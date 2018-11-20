@@ -1,0 +1,71 @@
+""
+{
+	"item_recipe_blade_mail2"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"5678"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"1500"
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_blade_mail2"
+		"ItemRequirements"
+		{
+			"01"						"item_blade_mail"
+		}
+	}
+	
+		"item_blade_mail2"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_blade_mail.lua"
+		"AbilityTextureName"			"custom/blade_mail2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityCooldown"				"20 18 16"
+		"AbilityManaCost"				"25 50 100"
+		"ItemShopTags"					"damage;armor;int;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"blade mail;blademail"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilitySharedCooldown"			"blademail"
+
+		"MaxUpgradeLevel"				"1"
+		"ItemBaseLevel"					"1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"30"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"28"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"25"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"reflected_damage_pct"	"125"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"reduced_damage_pct"	"5"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"4"
+			}
+		}
+	}
+	
+	}
+	

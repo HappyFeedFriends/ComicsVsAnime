@@ -1,0 +1,958 @@
+#base "items/Desolator.txt"
+#base "items/butterfly.txt"
+#base "items/stones_infinity.txt"
+#base "items/lens.txt"
+#base "items/power_treads.txt"
+#base "items/phase_boots.txt"
+#base "items/sange_yasha.txt"
+#base "items/magic_medallion.txt"
+#base "items/blade_of_knight.txt"
+#base "items/black_king_bar.txt"
+#base "items/blink.txt"
+#base "items/item_dragon_staff.txt"
+//#base "items/medallions_spiritual.txt" OFF and OFF custom damage
+
+"DOTAAbilities"
+{
+	"Version"		"1"
+	
+	//=================================================================================================================
+	// Bag of Gold
+	//=================================================================================================================
+	"item_bag_of_gold"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityName"					"item_bag_of_gold"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"Model"							"models/props_gameplay/gold_coin001.vmdl"
+		"ItemKillable"					"0"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"99999"
+		"ItemPurchasable"				"0"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"0"
+		"ItemKillable"					"0"
+		"ItemCastOnPickup"				"1"
+	}
+	//=================================================================================================================
+	// Treasure Chest
+	//=================================================================================================================
+	"item_treasure_chest"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"1001"
+		"AbilityName"					"item_treasure_chest"
+		"BaseClass"						"item_bag_of_gold"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_ITEM"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"Model"							"models/props_gameplay/treasure_chest001.vmdl"
+		"ItemKillable"					"0"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"99999"
+		"ItemPurchasable"				"0"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"0"
+		"ItemKillable"					"0"
+		"ItemCastOnPickup"				"1"
+	}
+	
+	"item_event_rezhim"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"1032"
+		"AbilityName"					"item_treasure_chest"
+		"BaseClass"						"item_bag_of_gold"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_ITEM"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"Model"							"models/props_winter/present.vmdl"
+		"ItemKillable"					"0"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"99999"
+		"ItemPurchasable"				"0"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"0"
+		"ItemKillable"					"0"
+		"ItemCastOnPickup"				"1"
+	}
+
+	"item_recipe_thor_mjollnier"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"11110"						
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"BaseClass"                     "item_datadriven"
+	
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1300"	
+		"ItemShopTags"					"artifacts"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_thor_mjollnier"
+		"ItemRequirements"
+		{
+			"01"						"item_maelstrom"
+		}
+	}
+
+	"item_recipe_thor_mjollnier_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"11119"						
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"BaseClass"                     "item_datadriven"
+	
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1000"	
+		"ItemShopTags"					"artifacts"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_thor_mjollnier_2"
+		"ItemRequirements"
+		{
+			"01"						"item_thor_mjollnier"
+		}
+	}
+
+	"item_recipe_thor_mjollnier_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"11117"						
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"BaseClass"                     "item_datadriven"
+	
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1100"	
+		"ItemShopTags"					"artifacts"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_thor_mjollnier_3"
+		"ItemRequirements"
+		{
+			"01"						"item_thor_mjollnier_2"
+		}
+	}
+
+	"item_recipe_thor_mjollnier_4"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"11116"						
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"BaseClass"                     "item_datadriven"
+	
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2500"	
+		"ItemShopTags"					"artifacts"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_thor_mjollnier_4"
+		"ItemRequirements"
+		{
+			"01"						"item_thor_mjollnier_3"
+		}
+	}
+
+	"item_thor_mjollnier"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"11111"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"custom/item_thor_mjollnier"
+		"ItemQuality"					"legendary"
+		"ItemAliases"					"thor mjollnier;thor;mjollnier"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityCastRange"				"280"
+		"AbilityManaCost"				"230"
+		"AbilityCooldown"				"65"
+		"UpgradesItems"					"item_thor_mjollnier;item_thor_mjollnier_2;item_thor_mjollnier_3;item_thor_mjollnier_4"
+		"UpgradeRecipe"					"item_recipe_thor_mjollnier"
+		"ShouldBeSuggested"				"1"
+		"MaxUpgradeLevel"				"4"
+		"ItemBaseLevel"					"1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"60 80 120 150"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"90 110 140 160"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"chance"				"15 20 25 30"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_melee"			"400 550 650 200"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_ranged"			"200 350 330 150"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"5"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"280"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"water_mult"			"15 30 35 40"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"	
+			{
+				"ScriptFile"	"items/thor_mjollnier"
+				"Function"		"thor_mjollnier_activate"
+			}
+		}
+		"Modifiers"
+		{
+
+			"modifier_thor_mjollnier_passive"
+			{
+				"IsHidden"	"1"
+				"Passive"	"1"
+				
+				"OnAttackLanded"
+				{
+					"RunScript"	
+					{
+						"ScriptFile"	"items/thor_mjollnier"
+						"Function"		"thor_mjollnier"
+					}
+				}
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%bonus_attack_speed"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"			"%bonus_damage"
+				}
+			}
+		}
+	}
+
+	"item_thor_mjollnier_2"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"11112"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"custom/item_thor_mjollnier_2"
+		"ItemQuality"					"legendary"
+		"ItemAliases"					"thor mjollnier;thor;mjollnier"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityCastRange"				"450"
+		"AbilityManaCost"				"120"
+		"AbilityCooldown"				"45"
+		"UpgradesItems"					"item_thor_mjollnier_2;item_thor_mjollnier_3;item_thor_mjollnier_4"
+		"UpgradeRecipe"					"item_recipe_thor_mjollnier"
+		"ShouldBeSuggested"				"1"
+		"MaxUpgradeLevel"				"4"
+		"ItemBaseLevel"					"2"
+		"AbilitySharedCooldown"			"thor_mjollnier"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"60 80 120 150"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"90 110 140 160"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"chance"				"15 20 25 30"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_melee"			"400 550 650 200"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_ranged"			"200 350 330 150"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"5"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"280"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"water_mult"			"15 30 35 40"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"	
+			{
+				"ScriptFile"	"items/thor_mjollnier"
+				"Function"		"thor_mjollnier_activate"
+			}
+		}
+		"Modifiers"
+		{
+
+			"modifier_thor_mjollnier_passive"
+			{
+				"IsHidden"	"1"
+				"Passive"	"1"
+				
+				"OnAttackLanded"
+				{
+					"RunScript"	
+					{
+						"ScriptFile"	"items/thor_mjollnier"
+						"Function"		"thor_mjollnier"
+					}
+				}
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%bonus_attack_speed"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"			"%bonus_damage"
+				}
+			}
+		}
+	}
+
+	"item_thor_mjollnier_3"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"11113"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"custom/item_thor_mjollnier_3"
+		"ItemQuality"					"legendary"
+		"ItemAliases"					"thor mjollnier;thor;mjollnier"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityCastRange"				"450"
+		"AbilityManaCost"				"120"
+		"AbilityCooldown"				"45"
+		"UpgradesItems"					"item_thor_mjollnier_2;item_thor_mjollnier_3;item_thor_mjollnier_4"
+		"UpgradeRecipe"					"item_recipe_thor_mjollnier"
+		"ShouldBeSuggested"				"1"
+		"MaxUpgradeLevel"				"4"
+		"ItemBaseLevel"					"3"
+		"AbilitySharedCooldown"			"thor_mjollnier"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"60 80 120 150"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"90 110 140 160"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"chance"				"15 20 25 30"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_melee"			"400 550 650 200"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_ranged"			"200 350 330 150"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"5"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"280"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"water_mult"			"15 30 35 40"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"	
+			{
+				"ScriptFile"	"items/thor_mjollnier"
+				"Function"		"thor_mjollnier_activate"
+			}
+		}
+		"Modifiers"
+		{
+
+			"modifier_thor_mjollnier_passive"
+			{
+				"IsHidden"	"1"
+				"Passive"	"1"
+				
+				"OnAttackLanded"
+				{
+					"RunScript"	
+					{
+						"ScriptFile"	"items/thor_mjollnier"
+						"Function"		"thor_mjollnier"
+					}
+				}
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%bonus_attack_speed"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"			"%bonus_damage"
+				}
+			}
+		}
+	}
+
+	"item_thor_mjollnier_4"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"11114"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityTextureName"			"custom/item_thor_mjollnier_4"
+		"ItemQuality"					"legendary"
+		"ItemAliases"					"thor mjollnier;thor;mjollnier"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityCastRange"				"450"
+		"AbilityManaCost"				"120"
+		"AbilityCooldown"				"45"
+		"UpgradesItems"					"item_thor_mjollnier_2;item_thor_mjollnier_3;item_thor_mjollnier_4"
+		"UpgradeRecipe"					"item_recipe_thor_mjollnier"
+		"ShouldBeSuggested"				"1"
+		"MaxUpgradeLevel"				"4"
+		"ItemBaseLevel"					"4"
+		"AbilitySharedCooldown"			"thor_mjollnier"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"60 80 120 150"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"90 110 140 160"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"chance"				"15 20 25 30"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_melee"			"400 550 650 200"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_ranged"			"200 350 330 150"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"5"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"280"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"water_mult"			"15 30 35 40"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"interval"				"0.3"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"	
+			{
+				"ScriptFile"	"items/thor_mjollnier"
+				"Function"		"thor_mjollnier_activate_4"
+			}
+		}
+		"Modifiers"
+		{
+
+			"modifier_thor_mjollnier_passive"
+			{
+				"IsHidden"	"1"
+				"Passive"	"1"
+				
+				"OnAttackLanded"
+				{
+					"RunScript"	
+					{
+						"ScriptFile"	"items/thor_mjollnier"
+						"Function"		"thor_mjollnier"
+					}
+				}
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%bonus_attack_speed"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"			"%bonus_damage"
+				}
+			}
+		}
+	}
+	
+
+	
+	"item_recipe_aghanim2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"21987"						
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"BaseClass"                     "item_datadriven"
+	
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2250"	
+		"ItemShopTags"					"artifacts"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_aghanim2"
+		"ItemRequirements"
+		{
+			"01"						"item_ultimate_scepter"
+		}
+	}
+	
+	"item_aghanim2"
+	{
+		"BaseClass"						"item_lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/item_aghanim2"
+		"ScriptFile"					"items/item_aghanim"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"ItemCost"						"30" 
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemPermanent"					"0"
+		"ItemDisplayCharges" 			"1"
+		"ItemInitialCharges"			"1"
+		"AbilityCastRange"				"100"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"all_stats"					"44"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_hp"					"550"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana"				"450"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Recipe: Monkey King Bar
+	//=================================================================================================================
+	"item_recipe_mkb"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"20898"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1800"
+		"ItemShopTags"					""
+
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mkb"
+		"ItemRequirements"
+		{
+			"01"						"item_javelin;item_javelin;item_monkey_king_bar"
+		}
+	}
+
+	//=================================================================================================================
+	// Monkey King Bar
+	//=================================================================================================================
+	"item_mkb"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"1135"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_mkb.lua"
+		"AbilityTextureName" 			"custom/item_mkb"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"5400"
+		"ItemShopTags"					"damage;attack_speed;str;agi;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"mkb;monkey king bar"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"145"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_range"			"0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"pulverize_count"		"3"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"pulverize_damage"				"240"
+				"CalculateSpellDamageTooltip"	"1"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pulverize_stun"		"0.4"
+			}
+		}
+	}	
+	
+	"item_dummy"
+	{
+		"ID"							"45323"
+		"BaseClass"                     "item_datadriven"
+		"ItemPurchasable"				"0"
+		"ItemCost"						"0"
+		"ItemKillable"					"0"
+		"ItemSellable"					"0"
+		"AllowedInBackpack"				"1"
+		"IsTempestDoubleClonable"		"0"
+	}
+	
+	"item_recipe_quantum_sphere"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"2066"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_quantum_sphere"
+		"ItemRequirements"
+		{
+			"01"						"item_sphere;item_lotus_orb"
+		}
+	}
+	
+	"item_quantum_sphere"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_lua"
+		"AbilityTextureName" 			"custom/item_quantum_sphere"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"ScriptFile"					"items/item_quantum_sphere.lua"
+		"AbilityCooldown"				"25"
+		"AbilityCastRange"				"%range"
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"4000"
+		"ItemShopTags"					"magic;amplify;magic crit;crit;magic"
+		"ItemQuality"					"legendary"
+		"ItemAliases"					"magic medallion"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_stats"				"55"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"				"35"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health_bonus"				"800"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"					"15"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"						"900"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cooldown"					"25"
+			}
+		}
+	}
+	"item_glove_infinity"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"12342"
+		"BaseClass" 					"item_datadriven"
+		"AbilityTextureName" 			"custom/item_glove_infinity"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"ItemPurchasable"		 		"0"
+		"ItemSellable"                  "0"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemShopTags"					"infinity"
+		"ItemQuality"					"legendary"
+		"ItemAliases"					"glove infinity"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
+	}
+	
+	"item_recipe_gloves_infinity_active"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"20774"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_gloves_infinity_active"
+		"ItemRequirements"
+		{
+			"01"						"item_glove_infinity;item_stone_of_time;item_stone_strength;item_stone_soul;item_stone_reality;item_stone_intellegence;item_stone_spaces"
+		}
+	}
+	
+	"item_gloves_infinity_active"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_lua"
+		"AbilityTextureName" 			"custom/item_gloves_infinity_active"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"ScriptFile"					"items/item_gloves_infinity_active.lua"
+		"AbilityCooldown"				"1"
+		"ItemRequiresCharges"			"1"
+		"ItemInitialCharges"			"3"
+		"AbilityCastRange"				"999999"
+		"AbilityChannelTime"			"4"
+
+		"ItemCost"						"0"
+		"ItemShopTags"					"infinity"
+		"ItemQuality"					"legendary"
+		"ItemAliases"					"glove infinity"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_charges"				"3"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"delay"						"4"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cooldown_charges"			"90"
+			}			
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"kill_unit"					"2"
+			}			
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cooldown_bonus_stat"		"35"
+			}			
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_stat"				"5"
+			}			
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all"					"60"
+			}			
+		}
+	}
+}

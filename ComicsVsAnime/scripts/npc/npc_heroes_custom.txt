@@ -1,0 +1,3669 @@
+
+"DOTAHeroes"
+{
+//	LEGEND
+//	"IsDisabled":
+//	0 = работает
+//	1 = desert_duo lock and forest_solo lock and mines_trio lock
+//	2 = forest_solo disabled,
+//	3 = видно,но не пикнуть
+//	4 = полностью спрятан
+//	5 = desert_duo disabled.
+//	"IsNew"	Новый герой (отключено)
+//  "IsImba" Имба герой (отключено)
+// 	"IsAnime" Аниме герой
+//	"IsComics" Комиксовый герой
+//	"IsCustom" Кастомный герой
+
+	"Version"		"1"
+
+	"npc_dota_hero_base"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"		"npc_dota_hero"
+		"Model"		"models/error.vmdl"
+		"SoundSet"		"0"
+		"Enabled"		"0"
+		"Level"		"1"
+		"BotImplemented"		"0"
+		"NewHero"		"1"
+		"HeroPool1"		"0"
+		"HeroUnlockOrder"		"1"
+		"CMEnabled"		"0"
+		"CMTournamentIgnore"		"0"
+		"new_player_enable"		"0"
+		"Legs"	"2"
+
+		"AbilityDraftIgnoreCount" "4"
+
+		// Abilities
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityLayout"		"4"
+		"Ability1"					""										// Ability 1.
+		"Ability2"					""										// Ability 2.
+		"Ability3"					""										// Ability 3.
+		"Ability4"					""										// Ability 4.
+		"Ability5"					""
+		"Ability6"					""										// Ability 6 - Extra.
+		"Ability7"					""										// Ability 7 - Extra.
+		"Ability8"					""										// Ability 8 - Extra.
+		"Ability9"					""
+
+		// Armor
+		//-------------------------------------------------------------------------------------------------------------
+		"ArmorPhysical"		"-1"
+		"MagicalResistance"		"25"
+
+		// Attack
+		//-------------------------------------------------------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"1"
+		"AttackDamageMax"		"1"
+		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.750000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"600"
+		"ProjectileModel"		"particles/base_attacks/ranged_hero.vpcf"
+		"ProjectileSpeed"		"900"
+
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"0"
+		"AttributeStrengthGain"		"0"
+		"AttributeBaseIntelligence"		"0"
+		"AttributeIntelligenceGain"		"0"
+		"AttributeBaseAgility"		"0"
+		"AttributeAgilityGain"		"0"
+
+		// Bounty
+		//-------------------------------------------------------------------------------------------------------------
+		"BountyXP"		"62"
+		"BountyGoldMin"		"0"
+		"BountyGoldMax"		"0"
+
+		// Bounds
+		//-------------------------------------------------------------------------------------------------------------
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"RingRadius"		"70"
+
+		// Movement
+		//-------------------------------------------------------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"		"300"
+		"MovementTurnRate"		"0.500000"
+		"HasAggressiveStance"		"0"
+
+		// Status
+		//-------------------------------------------------------------------------------------------------------------
+		"StatusHealth"		"200"
+		"StatusHealthRegen"		"0.0000"
+		"StatusMana"		"75"
+		"StatusManaRegen"		"0.010000"
+
+		// Team
+		//-------------------------------------------------------------------------------------------------------------
+		"TeamName"		"DOTA_TEAM_GOODGUYS"
+		"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"		"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+
+		// Vision
+		//-------------------------------------------------------------------------------------------------------------
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"800"
+
+		//Inventory
+		"HasInventory"		"1"
+
+		//Voice
+		"VoiceBackgroundSound"		""
+		"HealthBarOffset"		"200" 		
+		"IdleExpression"		"scenes/default_idle.vcd"
+		"IdleSoundLoop"				""
+		"AbilityDraftDisabled"		"0"
+		"ARDMDisabled"		"0"
+		"HUD"
+		{
+			"StatusHUD"
+			{
+				"StatusStrength"
+				{
+					"LocalizeToken"		"#DOTA_StrengthStatus"
+					"Parameters"		"Traits:Strength"
+					"HUDName"		"unitstrength"
+				}
+				"StatusAgility"
+				{
+					"LocalizeToken"		"#DOTA_AgilityStatus"
+					"Parameters"		"Traits:Agility"
+					"HUDName"		"unitagility"
+				}
+				"StatusIntellect"
+				{
+					"LocalizeToken"		"#DOTA_IntellectStatus"
+					"Parameters"		"Traits:Intellect"
+					"HUDName"		"unitintellect"
+				}
+			}
+		}
+	}
+	
+			"npc_dota_hero_shredder"
+	{
+		"IsDisabled"		"4"
+		"Model"				"models/heroes/hero_loki/loki.vmdl"
+		"ModelScale"		"1.6"
+		"DisableWearables"	"1"
+		"VoiceFile"			""
+		"IsComics"			"1"
+		
+		"Ability1"		"flash_double_attack"
+		"Ability2"		"loki_blink_strike"
+		"Ability3"		"loki_illusion_invis"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"loki_swap_models"
+		
+		"Ability10"		"special_bonus_agility_8"
+		"Ability11"		"special_bonus_mp_200"
+		"Ability12"		"special_bonus_attack_speed_25"
+		"Ability13"		"special_bonus_cooldown_reduction_12"
+		"Ability14"		"special_bonus_loki_1"
+		"Ability15"		"special_bonus_attack_damage_40"
+		"Ability16"		"special_bonus_unique_morphling_1"
+		"Ability17"		"special_bonus_unique_morphling_5"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"23.1"
+		"AttributeStrengthGain"		"1.8"	
+		"AttributeBaseIntelligence"		"18"
+		"AttributeIntelligenceGain"		"1.4"	
+		"AttributeBaseAgility"		"34"
+		"AttributeAgilityGain"		"2.7"
+
+	}
+	
+	//==============================================
+	//HERO: ИМБА ШОУ
+	//==============================================
+	
+	"npc_dota_hero_chen"
+	{
+		"Model"		"models/heroes/hero_zoom/zoom.vmdl"
+		"DisableWearables"     "1"
+		"ModelScale"		"3.4"
+		"IsDisabled"	"4"
+		"PickSound"		"chen_chen_spawn_01"
+		"AbilityLayout"		"5"
+		"Ability1"		"pukan_boom"
+		"Ability2"		"damage_yarosti"
+		"Ability3"		"Baragoz_pukan"
+		"Ability4"      "generic_hidden"
+		"Ability5"      "generic_hidden"
+		"Ability6"		"Mass_stun"
+		
+		"Ability10"		"special_bonus_agility_10"
+		"Ability11"		"special_bonus_truestrike"
+		"Ability12"		"special_bonus_hp_250"
+		"Ability13"		"special_bonus_damage_pct_bonus_10"
+		"Ability14"		"special_bonus_attack_damage_120"
+		"Ability15"		"special_bonus_imba_show_1"
+		"Ability16"		"special_bonus_30_crit_2"
+		"Ability17"		"special_bonus_hp_125"
+		
+		"AttackCapabilities"		    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackRange"                   "150"
+		
+		"AttributePrimary"		        "DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		    "23"
+		"AttributeStrengthGain"		    "2.3"
+		"AttributeBaseAgility"		    "15"
+		"AttributeAgilityGain"		    "1.7"
+		"AttributeBaseIntelligence"		"10"
+		"AttributeIntelligenceGain"		"1.5"
+	}
+	//==================================================
+	//НС
+	//==================================================
+	"npc_dota_hero_rubick"
+	{
+		"IsDisabled"	"4"
+		"AbilityLayout"		"5"
+		"Ability1"		"burn_hp_mp"
+		"Ability2"		"ns_passive"
+		"Ability3"		"armor_reduction"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"stun_damage"
+		
+		"Ability11"		"special_bonus_attack_speed_25"
+		"Ability12"		"special_bonus_magic_resistance_12"
+		"Ability13"		"special_bonus_hp_150"
+		"Ability14"		"special_bonus_intelligence_15"
+		"Ability15"		"special_bonus_hp_250"
+		"Ability16"		"special_bonus_attack_damage_40"
+		"Ability17"		"special_bonus_ns_2"
+		"Ability18"		"special_bonus_ns_1"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+    }
+//========================================================================
+//Death
+//========================================================================
+	
+	"npc_dota_hero_death_prophet"
+	{
+		"PickSound"		            "death_prophet_dpro_spawn_01"
+		"HeroSelectSoundEffect"		"Hero_DeathProphet.Pick"
+		"IsDisabled"	"4"
+		"Ability1"		"death_respawn_skeleton"
+		"Ability2"		"death_passive"
+		"Ability3"		"Death_form"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"death_Apocalypse"
+		
+		"Ability7"      "death_spd_attack"
+		"Ability8"      "death_attack_bonus"
+		"Ability9"      "death_hp_regen"
+	    "Ability10"		"death_attack_ult"
+
+	    "Ability11"		"special_bonus_attack_speed_20"
+		"Ability12"		"special_bonus_attack_damage_15"
+		"Ability13"		"special_bonus_intelligence_10"
+		"Ability14"		"special_bonus_attack_range_150"
+		"Ability15"		"special_bonus_death_1"
+		"Ability16"		"special_bonus_magic_resistance_15"
+		"Ability17"		"special_bonus_hp_600"
+		"Ability18"		"special_bonus_cooldown_reduction_30"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_INTELLECT"
+	}
+	
+	//========================================================================
+	// Джарахов
+	//========================================================================
+	
+	"npc_dota_hero_meepo"
+	{
+
+		"PickSound"		"meepo_meepo_spawn_01"
+		"IsDisabled"	"4"
+		"Ability1"		"dzarahov_ne_prodamsya"
+		"Ability2"		"dzarahov_spd_bonus"
+		"Ability3"		"dzarahov_oobidna"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"dzarahov_ilich_stariy"
+		
+		"Ability10"		"special_bonus_armor_4"
+		"Ability11"		"special_bonus_attack_damage_15"
+		"Ability12"		"special_bonus_lifesteal_15"
+		"Ability13"		"special_bonus_movement_speed_25"
+		"Ability14"		"special_bonus_evasion_10"
+		"Ability15"		"special_bonus_attack_speed_25"
+		"Ability16"		"special_bonus_primary_stats_50"
+		"Ability17"		"special_bonus_damage_pct_bonus_25"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		
+		"AttributeBaseStrength"		     "25"
+		"AttributeStrengthGain"		     "1.6"
+		
+		"AttributeBaseAgility"		     "23"
+		"AttributeAgilityGain"		     "2.2"
+		
+		"AttributeBaseIntelligence"		 "20"
+		"AttributeIntelligenceGain"		 "1.6"
+	}	
+	//===================================
+	//Оляша
+	//===================================
+	
+		"npc_dota_hero_lina"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"wave_of_silence"
+		"Ability2"		"olyasha_tornado"
+		"Ability3"		"deafening_blast_custom"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"olysha_passive_int"
+		"Ability6"		"olyasha_silence"
+		"Ability10"		"special_bonus_mp_regen_8"
+		"Ability11"		"special_bonus_cast_range_125"
+		"Ability12"		"special_bonus_attack_damage_50"
+		"Ability13"		"special_bonus_olyasha_2"
+		"Ability14"		"special_bonus_spell_block_15"
+		"Ability15"		"special_bonus_olyasha_1"
+		"Ability16"		"special_bonus_hp_350"
+		"Ability17"		"special_bonus_spell_amplify_20"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseIntelligence"		"30"
+		"AttributeIntelligenceGain"		"2.4"
+    }
+	
+	//===================================
+	//Соболев
+	//===================================
+	
+		"npc_dota_hero_faceless_void"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"sobolev_kachalka"
+		"Ability2"		"sobolev_cleave"
+		"Ability3"		"sobolev_passive"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"sobolev_ultimate"
+		"Ability10"		"special_bonus_attack_speed_15"
+		"Ability11"		"special_bonus_strength_8"
+		"Ability12"		"special_bonus_armor_7"
+		"Ability13"		"special_bonus_attack_damage_25"
+		"Ability14"		"special_bonus_hp_300"
+		"Ability15"		"special_bonus_gold_income_20"
+		"Ability16"		"special_bonus_evasion_20"
+		"Ability17"		"special_bonus_unique_faceless_void_4"
+
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+    }
+	
+		"npc_dota_hero_skeleton_king"
+	{
+		"Model"		"models/heroes/wraith_king/leoric_base.vmdl"
+		"DisableWearables"     "1"
+				"IsDisabled"	"4"
+		"Ability1"		"papich_rage"
+		"Ability2"		"papich_shot"
+		"Ability3"		"papich_debuff"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"skeleton_king_reincarnation"
+		"Ability10"		"special_bonus_attack_damage_15"
+		"Ability11"		"special_bonus_hp_150"
+		"Ability12"		"special_bonus_movement_speed_15"
+		"Ability13"		"special_bonus_attack_speed_40"
+		"Ability14"		"special_bonus_armor_9"
+		"Ability15"		"special_bonus_magic_resistance_15"
+		"Ability16"		"special_bonus_30_crit_2"
+		"Ability17"		"special_bonus_evasion_25"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+	}
+	
+	"npc_dota_hero_brewmaster"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"hovan_passive"
+		"Ability2"		"hovan_bolt_damage"
+		"Ability3"		"hovan_pivo"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"hovan_bang_bang"
+		"Ability10"		"special_bonus_attack_damage_30"
+		"Ability11"		"special_bonus_hp_200"
+		"Ability12"		"special_bonus_hovan_1"
+		"Ability13"		"special_bonus_hovan_2"
+		"Ability14"		"special_bonus_hovan_3"
+		"Ability15"		"special_bonus_attack_speed_100"
+		"Ability16"		"special_bonus_armor_pct_30"
+		"Ability17"		"special_bonus_hovan_4"
+
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"			"23"
+		"AttributeStrengthGain"			"3.2"
+		
+		"AttributeBaseAgility"			"26"
+		"AttributeAgilityGain"			"2.1"
+
+	}
+	//===================================
+	//Павел Дуров
+	//===================================
+	
+	"npc_dota_hero_dragon_knight"
+	{
+		"Model"		"models/heroes/dragon_knight/dragon_knight.vmdl"
+		"Ability1"		""
+		"Ability2"		""
+		"Ability3"		""
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		""
+		"Ability10"		"special_bonus_mp_regen_2"
+		"Ability11"		"special_bonus_unique_dragon_knight_3"
+		"Ability12"		"special_bonus_attack_damage_35"
+		"Ability13"		"special_bonus_hp_300"
+		"Ability14"		"special_bonus_gold_income_25"
+		"Ability15"		"special_bonus_unique_dragon_knight"
+		"Ability16"		"special_bonus_strength_40"
+		"Ability17"		"special_bonus_unique_dragon_knight_2"
+		"MovementSpeed"	"295"
+		//"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+	}
+	//===================================
+	//РОСКОМНАДЗОР
+	//===================================
+	
+	"npc_dota_hero_vengefulspirit"
+	{
+		"Ability1"		""
+		"Ability2"		""
+		"Ability3"		""
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		""
+		"Ability10"		"special_bonus_magic_resistance_15"
+		"Ability11"		"special_bonus_unique_vengeful_spirit_4"
+		"Ability12"		"special_bonus_agility_15"
+		"Ability13"		"special_bonus_unique_vengeful_spirit_6"
+		"Ability14"		"special_bonus_unique_vengeful_spirit_5"
+		"Ability15"		"special_bonus_unique_vengeful_spirit_2"
+		"Ability16"		"special_bonus_unique_vengeful_spirit_1"
+		"Ability17"		"special_bonus_unique_vengeful_spirit_3"
+		//"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackRange"				"450"
+	}
+
+	//===================================
+	//ЧЁРНЫЙ ВЛАСТЕЛИН
+	//===================================
+	
+	"npc_dota_hero_spirit_breaker"
+	{
+		"Model"						"models/heroes/spirit_breaker/spirit_breaker.vmdl"
+		"SoundSet"					"Hero_AbyssalUnderlord"
+		"PickSound"					"abyssal_underlord_abys_anger_01"
+		"BanSound"					"abyssal_underlord_abys_anger_01"
+		"HeroSelectSoundEffect"		"Hero_Underlord.Pick"
+		"IsDisabled"	"4"
+		"Ability1"		"black_lord_rush"
+		"Ability2"		"black_lord_cep"
+		"Ability3"		"black_lord_nakaz"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"black_lord_vlast"
+		"Ability7"		"black_lord_return_target"
+		"Ability10"		"special_bonus_movement_speed_25"
+		"Ability11"		"special_bonus_armor_10"
+		"Ability12"		"special_bonus_black_lord_1"
+		"Ability13"		"special_bonus_attack_damage_40"
+		"Ability14"		"special_bonus_strength_25"
+		"Ability15"		"special_bonus_black_lord_2"
+		"Ability16"		"special_bonus_black_lord_3"
+		"Ability17"		"special_bonus_hp_800"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+	}
+	//=================================================================================================================
+	// HERO: Axe
+	//=================================================================================================================
+	"npc_dota_hero_axe"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"axe_berserkers_call"
+		"Ability2"		"axe_battle_hunger"
+		"Ability3"		"axe_counter_helix"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"axe_culling_blade"
+		"Ability10"		"special_bonus_strength_6"
+		"Ability11"		"special_bonus_mp_regen_3"
+		"Ability12"		"special_bonus_attack_damage_75"
+		"Ability13"		"special_bonus_hp_250"
+		"Ability14"		"special_bonus_hp_regen_25"
+		"Ability15"		"special_bonus_armor_pct_8"
+		"Ability16"		"special_bonus_armor_15"
+		"Ability17"		"special_bonus_unique_axe"
+		"AttributePrimary"		      "DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"250"
+		"AttributeStrengthGain"		"28"
+		
+		"AttributeBaseIntelligence"		"180"
+		"AttributeIntelligenceGain"		"10.6"
+		
+		"AttributeBaseAgility"		"200"
+		"AttributeAgilityGain"		"15.2"
+	}
+
+	//=================================================================================================================
+	// HERO: Bane
+	//=================================================================================================================
+	"npc_dota_hero_bane"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"bane_enfeeble"
+		"Ability2"		"bane_brain_sap"
+		"Ability3"		"bane_nightmare"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"bane_fiends_grip"
+		"Ability7"		"bane_nightmare_end"
+		"Ability10"		"special_bonus_armor_6"
+		"Ability11"		"special_bonus_mp_200"
+		"Ability12"		"special_bonus_hp_250"
+		"Ability13"		"special_bonus_exp_boost_30"
+		"Ability14"		"special_bonus_unique_bane_1"
+		"Ability15"		"special_bonus_cast_range_175"
+		"Ability16"		"special_bonus_unique_bane_4"
+		"Ability17"		"special_bonus_unique_bane_2"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		
+		"AttributeBaseStrength"		"220"
+		"AttributeStrengthGain"		"24.00000"
+		
+		"AttributeBaseIntelligence"		"220"
+		"AttributeIntelligenceGain"		"20.400000"
+		
+		"AttributeBaseAgility"		"220"
+		"AttributeAgilityGain"		"20.400000"
+
+	}
+
+	//=================================================================================================================
+	// HERO: Bloodseeker
+	//=================================================================================================================
+	"npc_dota_hero_bloodseeker"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"bloodseeker_bloodrage"
+		"Ability2"		"bloodseeker_blood_bath"
+		"Ability3"		"bloodseeker_thirst"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"bloodseeker_rupture"
+		"Ability10"		"special_bonus_attack_speed_25"
+		"Ability11"		"special_bonus_armor_4"
+		"Ability12"		"special_bonus_hp_300"
+		"Ability13"		"special_bonus_unique_bloodseeker_2"
+		"Ability14"		"special_bonus_unique_bloodseeker_3"
+		"Ability15"		"special_bonus_lifesteal_25"
+		"Ability16"		"special_bonus_unique_bloodseeker"
+		"Ability17"		"special_bonus_unique_bloodseeker_4"
+		"AttributePrimary"		      "DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"230"
+		"AttributeStrengthGain"		"27"
+		"AttributeBaseIntelligence"		"180"
+		"AttributeIntelligenceGain"		"17"
+		"AttributeBaseAgility"		"240"
+		"AttributeAgilityGain"		"30"
+
+	}
+	"npc_dota_hero_drow_ranger"
+	{
+			"IsDisabled"	"4"
+		"Ability1"		"drow_ranger_frost_arrows"
+		"Ability2"		"drow_ranger_wave_of_silence"
+		"Ability3"		"drow_ranger_trueshot"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"drow_ranger_marksmanship"
+		"Ability10"		"special_bonus_agility_10"
+		"Ability11"		"special_bonus_primary_stats_50"
+		"Ability12"		"special_bonus_hp_175"
+		"Ability13"		"special_bonus_attack_speed_20"
+		"Ability14"		"special_bonus_unique_drow_ranger_1"
+		"Ability15"		"special_bonus_strength_14"
+		"Ability16"		"special_bonus_armor_pct_8"
+		"Ability17"		"special_bonus_unique_drow_ranger_3"
+		"AttributePrimary"		      "DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"170"
+		"AttributeStrengthGain"		"10.900000"
+		
+		"AttributeBaseIntelligence"		"150"
+		"AttributeIntelligenceGain"		"10.400000"
+		
+		"AttributeBaseAgility"		"260"
+		"AttributeAgilityGain"		"10.900000"
+
+	}
+	
+	"npc_dota_hero_earthshaker"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"earthshaker_fissure"
+		"Ability2"		"earthshaker_enchant_totem"
+		"Ability3"		"earthshaker_aftershock"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"earthshaker_echo_slam"
+		"Ability10"		"special_bonus_strength_10"
+		"Ability11"		"special_bonus_mp_250"
+		"Ability12"		"special_bonus_all_stats_10"
+		"Ability13"		"special_bonus_attack_damage_50"
+		"Ability14"		"special_bonus_unique_earthshaker_2"
+		"Ability15"		"special_bonus_unique_earthshaker_3"
+		"Ability16"		"special_bonus_hp_600"
+		"Ability17"		"special_bonus_unique_earthshaker"
+		"AttributePrimary"		      "DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"300"
+		"AttributeStrengthGain"		"35"
+		
+		"AttributeBaseIntelligence"		"160"
+		"AttributeIntelligenceGain"		"10.800000"
+		
+		"AttributeBaseAgility"		"120"
+		"AttributeAgilityGain"		"10.400000"
+
+	}
+	"npc_dota_hero_juggernaut"
+	{
+		//"DisableWearables"	"1"
+		"IsDisabled"	"4"	
+		"Ability1"		"juggernaut_blade_fury"
+		"Ability2"		"juggernaut_healing_ward"
+		"Ability3"		"juggernaut_blade_dance"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"juggernaut_omni_slash"
+		"Ability10"		"special_bonus_hp_175"
+		"Ability11"		"special_bonus_attack_damage_20"
+		"Ability12"		"special_bonus_attack_speed_20"
+		"Ability13"		"special_bonus_armor_7"
+		"Ability14"		"special_bonus_attack_damage_100"
+		"Ability15"		"special_bonus_all_stats_8"
+		"Ability16"		"special_bonus_agility_20"
+		"Ability17"		"special_bonus_unique_juggernaut"
+		"AttributePrimary"		      "DOTA_ATTRIBUTE_AGILITY"
+
+		"AttributeBaseStrength"		"200"
+		"AttributeStrengthGain"		"20.200000"
+		
+		"AttributeBaseIntelligence"		"140"
+		"AttributeIntelligenceGain"		"10.400000"
+		
+		"AttributeBaseAgility"		"260"
+		"AttributeAgilityGain"		"20.400000"
+
+	}
+	"npc_dota_hero_mirana"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"mirana_starfall"
+		"Ability2"		"mirana_arrow"
+		"Ability3"		"mirana_leap"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"mirana_invis"
+		"Ability10"		"special_bonus_agility_8"
+		"Ability11"		"special_bonus_hp_150"
+		"Ability12"		"special_bonus_spell_amplify_5"
+		"Ability13"		"special_bonus_attack_speed_30"
+		"Ability14"		"special_bonus_attack_damage_50"
+		"Ability15"		"special_bonus_unique_mirana_3"
+		"Ability16"		"special_bonus_unique_mirana_1"
+		"Ability17"		"special_bonus_unique_mirana_2"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"170"
+		"AttributeStrengthGain"		"20.150000"
+		
+		"AttributeBaseIntelligence"		"170"
+		"AttributeIntelligenceGain"		"10.650000"
+		
+		"AttributeBaseAgility"		"200"
+		"AttributeAgilityGain"		"30.60000"
+	}
+	"npc_dota_hero_nevermore"
+	{
+	    "override_hero"			"npc_dota_hero_nevermore"
+		"DisableWearables"     "0"
+		"IsDisabled"	"4"
+		"Ability1"		"nevermore_shadowraze1"
+		"Ability2"		"nevermore_shadowraze2"
+		"Ability3"		"nevermore_shadowraze3"
+		"Ability4"		"nevermore_necromastery"
+		"Ability5"		"nevermore_dark_lord"
+		"Ability6"		"nevermore_requiem"
+		
+		"Ability10"		"special_bonus_incoming_10"
+		"Ability11"		"special_bonus_attack_speed_20"
+		"Ability12"		"special_bonus_spell_amplify_6"
+		"Ability13"		"special_bonus_hp_175"
+		"Ability14"		"special_bonus_lifesteal_15"
+		"Ability15"		"special_bonus_unique_nevermore_1"
+		"Ability16"		"special_bonus_attack_range_150"
+		"Ability17"		"special_bonus_unique_nevermore_2"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		    "150"
+		"AttributeStrengthGain"		    "20.300000"
+		
+		"AttributeBaseIntelligence"		"180"
+		"AttributeIntelligenceGain"		"20.000000"
+		
+		"AttributeBaseAgility"		    "200"
+		"AttributeAgilityGain"		    "20.900000"	
+    }
+
+	"npc_dota_hero_phantom_lancer"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"phantom_lancer_spirit_lance"
+		"Ability2"		"phantom_lancer_doppelwalk"
+		"Ability3"		"phantom_lancer_phantom_edge"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"phantom_lancer_juxtapose"
+		"Ability10"		"special_bonus_unique_phantom_lancer_2"
+		"Ability11"		"special_bonus_attack_speed_20"
+		"Ability12"		"special_bonus_all_stats_8"
+		"Ability13"		"special_bonus_cooldown_reduction_15"
+		"Ability14"		"special_bonus_magic_resistance_15"
+		"Ability15"		"special_bonus_evasion_15"
+		"Ability16"		"special_bonus_strength_20"
+		"Ability17"		"special_bonus_unique_phantom_lancer"
+
+		"AttributePrimary"				"DOTA_ATTRIBUTE_AGILITY"
+
+		"AttributeBaseStrength"		"210"
+		"AttributeStrengthGain"		"20.000000"
+		
+		"AttributeBaseIntelligence"		"210"
+		"AttributeIntelligenceGain"		"20.000000"
+		
+		"AttributeBaseAgility"		"290"
+		"AttributeAgilityGain"		"20.800000"
+
+	}
+	"npc_dota_hero_puck"
+	{
+		"IsDisabled"	"4"
+		"IsNew"			"1"	
+		"Ability1"		"puck_illusory_orb"
+		"Ability2"		"puck_waning_rift"
+		"Ability3"		"puck_phase_shift"
+		"Ability4"		"puck_ethereal_jaunt"
+		"Ability6"		"puck_dream_coil"
+		"Ability10"		"special_bonus_intelligence_8"
+		"Ability11"		"special_bonus_hp_175"
+		"Ability12"		"special_bonus_attack_damage_50"
+		"Ability13"		"special_bonus_magic_resistance_20"
+		"Ability14"		"special_bonus_spell_amplify_10"
+		"Ability15"		"special_bonus_unique_puck_2"
+		"Ability16"		"special_bonus_gold_income_70"
+		"Ability17"		"special_bonus_unique_puck"
+
+		"AttributePrimary"				"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"150"
+		"AttributeStrengthGain"		"20.000000"
+		"AttributeBaseIntelligence"		"250"
+		"AttributeIntelligenceGain"		"20.400000"
+		"AttributeBaseAgility"		"220"
+		"AttributeAgilityGain"		"10.700000"
+
+	}
+	"npc_dota_hero_pudge"
+	{	
+		//"DisableWearables"     "1"
+		"Ability1"		"pudge_meat_hook"
+		"Ability2"		"pudge_rot"
+		"Ability3"		"pudge_flesh_heap"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"pudge_dismember"
+		"Ability10"		"special_bonus_strength_8"
+		"Ability11"		"special_bonus_mp_regen_2"
+		"Ability12"		"special_bonus_armor_5"
+		"Ability13"		"special_bonus_strength_14"
+		"Ability14"		"special_bonus_gold_income_25"
+		"Ability15"		"special_bonus_unique_pudge_3"
+		"Ability16"		"special_bonus_unique_pudge_1"
+		"Ability17"		"special_bonus_unique_pudge_2"
+		"IsDisabled"	"4"
+		"AttributeBaseStrength"		"250"
+		"AttributeStrengthGain"		"30.500000"
+		"AttributeBaseIntelligence"		"140"
+		"AttributeIntelligenceGain"		"10.500000"
+		"AttributeBaseAgility"		"140"
+		"AttributeAgilityGain"		"10.500000"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
+
+    }
+	"npc_dota_hero_razor"
+	{
+
+		"Ability1"		"razor_plasma_field"
+		"Ability2"		"razor_static_link"
+		"Ability3"		"razor_unstable_current"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"razor_eye_of_the_storm"
+		"Ability10"		"special_bonus_damage_pct_bonus_10"
+		"Ability11"		"special_bonus_agility_15"
+		"Ability12"		"special_bonus_unique_razor_2"
+		"Ability13"		"special_bonus_cast_range_175"
+		"Ability14"		"special_bonus_hp_400"
+		"Ability15"		"special_bonus_attack_speed_40"
+		"Ability16"		"special_bonus_attack_range_175"
+		"Ability17"		"special_bonus_unique_razor"
+		"IsDisabled"	"4"
+		"AttributeBaseStrength"		"210"
+		"AttributeStrengthGain"		"20.600000"
+		"AttributeBaseIntelligence"		"210"
+		"AttributeIntelligenceGain"		"10.800000"
+		"AttributeBaseAgility"		"220"
+		"AttributeAgilityGain"		"10.800000"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_AGILITY"
+	}
+	"npc_dota_hero_sand_king"
+	{
+		"IsDisabled"	"4"
+		"IsNew"			"1"
+		"Ability1"		"sandking_burrowstrike"
+		"Ability2"		"sandking_sand_storm"
+		"Ability3"		"sandking_caustic_finale"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"sandking_epicenter"
+		"Ability10"		"special_bonus_magic_resistance_10"
+		"Ability11"		"special_bonus_armor_5"
+		"Ability12"		"special_bonus_unique_sand_king_2"
+		"Ability13"		"special_bonus_unique_sand_king_3"
+		"Ability14"		"special_bonus_hp_350"
+		"Ability15"		"special_bonus_gold_income_20"
+		"Ability16"		"special_bonus_hp_regen_50"
+		"Ability17"		"special_bonus_unique_sand_king"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"220"
+		"AttributeStrengthGain"		"20.900000"
+		"AttributeBaseIntelligence"		"160"
+		"AttributeIntelligenceGain"		"10.800000"
+		"AttributeBaseAgility"		"190"
+		"AttributeAgilityGain"		"20.100000"
+
+	}
+	"npc_dota_hero_tiny"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"tiny_avalanche"
+		"Ability2"		"tiny_toss"
+		"Ability3"		"tiny_craggy_exterior"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"tiny_grow"
+		"Ability7"		"tiny_toss_tree"
+		"Ability10"		"special_bonus_strength_8"
+		"Ability11"		"special_bonus_intelligence_14"
+		"Ability12"		"special_bonus_attack_damage_60"
+		"Ability13"		"special_bonus_armor_15"
+		"Ability14"		"special_bonus_attack_speed_25"
+		"Ability15"		"special_bonus_mp_regen_14"
+		"Ability16"		"special_bonus_cooldown_reduction_20"
+		"Ability17"		"special_bonus_unique_tiny"
+
+		"AttributeBaseStrength"		"260"
+		"AttributeStrengthGain"		"30.300000"
+		"AttributeBaseIntelligence"		"170"
+		"AttributeIntelligenceGain"		"10.600000"
+		"AttributeBaseAgility"		"90"
+		"AttributeAgilityGain"		"10.900000"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
+
+	}
+	"npc_dota_hero_zuus"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"zuus_arc_lightning"
+		"Ability2"		"zuus_lightning_bolt"
+		"Ability3"		"zuus_static_field"
+		"Ability4"		"zuus_cloud"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"generic_hidden"
+		"Ability7"		"zuus_thundergods_wrath"		
+		"Ability10"		"special_bonus_armor_pct_10"
+		"Ability11"		"special_bonus_spell_amplify_5"
+		"Ability12"		"special_bonus_armor_7"
+		"Ability13"		"special_bonus_magic_resistance_15"
+		"Ability14"		"special_bonus_unique_zeus_2"
+		"Ability15"		"special_bonus_unique_zeus_3"
+		"Ability16"		"special_bonus_cast_range_200"
+		"Ability17"		"special_bonus_unique_zeus"
+
+		"AttributePrimary"				"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"190"
+		"AttributeStrengthGain"		"20.600000"
+		"AttributeBaseIntelligence"		"220"
+		"AttributeIntelligenceGain"		"20.700000"
+		"AttributeBaseAgility"		"110"
+		"AttributeAgilityGain"		"10.200000"
+
+	}
+	"npc_dota_hero_kunkka"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"kunkka_torrent"
+		"Ability2"		"kunkka_tidebringer"
+		"Ability3"		"kunkka_x_marks_the_spot"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"kunkka_ghostship"
+		"Ability7"		"kunkka_return"
+		"Ability10"		"special_bonus_attack_damage_30"
+		"Ability11"		"special_bonus_unique_kunkka_2"
+		"Ability12"		"special_bonus_hp_regen_15"
+		"Ability13"		"special_bonus_strength_10"
+		"Ability14"		"special_bonus_hp_300"
+		"Ability15"		"special_bonus_gold_income_20"
+		"Ability16"		"special_bonus_magic_resistance_35"
+		"Ability17"		"special_bonus_unique_kunkka_3"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
+
+		"AttributeBaseStrength"		"240"
+		"AttributeStrengthGain"		"30.300000"
+		"AttributeBaseIntelligence"		"180"
+		"AttributeIntelligenceGain"		"10.500000"
+		"AttributeBaseAgility"		"140"
+		"AttributeAgilityGain"		"10.300000"
+
+	}
+	"npc_dota_hero_lion"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"lion_impale"
+		"Ability2"		"lion_voodoo"
+		"Ability3"		"lion_mana_drain"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"lion_finger_of_death"
+		"Ability10"		"special_bonus_cast_range_75"
+		"Ability11"		"special_bonus_attack_damage_60"
+		"Ability12"		"special_bonus_unique_lion_2"
+		"Ability13"		"special_bonus_gold_income_15"
+		"Ability14"		"special_bonus_magic_resistance_20"
+		"Ability15"		"special_bonus_spell_amplify_8"
+		"Ability16"		"special_bonus_unique_lion_3"
+		"Ability17"		"special_bonus_unique_lion"
+
+		"AttributePrimary"				"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"160"
+		"AttributeStrengthGain"		"20.000000"
+		"AttributeBaseIntelligence"		"200"
+		"AttributeIntelligenceGain"		"30.000000"
+		"AttributeBaseAgility"		"150"
+		"AttributeAgilityGain"		"10.500000"
+
+	}
+	"npc_dota_hero_shadow_shaman"
+	{
+		"IsDisabled"	"4"
+		"IsNew"			"1"
+		"Ability1"		"shadow_shaman_ether_shock"
+		"Ability2"		"shadow_shaman_voodoo"
+		"Ability3"		"shadow_shaman_shackles"
+		"Ability6"		"shadow_shaman_mass_serpent_ward"
+		"Ability10"		"special_bonus_hp_200"
+		"Ability11"		"special_bonus_intelligence_10"
+		"Ability12"		"special_bonus_cast_range_100"
+		"Ability13"		"special_bonus_exp_boost_35"
+		"Ability14"		"special_bonus_unique_shadow_shaman_4"
+		"Ability15"		"special_bonus_unique_shadow_shaman_2"
+		"Ability16"		"special_bonus_unique_shadow_shaman_1"
+		"Ability17"		"special_bonus_unique_shadow_shaman_3"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"210"
+		"AttributeStrengthGain"		"20.100000"
+		"AttributeBaseIntelligence"		"210"
+		"AttributeIntelligenceGain"		"30.000000"
+		"AttributeBaseAgility"		"160"
+		"AttributeAgilityGain"		"10.600000"
+
+	}
+	"npc_dota_hero_slardar"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"slardar_sprint"
+		"Ability2"		"slardar_slithereen_crush"
+		"Ability3"		"slardar_bash"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"slardar_amplify_damage"
+		"Ability10"		"special_bonus_hp_regen_6"
+		"Ability11"		"special_bonus_mp_175"
+		"Ability12"		"special_bonus_hp_225"
+		"Ability13"		"special_bonus_attack_speed_25"
+		"Ability14"		"special_bonus_attack_damage_35"
+		"Ability15"		"special_bonus_armor_7"
+		"Ability16"		"special_bonus_strength_20"
+		"Ability17"		"special_bonus_unique_slardar"
+
+		"AttributeBaseStrength"		"210"
+		"AttributeStrengthGain"		"30.100000"
+		"AttributeBaseIntelligence"		"150"
+		"AttributeIntelligenceGain"		"10.500000"
+		"AttributeBaseAgility"		"170"
+		"AttributeAgilityGain"		"20.400000"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
+
+	}
+	"npc_dota_hero_tidehunter"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"tidehunter_gush"
+		"Ability2"		"tidehunter_kraken_shell"
+		"Ability3"		"tidehunter_anchor_smash"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"tidehunter_ravage"
+		"Ability10"		"special_bonus_attack_damage_50"
+		"Ability11"		"special_bonus_hp_150"
+		"Ability12"		"special_bonus_armor_7"
+		"Ability13"		"special_bonus_exp_boost_35"
+		"Ability14"		"special_bonus_mp_regen_6"
+		"Ability15"		"special_bonus_strength_15"
+		"Ability16"		"special_bonus_cooldown_reduction_20"
+		"Ability17"		"special_bonus_unique_tidehunter"
+
+		"AttributeBaseStrength"		"220"
+		"AttributeStrengthGain"		"30.300000"
+		"AttributeBaseIntelligence"		"160"
+		"AttributeIntelligenceGain"		"10.700000"
+		"AttributeBaseAgility"		"150"
+		"AttributeAgilityGain"		"10.500000"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
+
+	}
+	"npc_dota_hero_witch_doctor"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"witch_doctor_paralyzing_cask"
+		"Ability2"		"witch_doctor_voodoo_restoration"
+		"Ability3"		"witch_doctor_maledict"
+		"Ability6"		"witch_doctor_death_ward"
+		"Ability10"		"special_bonus_hp_200"
+		"Ability11"		"special_bonus_exp_boost_25"
+		"Ability12"		"special_bonus_attack_damage_90"
+		"Ability13"		"special_bonus_unique_witch_doctor_3"
+		"Ability14"		"special_bonus_armor_8"
+		"Ability15"		"special_bonus_magic_resistance_15"
+		"Ability16"		"special_bonus_unique_witch_doctor_1"
+		"Ability17"		"special_bonus_unique_witch_doctor_2"
+			"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"160"
+		"AttributeStrengthGain"		"20.100000"
+		"AttributeBaseIntelligence"		"240"
+		"AttributeIntelligenceGain"		"20.900000"
+		"AttributeBaseAgility"		"130"
+		"AttributeAgilityGain"		"10.400000"
+
+	}
+	"npc_dota_hero_riki"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"riki_smoke_screen"
+		"Ability2"		"riki_blink_strike"
+		"Ability3"		"riki_permanent_invisibility"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"riki_tricks_of_the_trade"
+		"Ability10"		"special_bonus_hp_150"
+		"Ability11"		"special_bonus_incoming_10"
+		"Ability12"		"special_bonus_agility_10"
+		"Ability13"		"special_bonus_exp_boost_30"
+		"Ability14"		"special_bonus_cast_range_250"
+		"Ability15"		"special_bonus_all_stats_8"
+		"Ability16"		"special_bonus_unique_riki_1"
+		"Ability17"		"special_bonus_unique_riki_5"
+
+		"AttributePrimary"				"DOTA_ATTRIBUTE_AGILITY"
+
+		"AttributeBaseStrength"		"170"
+		"AttributeStrengthGain"		"10.900000"
+		"AttributeBaseIntelligence"		"140"
+		"AttributeIntelligenceGain"		"10.300000"
+		"AttributeBaseAgility"		"340"
+		"AttributeAgilityGain"		"20.20000"
+
+	}
+	"npc_dota_hero_enigma"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"enigma_malefice"
+		"Ability2"		"enigma_demonic_conversion"
+		"Ability3"		"enigma_midnight_pulse"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"enigma_black_hole"
+		"Ability10"		"special_bonus_intelligence_10"
+		"Ability11"		"special_bonus_magic_resistance_12"
+		"Ability12"		"special_bonus_cooldown_reduction_15"
+		"Ability13"		"special_bonus_gold_income_20"
+		"Ability14"		"special_bonus_hp_300"
+		"Ability15"		"special_bonus_unique_enigma_2"
+		"Ability16"		"special_bonus_armor_12"
+		"Ability17"		"special_bonus_unique_enigma"
+
+		"AttributeBaseStrength"		"170"
+		"AttributeStrengthGain"		"20.400000"
+		"AttributeBaseIntelligence"		"200"
+		"AttributeIntelligenceGain"		"30.400000"
+		"AttributeBaseAgility"		"140"
+		"AttributeAgilityGain"		"10"
+
+		"AttributePrimary"				"DOTA_ATTRIBUTE_INTELLECT"
+	}
+	"npc_dota_hero_tinker"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"tinker_laser"
+		"Ability2"		"tinker_heat_seeking_missile"
+		"Ability3"		"tinker_march_of_the_machines"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"tinker_rearm"
+		"Ability10"		"special_bonus_intelligence_8"
+		"Ability11"		"special_bonus_armor_6"
+		"Ability12"		"special_bonus_hp_225"
+		"Ability13"		"special_bonus_spell_amplify_5"
+		"Ability14"		"special_bonus_cast_range_75"
+		"Ability15"		"special_bonus_magic_resistance_15"
+		"Ability16"		"special_bonus_spell_lifesteal_20"
+		"Ability17"		"special_bonus_unique_tinker"
+
+		"AttributeBaseStrength"		"170"
+		"AttributeStrengthGain"		"20.300000"
+		"AttributeBaseIntelligence"		"300"
+		"AttributeIntelligenceGain"		"20.200000"
+		"AttributeBaseAgility"		"130"
+		"AttributeAgilityGain"		"10.200000"
+
+		"AttributePrimary"				"DOTA_ATTRIBUTE_INTELLECT"
+	}
+	"npc_dota_hero_sniper"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"sniper_shrapnel"
+		"Ability2"		"sniper_headshot"
+		"Ability3"		"sniper_take_aim"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"sniper_assassinate"
+		"Ability10"		"special_bonus_mp_regen_5"
+		"Ability11"		"special_bonus_attack_speed_15"
+		"Ability12"		"special_bonus_unique_sniper_1"
+		"Ability13"		"special_bonus_hp_200"
+		"Ability14"		"special_bonus_armor_8"
+		"Ability15"		"special_bonus_cooldown_reduction_25"
+		"Ability16"		"special_bonus_attack_range_100"
+		"Ability17"		"special_bonus_unique_sniper_2"
+
+		"AttributeBaseStrength"		"160"
+		"AttributeStrengthGain"		"20.000000"
+		"AttributeBaseIntelligence"		"150"
+		"AttributeIntelligenceGain"		"20.600000"
+		"AttributeBaseAgility"		"210"
+		"AttributeAgilityGain"		"20.700000"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_AGILITY"
+
+	}
+	"npc_dota_hero_necrolyte"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"necrolyte_death_pulse"
+		"Ability2"		"necrolyte_sadist"
+		"Ability3"		"necrolyte_heartstopper_aura"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"necrolyte_reapers_scythe"
+		"Ability10"		"special_bonus_attack_damage_40"
+		"Ability11"		"special_bonus_strength_8"
+		"Ability12"		"special_bonus_all_stats_6"
+		"Ability13"		"special_bonus_armor_10"
+		"Ability14"		"special_bonus_spell_amplify_5"
+		"Ability15"		"special_bonus_magic_resistance_10"
+		"Ability16"		"special_bonus_hp_400"
+		"Ability17"		"special_bonus_unique_necrophos"
+
+		"AttributeBaseStrength"		"160"
+		"AttributeStrengthGain"		"20.300000"
+		"AttributeBaseIntelligence"		"220"
+		"AttributeIntelligenceGain"		"20.500000"
+		"AttributeBaseAgility"		"150"
+		"AttributeAgilityGain"		"10.200000"
+
+		"AttributePrimary"				"DOTA_ATTRIBUTE_INTELLECT"
+	}
+	"npc_dota_hero_warlock"
+	{
+		"IsDisabled"	"4"
+		"IsNew"			"1"
+		"Ability1"		"warlock_fatal_bonds"
+		"Ability2"		"warlock_shadow_word"
+		"Ability3"		"warlock_upheaval"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"warlock_rain_of_chaos"
+		"Ability10"		"special_bonus_exp_boost_20"
+		"Ability11"		"special_bonus_all_stats_6"
+		"Ability12"		"special_bonus_cast_range_150"
+		"Ability13"		"special_bonus_unique_warlock_3"
+		"Ability14"		"special_bonus_hp_350"
+		"Ability15"		"special_bonus_unique_warlock_4"
+		"Ability16"		"special_bonus_unique_warlock_1"
+		"Ability17"		"special_bonus_unique_warlock_2"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"220"
+		"AttributeStrengthGain"		"20.800000"
+		"AttributeBaseIntelligence"		"240"
+		"AttributeIntelligenceGain"		"20.700000"
+		"AttributeBaseAgility"		"100"
+		"AttributeAgilityGain"		"10.000000"
+
+	}
+	"npc_dota_hero_beastmaster"
+	{
+		"IsDisabled"	"4"
+		"IsNew"			"1"
+		"Ability1"		"beastmaster_wild_axes"
+		"Ability2"		"beastmaster_call_of_the_wild"
+		"Ability3"		"beastmaster_inner_beast"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"beastmaster_primal_roar"
+		"Ability10"		"special_bonus_exp_boost_20"
+		"Ability11"		"special_bonus_magic_resistance_10"
+		"Ability12"		"special_bonus_strength_12"
+		"Ability13"		"special_bonus_unique_beastmaster_2"
+		"Ability14"		"special_bonus_cooldown_reduction_12"
+		"Ability15"		"special_bonus_hp_400"
+		"Ability16"		"special_bonus_attack_damage_120"
+		"Ability17"		"special_bonus_unique_beastmaster"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"230"
+		"AttributeStrengthGain"		"20.500000"
+		"AttributeBaseIntelligence"		"160"
+		"AttributeIntelligenceGain"		"10.900000"
+		"AttributeBaseAgility"		"180"
+		"AttributeAgilityGain"		"10.600000"
+
+	}
+	"npc_dota_hero_venomancer"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"venomancer_venomous_gale"
+		"Ability2"		"venomancer_poison_sting"
+		"Ability3"		"venomancer_plague_ward"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"venomancer_poison_nova"
+		"Ability10"		"special_bonus_exp_boost_30"
+		"Ability11"		"special_bonus_incoming_10"
+		"Ability12"		"special_bonus_hp_200"
+		"Ability13"		"special_bonus_cast_range_150"
+		"Ability14"		"special_bonus_attack_damage_75"
+		"Ability15"		"special_bonus_magic_resistance_15"
+		"Ability16"		"special_bonus_unique_venomancer_6"
+		"Ability17"		"special_bonus_unique_venomancer"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"			"180"
+		"AttributeStrengthGain"			"10.90000"
+		"AttributeBaseIntelligence"		"170"
+		"AttributeIntelligenceGain"		"10.80000"
+		"AttributeBaseAgility"			"22"
+		"AttributeAgilityGain"			"2.800000"
+
+	}
+	"npc_dota_hero_phantom_assassin"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"phantom_assassin_stifling_dagger"
+		"Ability2"		"phantom_assassin_phantom_strike"
+		"Ability3"		"phantom_assassin_blur"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"phantom_assassin_coup_de_grace"
+		"Ability10"		"special_bonus_hp_150"
+		"Ability11"		"special_bonus_green_damage_pct_15"
+		"Ability12"		"special_bonus_lifesteal_10"
+		"Ability13"		"special_bonus_unique_phantom_assassin"
+		"Ability14"		"special_bonus_attack_speed_25"
+		"Ability15"		"special_bonus_all_stats_10"
+		"Ability16"		"special_bonus_agility_25"
+		"Ability17"		"special_bonus_unique_phantom_assassin_2"
+
+		"AttributePrimary"				"DOTA_ATTRIBUTE_AGILITY"
+
+		"AttributeBaseStrength"		"200"
+		"AttributeStrengthGain"		"20.150000"
+		"AttributeBaseAgility"		"230"
+		"AttributeAgilityGain"		"30.150000"
+		"AttributeBaseIntelligence"		"150"
+		"AttributeIntelligenceGain"		"10.400000"
+
+	}
+	"npc_dota_hero_pugna"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"pugna_nether_blast"
+		"Ability2"		"pugna_decrepify"
+		"Ability3"		"pugna_nether_ward"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"pugna_life_drain"
+		"Ability10"		"special_bonus_primary_stats_10"
+		"Ability11"		"special_bonus_hp_225"
+		"Ability12"		"special_bonus_unique_pugna_5"
+		"Ability13"		"special_bonus_unique_pugna_4"
+		"Ability14"		"special_bonus_unique_pugna_3"
+		"Ability15"		"special_bonus_primary_stats_20"
+		"Ability16"		"special_bonus_unique_pugna_2"
+		"Ability17"		"special_bonus_armor_pct_10"
+
+		"AttributePrimary"				"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"170"
+		"AttributeStrengthGain"		"10.500000"
+		"AttributeBaseAgility"		"160"
+		"AttributeAgilityGain"		"10.000000"
+		"AttributeBaseIntelligence"		"260"
+		"AttributeIntelligenceGain"		"40.50000"
+
+	}
+	"npc_dota_hero_templar_assassin"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"templar_assassin_refraction"
+		"Ability2"		"templar_assassin_meld"
+		"Ability3"		"templar_assassin_psi_blades"
+		"Ability4"		"templar_assassin_trap"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"templar_assassin_psionic_trap"
+		"Ability10"		"special_bonus_attack_speed_25"
+		"Ability11"		"special_bonus_magic_resistance_10"
+		"Ability12"		"special_bonus_all_stats_6"
+		"Ability13"		"special_bonus_evasion_12"
+		"Ability14"		"special_bonus_hp_275"
+		"Ability15"		"special_bonus_attack_damage_40"
+		"Ability16"		"special_bonus_unique_templar_assassin_2"
+		"Ability17"		"special_bonus_primary_stats_20"
+
+		"AttributePrimary"				"DOTA_ATTRIBUTE_AGILITY"
+
+		"AttributeBaseStrength"		"180"
+		"AttributeStrengthGain"		"20.400000"
+		"AttributeBaseAgility"		"230"
+		"AttributeAgilityGain"		"20.300000"
+		"AttributeBaseIntelligence"		"200"
+		"AttributeIntelligenceGain"		"20.000000"
+
+	}
+	"npc_dota_hero_viper"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"viper_poison_attack"
+		"Ability2"		"viper_nethertoxin"
+		"Ability3"		"viper_corrosive_skin"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"viper_viper_strike"
+		"Ability10"		"special_bonus_attack_damage_15"
+		"Ability11"		"special_bonus_hp_175"
+		"Ability12"		"special_bonus_strength_15"
+		"Ability13"		"special_bonus_agility_16"
+		"Ability14"		"special_bonus_unique_viper_1"
+		"Ability15"		"special_bonus_attack_range_75"
+		"Ability16"		"special_bonus_armor_20"
+		"Ability17"		"special_bonus_unique_viper_2"
+
+		"AttributePrimary"				"DOTA_ATTRIBUTE_AGILITY"
+
+		"AttributeBaseStrength"		"200"
+		"AttributeStrengthGain"		"20.400000"
+		"AttributeBaseAgility"		"210"
+		"AttributeAgilityGain"		"20.900000"
+		"AttributeBaseIntelligence"		"150"
+		"AttributeIntelligenceGain"		"10.800000"
+
+	}
+	"npc_dota_hero_luna"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"luna_lucent_beam"
+		"Ability2"		"luna_moon_glaive"
+		"Ability3"		"luna_lunar_blessing"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"luna_eclipse"
+		"Ability10"		"special_bonus_attack_damage_15"
+		"Ability11"		"special_bonus_incoming_10"
+		"Ability12"		"special_bonus_hp_150"
+		"Ability13"		"special_bonus_unique_luna_1"
+		"Ability14"		"special_bonus_unique_luna_3"
+		"Ability15"		"special_bonus_magic_resistance_15"
+		"Ability16"		"special_bonus_primary_stats_20"
+		"Ability17"		"special_bonus_unique_luna_2"
+
+		"AttributePrimary"				"DOTA_ATTRIBUTE_AGILITY"
+
+		"AttributeBaseStrength"		"150"
+		"AttributeStrengthGain"		"20.500000"
+		"AttributeBaseAgility"		"180"
+		"AttributeAgilityGain"		"30.300000"
+		"AttributeBaseIntelligence"		"160"
+		"AttributeIntelligenceGain"		"10.850000"
+
+	}
+	"npc_dota_hero_dazzle"
+	{
+		"IsDisabled"	"4"
+		"IsNew"			"1"	
+		"Ability1"		"dazzle_poison_touch"
+		"Ability2"		"dazzle_shallow_grave"
+		"Ability3"		"dazzle_shadow_wave"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"dazzle_weave"
+		"Ability10"		"special_bonus_intelligence_10"
+		"Ability11"		"special_bonus_hp_125"
+		"Ability12"		"special_bonus_cast_range_100"
+		"Ability13"		"special_bonus_attack_damage_60"
+		"Ability14"		"special_bonus_incoming_10"
+		"Ability15"		"special_bonus_unique_dazzle_3"
+		"Ability16"		"special_bonus_unique_dazzle_4"
+		"Ability17"		"special_bonus_unique_dazzle_2"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"160"
+		"AttributeStrengthGain"		"20.150000"
+		"AttributeBaseIntelligence"		"270"
+		"AttributeIntelligenceGain"		"30.400000"
+		"AttributeBaseAgility"		"210"
+		"AttributeAgilityGain"		"10.700000"
+
+	}
+	"npc_dota_hero_rattletrap"
+	{
+		"IsDisabled"	"4"
+		"IsNew"			"1"
+		"Ability1"		"rattletrap_battery_assault"
+		"Ability2"		"rattletrap_power_cogs"
+		"Ability3"		"rattletrap_rocket_flare"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"rattletrap_hookshot"
+		"Ability10"		"special_bonus_armor_4"
+		"Ability11"		"special_bonus_mp_200"
+		"Ability12"		"special_bonus_attack_damage_50"
+		"Ability13"		"special_bonus_unique_clockwerk_2"
+		"Ability14"		"special_bonus_unique_clockwerk_3"
+		"Ability15"		"special_bonus_magic_resistance_12"
+		"Ability16"		"special_bonus_hp_400"
+		"Ability17"		"special_bonus_unique_clockwerk"
+			"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"260"
+		"AttributeStrengthGain"		"30.200000"
+		"AttributeBaseAgility"		"130"
+		"AttributeAgilityGain"		"20.300000"
+		"AttributeBaseIntelligence"		"170"
+		"AttributeIntelligenceGain"		"10.300000"
+
+	}
+	"npc_dota_hero_leshrac"
+	{
+		"IsDisabled"	"4"
+		"IsNew"			"1"
+		"Ability1"		"leshrac_split_earth"
+		"Ability2"		"leshrac_diabolic_edict"
+		"Ability3"		"leshrac_lightning_storm"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"leshrac_pulse_nova"
+		"Ability10"		"special_bonus_hp_175"
+		"Ability11"		"special_bonus_incoming_15"
+		"Ability12"		"special_bonus_unique_leshrac_2"
+		"Ability13"		"special_bonus_magic_resistance_15"
+		"Ability14"		"special_bonus_spell_amplify_5"
+		"Ability15"		"special_bonus_strength_15"
+		"Ability16"		"special_bonus_unique_leshrac_1"
+		"Ability17"		"special_bonus_unique_leshrac_3"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"160"
+		"AttributeStrengthGain"		"10.800000"
+		"AttributeBaseIntelligence"		"260"
+		"AttributeIntelligenceGain"		"30"
+		"AttributeBaseAgility"		"230"
+		"AttributeAgilityGain"		"17.00000"
+
+	}
+	"npc_dota_hero_furion"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"furion_sprout"
+		"Ability2"		"furion_teleportation"
+		"Ability3"		"furion_force_of_nature"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"furion_wrath_of_nature"
+		"Ability10"		"special_bonus_attack_damage_30"
+		"Ability11"		"special_bonus_hp_250"
+		"Ability12"		"special_bonus_intelligence_20"
+		"Ability13"		"special_bonus_unique_furion_2"
+		"Ability14"		"special_bonus_attack_speed_35"
+		"Ability15"		"special_bonus_armor_10"
+		"Ability16"		"special_bonus_unique_furion_3"
+		"Ability17"		"special_bonus_unique_furion"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"190"
+		"AttributeStrengthGain"		"20.100000"
+		"AttributeBaseIntelligence"		"250"
+		"AttributeIntelligenceGain"		"20.900000"
+		"AttributeBaseAgility"		"180"
+		"AttributeAgilityGain"		"10.900000"
+
+	}
+	"npc_dota_hero_life_stealer"
+	{
+		"IsDisabled"	"4"
+		"HeroSelectSoundEffect"		"Hero_LifeStealer.Pick"
+		"Ability1"		"life_stealer_rage"
+		"Ability2"		"life_stealer_feast"
+		"Ability3"		"life_stealer_open_wounds"
+		"Ability4"		"life_stealer_assimilate"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"Ultimate_lifesteal"
+		"Ability7"		"life_stealer_control"
+		"Ability8"		"life_stealer_consume"
+		"Ability9"		"life_stealer_assimilate_eject"
+		"Ability10"		"special_bonus_all_stats_5"
+		"Ability11"		"special_bonus_attack_speed_15"
+		"Ability12"		"special_bonus_hp_250"
+		"Ability13"		"special_bonus_attack_damage_25"
+		"Ability14"		"special_bonus_evasion_15"
+		"Ability15"		"special_bonus_strength_10"
+		"Ability16"		"special_bonus_armor_15"
+		"Ability17"		"special_bonus_reincarnation_200"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"250"
+		"AttributeStrengthGain"		"30.100000"
+		"AttributeBaseIntelligence"		"150"
+		"AttributeIntelligenceGain"		"10.75000"
+		"AttributeBaseAgility"		"180"
+		"AttributeAgilityGain"		"10.900000"
+
+	}
+	"npc_dota_hero_dark_seer"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"dark_seer_vacuum"
+		"Ability2"		"dark_seer_ion_shell"
+		"Ability3"		"passive_dark_seer"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"dark_seer_wall_of_replica"
+		"Ability10"		"special_bonus_evasion_12"
+		"Ability11"		"special_bonus_cast_range_100"
+		"Ability12"		"special_bonus_attack_damage_120"
+		"Ability13"		"special_bonus_hp_regen_14"
+		"Ability14"		"special_bonus_cooldown_reduction_10"
+		"Ability15"		"special_bonus_incoming_15"
+		"Ability16"		"special_bonus_armor_pct_10"
+		"Ability17"		"special_bonus_unique_dark_seer"
+
+		"AttributePrimary"				"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"220"
+		"AttributeStrengthGain"		"20.600000"
+		"AttributeBaseAgility"		"120"
+		"AttributeAgilityGain"		"10.200000"
+		"AttributeBaseIntelligence"		"230"
+		"AttributeIntelligenceGain"		"20.700000"
+
+	}
+	"npc_dota_hero_clinkz"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"clinkz_strafe"
+		"Ability2"		"clinkz_searing_arrows"
+		"Ability3"		"clinkz_wind_walk"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"clinkz_death_pact"
+		"Ability10"		"special_bonus_intelligence_10"
+		"Ability11"		"special_bonus_magic_resistance_10"
+		"Ability12"		"special_bonus_strength_15"
+		"Ability13"		"special_bonus_unique_clinkz_1"
+		"Ability14"		"special_bonus_evasion_20"
+		"Ability15"		"special_bonus_all_stats_10"
+		"Ability16"		"special_bonus_attack_range_125"
+		"Ability17"		"special_bonus_unique_clinkz_2"
+		"AttributeBaseStrength"		"150"
+		"AttributeStrengthGain"		"10.900000"
+		"AttributeBaseAgility"		"220"
+		"AttributeAgilityGain"		"30.300000"
+		"AttributeBaseIntelligence"		"160"
+		"AttributeIntelligenceGain"		"10.55000"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_AGILITY"
+	}
+	"npc_dota_hero_omniknight"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"omniknight_purification"
+		"Ability2"		"omniknight_repel"
+		"Ability3"		"omniknight_degen_aura"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"omniknight_guardian_angel"
+		"Ability10"		"special_bonus_gold_income_10"
+		"Ability11"		"special_bonus_exp_boost_20"
+		"Ability12"		"special_bonus_cast_range_75"
+		"Ability13"		"special_bonus_strength_8"
+		"Ability14"		"special_bonus_attack_damage_100"
+		"Ability15"		"special_bonus_movespeed_600"
+		"Ability16"		"special_bonus_unique_omniknight_1"
+		"Ability17"		"special_bonus_unique_omniknight_2"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"220"
+		"AttributeStrengthGain"		"30.10000"
+		"AttributeBaseAgility"		"150"
+		"AttributeAgilityGain"		"10.750000"
+		"AttributeBaseIntelligence"		"170"
+		"AttributeIntelligenceGain"		"10.800000"
+
+	}
+	
+		"npc_dota_hero_enchantress"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"enchantress_untouchable"
+		"Ability2"		"enchantress_enchant"
+		"Ability3"		"enchantress_natures_attendants"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"enchantress_impetus"
+		"Ability10"		"special_bonus_all_stats_6"
+		"Ability11"		"special_bonus_spell_amplify_6"
+		"Ability12"		"special_bonus_unique_enchantress_2"
+		"Ability13"		"special_bonus_attack_damage_50"
+		"Ability14"		"special_bonus_magic_resistance_15"
+		"Ability15"		"special_bonus_unique_enchantress_3"
+		"Ability16"		"special_bonus_unique_enchantress_4"
+		"Ability17"		"special_bonus_unique_enchantress_5"
+
+		"AttributePrimary"				"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"160"
+		"AttributeStrengthGain"		"10.300000"
+		
+		"AttributeBaseAgility"		"190"
+		"AttributeAgilityGain"		"10.800000"
+		
+		"AttributeBaseIntelligence"		"210"
+		"AttributeIntelligenceGain"		"30.100000"
+
+	}
+	"npc_dota_hero_huskar"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"huskar_inner_vitality"
+		"Ability2"		"huskar_burning_spear"
+		"Ability3"		"huskar_berserkers_blood"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"huskar_life_break"
+		"Ability10"		"special_bonus_hp_175"
+		"Ability11"		"special_bonus_attack_range_100"
+		"Ability12"		"special_bonus_attack_damage_30"
+		"Ability13"		"special_bonus_lifesteal_15"
+		"Ability14"		"special_bonus_strength_15"
+		"Ability15"		"special_bonus_attack_speed_40"
+		"Ability16"		"special_bonus_unique_huskar_2"
+		"Ability17"		"special_bonus_unique_huskar_3"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
+
+		"AttributeBaseStrength"		"210"
+		"AttributeStrengthGain"		"20.700000"
+		
+		"AttributeBaseAgility"		"150"
+		"AttributeAgilityGain"		"10.40000"
+		
+		"AttributeBaseIntelligence"		"180"
+		"AttributeIntelligenceGain"		"10.500000"
+
+	}
+	"npc_dota_hero_broodmother"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"broodmother_spawn_spiderlings"
+		"Ability2"		"broodmother_spin_web"
+		"Ability3"		"broodmother_incapacitating_bite"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"broodmother_insatiable_hunger"
+		"Ability10"		"special_bonus_unique_broodmother_3"
+		"Ability11"		"special_bonus_exp_boost_25"
+		"Ability12"		"special_bonus_cooldown_reduction_20"
+		"Ability13"		"special_bonus_hp_350"
+		"Ability14"		"special_bonus_unique_broodmother_4"
+		"Ability15"		"special_bonus_damage_pct_bonus_15"
+		"Ability16"		"special_bonus_unique_broodmother_1"
+		"Ability17"		"special_bonus_unique_broodmother_2"
+
+		"AttributePrimary"				"DOTA_ATTRIBUTE_AGILITY"
+
+		"AttributeBaseStrength"		"170"
+		"AttributeStrengthGain"		"20.800000"
+		
+		"AttributeBaseAgility"		"180"
+		"AttributeAgilityGain"		"20.200000"
+		
+		"AttributeBaseIntelligence"		"180"
+		"AttributeIntelligenceGain"		"20.000000"
+
+	}
+	"npc_dota_hero_bounty_hunter"
+	{
+		"IsDisabled"	"4"
+		"IsNew"			"1"
+		"Ability1"		"bounty_hunter_shuriken_toss"
+		"Ability2"		"bounty_hunter_jinada"
+		"Ability3"		"bounty_hunter_wind_walk"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"bounty_hunter_track"
+		"Ability10"		"special_bonus_hp_175"
+		"Ability11"		"special_bonus_exp_boost_20"
+		"Ability12"		"special_bonus_attack_speed_40"
+		"Ability13"		"special_bonus_agility_10"
+		"Ability14"		"special_bonus_unique_bounty_hunter_2"
+		"Ability15"		"special_bonus_attack_damage_120"
+		"Ability16"		"special_bonus_evasion_25"
+		"Ability17"		"special_bonus_unique_bounty_hunter"
+
+		"AttributePrimary"				"DOTA_ATTRIBUTE_AGILITY"
+
+		"AttributeBaseStrength"		"170"
+		"AttributeStrengthGain"		"20.100000"
+		
+		"AttributeBaseAgility"		"210"
+		"AttributeAgilityGain"		"30.000000"
+		
+		"AttributeBaseIntelligence"		"190"
+		"AttributeIntelligenceGain"		"20.000000"
+
+	}
+	"npc_dota_hero_weaver"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"weaver_the_swarm"
+		"Ability2"		"weaver_shukuchi"
+		"Ability3"		"weaver_geminate_attack"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"weaver_time_lapse"
+		"Ability10"		"special_bonus_strength_6"
+		"Ability11"		"special_bonus_unique_weaver_1"
+		"Ability12"		"special_bonus_attack_damage_25"
+		"Ability13"		"special_bonus_all_stats_7"
+		"Ability14"		"special_bonus_hp_200"
+		"Ability15"		"special_bonus_agility_15"
+		"Ability16"		"special_bonus_magic_resistance_35"
+		"Ability17"		"special_bonus_unique_weaver_5"
+
+		"AttributeBaseStrength"		"150"
+		"AttributeStrengthGain"		"10.800000"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseIntelligence"		"150"
+		"AttributeIntelligenceGain"		"10.800000"
+		
+		"AttributeBaseAgility"		"140"
+		"AttributeAgilityGain"		"20.800000"
+
+	}
+	"npc_dota_hero_jakiro"
+	{
+		"IsDisabled"	"4"
+		"IsNew"			"1"		
+		"Ability1"		"jakiro_dual_breath"
+		"Ability2"		"jakiro_ice_path"
+		"Ability3"		"jakiro_liquid_fire"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"jakiro_macropyre"
+		"Ability10"		"special_bonus_exp_boost_25"
+		"Ability11"		"special_bonus_spell_amplify_8"
+		"Ability12"		"special_bonus_cast_range_125"
+		"Ability13"		"special_bonus_unique_jakiro_2"
+		"Ability14"		"special_bonus_attack_range_400"
+		"Ability15"		"special_bonus_gold_income_25"
+		"Ability16"		"special_bonus_unique_jakiro_3"
+		"Ability17"		"special_bonus_unique_jakiro"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"250"
+		"AttributeStrengthGain"		"20.600000"
+		
+		"AttributeBaseIntelligence"		"280"
+		"AttributeIntelligenceGain"		"20.800000"
+		
+		"AttributeBaseAgility"		"100"
+		"AttributeAgilityGain"		"10.200000"
+
+	}
+	"npc_dota_hero_spectre"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"spectre_spectral_dagger"
+		"Ability2"		"spectre_desolate"
+		"Ability3"		"spectre_dispersion"
+		"Ability4"		"spectre_reality"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"spectre_haunt"
+		"Ability10"		"special_bonus_attack_damage_20"
+		"Ability11"		"special_bonus_armor_5"
+		"Ability12"		"special_bonus_all_stats_8"
+		"Ability13"		"special_bonus_attack_damage_100"
+		"Ability14"		"special_bonus_attack_speed_30"
+		"Ability15"		"special_bonus_strength_20"
+		"Ability16"		"special_bonus_hp_400"
+		"Ability17"		"special_bonus_unique_spectre"
+
+		"AttributePrimary"				"DOTA_ATTRIBUTE_AGILITY"
+
+		"AttributeBaseStrength"		"200"
+		"AttributeStrengthGain"		"20.300000"
+		
+		"AttributeBaseAgility"		"230"
+		"AttributeAgilityGain"		"10.800000"
+		
+		"AttributeBaseIntelligence"		"160"
+		"AttributeIntelligenceGain"		"10.900000"
+
+	}
+	"npc_dota_hero_doom_bringer"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"doom_bringer_devour"
+		"Ability2"		"doom_bringer_scorched_earth"
+		"Ability3"		"doom_bringer_infernal_blade"
+		"Ability4"		"doom_bringer_empty1"
+		"Ability5"		"doom_bringer_empty2"
+		"Ability6"		"doom_bringer_doom"
+		"Ability10"		"special_bonus_hp_275"
+		"Ability11"		"special_bonus_unique_doom_3"
+		"Ability12"		"special_bonus_magic_resistance_10"
+		"Ability13"		"special_bonus_unique_doom_4"
+		"Ability14"		"special_bonus_unique_doom_5"
+		"Ability15"		"special_bonus_unique_doom_2"
+		"Ability16"		"special_bonus_unique_doom_1"
+		"Ability17"		"special_bonus_hp_regen_40"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
+
+		"AttributeBaseStrength"		"260"
+		"AttributeStrengthGain"		"30.500000"
+		
+		"AttributeBaseAgility"		"110"
+		"AttributeAgilityGain"		"10.900000"
+		
+		"AttributeBaseIntelligence"		"130"
+		"AttributeIntelligenceGain"		"20.100000"
+
+	}
+	
+		"npc_dota_hero_night_stalker"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"night_stalker_void"
+		"Ability2"		"night_stalker_crippling_fear"
+		"Ability3"		"night_stalker_hunter_in_the_night"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"night_stalker_darkness"
+		"Ability10"		"special_bonus_hp_200"
+		"Ability11"		"special_bonus_mp_200"
+		"Ability12"		"special_bonus_strength_15"
+		"Ability13"		"special_bonus_cast_range_150"
+		"Ability14"		"special_bonus_movement_speed_50"
+		"Ability15"		"special_bonus_attack_damage_50"
+		"Ability16"		"special_bonus_unique_night_stalker_2"
+		"Ability17"		"special_bonus_unique_night_stalker"
+	}
+	"npc_dota_hero_gyrocopter"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"gyrocopter_rocket_barrage"
+		"Ability2"		"gyrocopter_homing_missile"
+		"Ability3"		"gyrocopter_flak_cannon"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"gyrocopter_call_down"
+		"Ability10"		"special_bonus_spell_amplify_6"
+		"Ability11"		"special_bonus_hp_225"
+		"Ability12"		"special_bonus_magic_resistance_15"
+		"Ability13"		"special_bonus_attack_damage_30"
+		"Ability14"		"special_bonus_movespeed_600"
+		"Ability15"		"special_bonus_cooldown_reduction_20"
+		"Ability16"		"special_bonus_unique_gyrocopter_1"
+		"Ability17"		"special_bonus_unique_gyrocopter_2"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"180"
+		"AttributeStrengthGain"		"20.100000"
+		
+		"AttributeBaseAgility"		"240"
+		"AttributeAgilityGain"		"20.800000"
+		
+		"AttributeBaseIntelligence"		"190"
+		"AttributeIntelligenceGain"		"20.100000"
+
+	}
+	"npc_dota_hero_alchemist"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"alchemist_acid_spray"
+		"Ability2"		"alchemist_unstable_concoction"
+		"Ability3"		"alchemist_goblins_greed"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"alchemist_chemical_rage"
+		"Ability7"		"alchemist_unstable_concoction_throw"
+		"Ability10"		"special_bonus_attack_damage_20"
+		"Ability11"		"special_bonus_armor_4"
+		"Ability12"		"special_bonus_unique_alchemist_2"
+		"Ability13"		"special_bonus_all_stats_6"
+		"Ability14"		"special_bonus_attack_speed_30"
+		"Ability15"		"special_bonus_hp_300"
+		"Ability16"		"special_bonus_lifesteal_30"
+		"Ability17"		"special_bonus_unique_alchemist_3"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
+
+		"AttributeBaseStrength"		"250"
+		"AttributeStrengthGain"		"20.100000"
+		
+		"AttributeBaseAgility"		"160"
+		"AttributeAgilityGain"		"10.200000"
+		
+		"AttributeBaseIntelligence"		"250"
+		"AttributeIntelligenceGain"		"10.800000"
+
+	}
+	"npc_dota_hero_invoker"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"invoker_quas"
+		"Ability2"		"invoker_wex"
+		"Ability3"		"invoker_exort"
+		"Ability4"		"invoker_empty1"
+		"Ability5"		"invoker_empty2"
+		"Ability6"		"invoker_invoke"
+		"Ability7"		"invoker_cold_snap"
+		"Ability8"		"invoker_ghost_walk"
+		"Ability9"		"invoker_tornado"
+		"Ability10"		"invoker_emp"
+		"Ability11"		"invoker_alacrity"
+		"Ability12"		"invoker_chaos_meteor"
+		"Ability13"		"invoker_sun_strike"
+		"Ability14"		"invoker_forge_spirit"
+		"Ability15"		"invoker_ice_wall"
+		"Ability16"		"invoker_deafening_blast"	
+		"Ability17"		"special_bonus_unique_invoker_8"
+		"Ability18"		"special_bonus_unique_invoker_6"
+		"Ability19"		"special_bonus_unique_invoker_1"
+		"Ability20"		"special_bonus_unique_invoker_7"
+		"Ability21"		"special_bonus_unique_invoker_4"
+		"Ability22"		"special_bonus_unique_invoker_5"
+		"Ability23"		"special_bonus_unique_invoker_2"
+		"Ability24"		"special_bonus_unique_invoker_3"
+
+		"AttributePrimary"				"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"160"
+		"AttributeStrengthGain"		"20.200000"
+		
+		"AttributeBaseAgility"		"140"
+		"AttributeAgilityGain"		"10.900000"
+		
+		"AttributeBaseIntelligence"		"160"
+		"AttributeIntelligenceGain"		"40.000000"
+
+	}
+	"npc_dota_hero_obsidian_destroyer"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"obsidian_destroyer_arcane_orb_datadriven"
+		"Ability2"		"obsidian_destroyer_astral_imprisonment"
+		"Ability3"		"obsidian_destroyer_essence_aura"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"obsidian_destroyer_sanity_eclipse"
+		"Ability10"		"special_bonus_mp_250"
+		"Ability11"		"special_bonus_magic_resistance_10"
+		"Ability12"		"special_bonus_armor_5"
+		"Ability13"		"special_bonus_attack_speed_20"
+		"Ability14"		"special_bonus_intelligence_15"
+		"Ability15"		"special_bonus_hp_275"
+		"Ability16"		"special_bonus_unique_outworld_devourer_3"
+		"Ability17"		"special_bonus_spell_amplify_8"
+
+		"AttributePrimary"				"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"190"
+		"AttributeStrengthGain"		"20.60000"
+		
+		"AttributeBaseAgility"		"240"
+		"AttributeAgilityGain"		"20.00000"
+		
+		"AttributeBaseIntelligence"		"260"
+		"AttributeIntelligenceGain"		"20.700000"
+
+	}
+	"npc_dota_hero_shadow_demon"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"shadow_demon_disruption"
+		"Ability2"		"shadow_demon_soul_catcher"
+		"Ability3"		"shadow_demon_shadow_poison"
+		"Ability4"		"shadow_demon_shadow_poison_release"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"shadow_demon_demonic_purge"
+		"Ability10"		"special_bonus_strength_10"
+		"Ability11"		"special_bonus_incoming_10"
+		"Ability12"		"special_bonus_cast_range_75"
+		"Ability13"		"special_bonus_spell_amplify_8"
+		"Ability14"		"special_bonus_magic_resistance_15"
+		"Ability15"		"special_bonus_unique_shadow_demon_3"
+		"Ability16"		"special_bonus_unique_shadow_demon_1"
+		"Ability17"		"special_bonus_unique_shadow_demon_2"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"210"
+		"AttributeStrengthGain"		"20.200000"
+		
+		"AttributeBaseAgility"		"180"
+		"AttributeAgilityGain"		"20.200000"
+		
+		"AttributeBaseIntelligence"		"230"
+		"AttributeIntelligenceGain"		"20.700000"
+	}
+	"npc_dota_hero_lone_druid"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"lone_druid_spirit_bear"
+		"Ability2"		"lone_druid_rabid"
+		"Ability3"		"lone_druid_savage_roar"
+		"Ability4"		"lone_druid_true_form_battle_cry"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"lone_druid_true_form"
+		"Ability7"		"lone_druid_true_form_druid"
+		"Ability10"		"special_bonus_hp_250"
+		"Ability11"		"special_bonus_attack_range_175"
+		"Ability12"		"special_bonus_attack_damage_50"
+		"Ability13"		"special_bonus_unique_lone_druid_1"
+		"Ability14"		"special_bonus_unique_lone_druid_2"
+		"Ability15"		"special_bonus_unique_lone_druid_5"
+		"Ability16"		"special_bonus_unique_lone_druid_3"
+		"Ability17"		"special_bonus_damage_pct_bonus_10"
+
+		"AttributeBaseStrength"		"170"
+		"AttributeStrengthGain"		"20.400000"
+		"AttributeBaseAgility"		"240"
+		"AttributeAgilityGain"		"20.700000"
+		"AttributeBaseIntelligence"		"130"
+		"AttributeIntelligenceGain"		"10.400000"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_AGILITY"
+
+	}
+	"npc_dota_hero_ogre_magi"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"ogre_magi_fireblast"
+		"Ability2"		"ogre_magi_ignite"
+		"Ability3"		"ogre_magi_bloodlust"
+		"Ability4"		"ogre_magi_unrefined_fireblast"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"ogre_magi_multicast"
+		"Ability10"		"special_bonus_gold_income_10"
+		"Ability11"		"special_bonus_cast_range_100"
+		"Ability12"		"special_bonus_attack_damage_50"
+		"Ability13"		"special_bonus_magic_resistance_12"
+		"Ability14"		"special_bonus_hp_350"
+		"Ability15"		"special_bonus_intelligence_10"
+		"Ability16"		"special_bonus_spell_amplify_15"
+		"Ability17"		"special_bonus_armor_pct_10"
+
+		"AttributePrimary"				"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"230"
+		"AttributeStrengthGain"		"30.500000"
+		"AttributeBaseAgility"		"140"
+		"AttributeAgilityGain"		"10.550000"
+		"AttributeBaseIntelligence"		"170"
+		"AttributeIntelligenceGain"		"20.000000"
+
+	}
+	"npc_dota_hero_undying"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"undying_decay"
+		"Ability2"		"undying_soul_rip"
+		"Ability3"		"undying_tombstone"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"undying_flesh_golem"
+		"Ability10"		"special_bonus_hp_regen_15"
+		"Ability11"		"special_bonus_gold_income_15"
+		"Ability12"		"special_bonus_exp_boost_35"
+		"Ability13"		"special_bonus_hp_300"
+		"Ability14"		"special_bonus_unique_undying"
+		"Ability15"		"special_bonus_strength_10"
+		"Ability16"		"special_bonus_armor_15"
+		"Ability17"		"special_bonus_unique_undying_2"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
+
+		"AttributeBaseStrength"		"220"
+		"AttributeStrengthGain"		"30.400000"
+		"AttributeBaseAgility"		"100"
+		"AttributeAgilityGain"		"10.800000"
+		"AttributeBaseIntelligence"		"270"
+		"AttributeIntelligenceGain"		"28.00000"
+		
+	}
+	"npc_dota_hero_disruptor"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"disruptor_thunder_strike"
+		"Ability2"		"disruptor_glimpse"
+		"Ability3"		"disruptor_kinetic_field"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"disruptor_static_storm"
+		"Ability10"		"special_bonus_cast_range_100"
+		"Ability11"		"special_bonus_gold_income_10"
+		"Ability12"		"special_bonus_unique_disruptor_4"
+		"Ability13"		"special_bonus_unique_disruptor_3"
+		"Ability14"		"special_bonus_hp_400"
+		"Ability15"		"special_bonus_spell_amplify_10"
+		"Ability16"		"special_bonus_unique_disruptor"
+		"Ability17"		"special_bonus_magic_resistance_30"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"190"
+		"AttributeStrengthGain"		"20.200000"
+		"AttributeBaseAgility"		"150"
+		"AttributeAgilityGain"		"10.400000"
+		"AttributeBaseIntelligence"		"220"
+		"AttributeIntelligenceGain"		"20.500000"
+	
+	}
+	"npc_dota_hero_nyx_assassin"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"nyx_assassin_impale"
+		"Ability2"		"nyx_assassin_mana_burn"
+		"Ability3"		"nyx_assassin_spiked_carapace"
+		"Ability4"		"nyx_assassin_burrow"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"nyx_assassin_vendetta"
+		"Ability7"		"nyx_assassin_unburrow"
+		"Ability10"		"special_bonus_spell_amplify_5"
+		"Ability11"		"special_bonus_hp_175"
+		"Ability12"		"special_bonus_magic_resistance_12"
+		"Ability13"		"special_bonus_unique_nyx_2"
+		"Ability14"		"special_bonus_gold_income_20"
+		"Ability15"		"special_bonus_agility_40"
+		"Ability16"		"special_bonus_unique_nyx_3"
+		"Ability17"		"special_bonus_unique_nyx"
+
+		"AttributePrimary"				"DOTA_ATTRIBUTE_AGILITY"
+
+		"AttributeBaseStrength"		"180"
+		"AttributeStrengthGain"		"20.300000"
+		"AttributeBaseAgility"		"190"
+		"AttributeAgilityGain"		"20.200000"
+		"AttributeBaseIntelligence"		"180"
+		"AttributeIntelligenceGain"		"20.100000"
+	
+	}
+	"npc_dota_hero_naga_siren"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"naga_siren_mirror_image"
+		"Ability2"		"naga_siren_ensnare"
+		"Ability3"		"naga_siren_rip_tide"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"naga_siren_song_of_the_siren"
+		"Ability7"		"naga_siren_song_of_the_siren_cancel"
+		"Ability10"		"special_bonus_mp_250"
+		"Ability11"		"special_bonus_hp_125"
+		"Ability12"		"special_bonus_attack_speed_30"
+		"Ability13"		"special_bonus_unique_naga_siren_2"
+		"Ability14"		"special_bonus_agility_15"
+		"Ability15"		"special_bonus_strength_20"
+		"Ability16"		"special_bonus_incoming_15"
+		"Ability17"		"special_bonus_unique_naga_siren"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"210"
+		"AttributeStrengthGain"		"20.800000"
+		"AttributeBaseAgility"		"210"
+		"AttributeAgilityGain"		"20.750000"
+		"AttributeBaseIntelligence"		"210"
+		"AttributeIntelligenceGain"		"20.0000"
+
+	}
+	"npc_dota_hero_keeper_of_the_light"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"keeper_of_the_light_illuminate"
+		"Ability2"		"keeper_of_the_light_mana_leak"
+		"Ability3"		"keeper_of_the_light_chakra_magic"
+		"Ability4"		"keeper_of_the_light_recall"
+		"Ability5"		"keeper_of_the_light_blinding_light"
+		"Ability6"		"keeper_of_the_light_spirit_form"
+		"Ability7"		"keeper_of_the_light_illuminate_end"
+		"Ability8"		"keeper_of_the_light_spirit_form_illuminate"
+		"Ability9"		"keeper_of_the_light_spirit_form_illuminate_end"
+		"Ability10"		"special_bonus_strength_7"
+		"Ability11"		"special_bonus_incoming_10"
+		"Ability12"		"special_bonus_exp_boost_20"
+		"Ability13"		"special_bonus_unique_keeper_of_the_light_2"
+		"Ability14"		"special_bonus_magic_resistance_10"
+		"Ability15"		"special_bonus_armor_7"
+		"Ability16"		"special_bonus_cast_range_400"
+		"Ability17"		"special_bonus_unique_keeper_of_the_light"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"140"
+		"AttributeStrengthGain"		"20.100000"
+		"AttributeBaseAgility"		"150"
+		"AttributeAgilityGain"		"10.600000"
+		"AttributeBaseIntelligence"		"250"
+		"AttributeIntelligenceGain"		"20.800000"
+
+	}
+	"npc_dota_hero_wisp"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"wisp_tether"
+		"Ability2"		"wisp_spirits"
+		"Ability3"		"wisp_overcharge"		
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"io_ultimate"
+		"Ability7"		"wisp_tether_break"
+		"Ability8"		"wisp_spirits_in"
+		"Ability11"		"special_bonus_damage_pct_bonus_15"
+		"Ability12"		"special_bonus_armor_6"
+		"Ability13"		"special_bonus_strength_3"
+		"Ability14"		"special_bonus_strength_10"
+		"Ability15"		"special_bonus_unique_wisp_5"
+		"Ability16"		"special_bonus_gold_income_20"
+		"Ability17"		"special_bonus_hp_regen_20"
+		"Ability18"		"special_bonus_unique_wisp_4"
+
+		"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"170"
+		"AttributeStrengthGain"		"20.200000"
+		"AttributeBaseAgility"		"140"
+		"AttributeAgilityGain"		"10.600000"
+		"AttributeBaseIntelligence"		"230"
+		"AttributeIntelligenceGain"		"10.700000"
+
+	}
+	"npc_dota_hero_visage"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"visage_grave_chill"
+		"Ability2"		"visage_soul_assumption"
+		"Ability3"		"visage_gravekeepers_cloak"
+		"Ability6"		"visage_summon_familiars"
+		"Ability10"		"special_bonus_gold_income_15"
+		"Ability11"		"special_bonus_exp_boost_30"
+		"Ability12"		"special_bonus_attack_damage_50"
+		"Ability13"		"special_bonus_cast_range_100"
+		"Ability14"		"special_bonus_hp_300"
+		"Ability15"		"special_bonus_unique_visage_3"
+		"Ability16"		"special_bonus_spell_amplify_20"
+		"Ability17"		"special_bonus_unique_visage_2"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"220"
+		"AttributeStrengthGain"		"20.700000"
+		"AttributeBaseAgility"		"110"
+		"AttributeAgilityGain"		"10.300000"
+		"AttributeBaseIntelligence"		"240"
+		"AttributeIntelligenceGain"		"20.500000"
+	}
+	"npc_dota_hero_medusa"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"medusa_split_shot"
+		"Ability2"		"medusa_mystic_snake"
+		"Ability3"		"medusa_mana_shield"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"medusa_stone_gaze"
+		"Ability10"		"special_bonus_intelligence_12"
+		"Ability11"		"special_bonus_attack_damage_15"
+		"Ability12"		"special_bonus_attack_speed_20"
+		"Ability13"		"special_bonus_evasion_15"
+		"Ability14"		"special_bonus_unique_medusa_2"
+		"Ability15"		"special_bonus_mp_600"
+		"Ability16"		"special_bonus_lifesteal_25"
+		"Ability17"		"special_bonus_unique_medusa_4"
+
+		"AttributePrimary"				"DOTA_ATTRIBUTE_AGILITY"
+
+		"AttributeBaseStrength"		"140"
+		"AttributeStrengthGain"		"10.950000"
+		"AttributeBaseIntelligence"		"190"
+		"AttributeIntelligenceGain"		"20.1000"
+		"AttributeBaseAgility"		"200"
+		"AttributeAgilityGain"		"20.500000"
+	
+	}
+	"npc_dota_hero_troll_warlord"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"troll_warlord_berserkers_rage"
+		"Ability2"		"troll_warlord_whirling_axes_ranged"
+		"Ability3"		"troll_warlord_whirling_axes_melee"
+		"Ability4"		"troll_warlord_fervor"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"troll_ultimate"
+		"Ability10"		"special_bonus_strength_7"
+		"Ability11"		"special_bonus_agility_10"
+		"Ability12"		"special_bonus_all_stats_10"
+		"Ability13"		"special_bonus_armor_6"
+		"Ability14"		"special_bonus_hp_350"
+		"Ability15"		"special_bonus_attack_damage_40"
+		"Ability16"		"special_bonus_magic_resistance_20"
+		"Ability17"		"special_bonus_unique_troll_warlord"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"	
+		"AttributeBaseStrength"		"200"
+		"AttributeStrengthGain"		"20.500000"
+		"AttributeBaseIntelligence"		"130"
+		"AttributeIntelligenceGain"		"10.000000"
+		"AttributeBaseAgility"		"210"
+		"AttributeAgilityGain"		"20.50000"
+		"VisionDaytimeRange"		"1800"
+
+	}
+	"npc_dota_hero_centaur"
+	{
+		"IsDisabled"	"4"
+		"IsNew"			"1"
+		"Ability1"		"centaur_hoof_stomp"
+		"Ability2"		"centaur_double_edge"
+		"Ability3"		"centaur_return"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"centaur_stampede"
+		"Ability10"		"special_bonus_attack_damage_35"
+		"Ability11"		"special_bonus_mp_regen_2"
+		"Ability12"		"special_bonus_evasion_10"
+		"Ability13"		"special_bonus_magic_resistance_10"
+		"Ability14"		"special_bonus_spell_amplify_10"
+		"Ability15"		"special_bonus_strength_15"
+		"Ability16"		"special_bonus_unique_centaur_4"
+		"Ability17"		"special_bonus_unique_centaur_2"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
+
+		"AttributeBaseStrength"		"230"
+		"AttributeStrengthGain"		"40.300000"
+		"AttributeBaseIntelligence"		"150"
+		"AttributeIntelligenceGain"		"10.600000"
+		"AttributeBaseAgility"		"150"
+		"AttributeAgilityGain"		"10.600000"
+		"VisionDaytimeRange"		"1800"
+
+	}
+	"npc_dota_hero_magnataur"
+	{
+		"IsDisabled"	"4"
+		"IsNew"			"1"
+		"Ability1"		"magnataur_shockwave"
+		"Ability2"		"magnataur_empower"
+		"Ability3"		"magnataur_skewer"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"magnataur_reverse_polarity"
+		"Ability10"		"special_bonus_attack_speed_25"
+		"Ability11"		"special_bonus_spell_amplify_15"
+		"Ability12"		"special_bonus_gold_income_15"
+		"Ability13"		"special_bonus_strength_12"
+		"Ability14"		"special_bonus_unique_magnus_2"
+		"Ability15"		"special_bonus_unique_magnus"
+		"Ability16"		"special_bonus_unique_magnus_3"
+		"Ability17"		"special_bonus_armor_15"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"210"
+		"AttributeStrengthGain"		"30.20000"
+		"AttributeBaseIntelligence"		"190"
+		"AttributeIntelligenceGain"		"10.650000"
+		"AttributeBaseAgility"		"150"
+		"AttributeAgilityGain"		"20.500000"
+
+	}
+	"npc_dota_hero_shredder"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"shredder_whirling_death"
+		"Ability2"		"shredder_timber_chain"
+		"Ability3"		"shredder_reactive_armor"
+		"Ability4"		"shredder_chakram_2"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"shredder_chakram"
+		"Ability7"		"shredder_return_chakram"
+		"Ability8"		"shredder_return_chakram_2"
+		"Ability10"		"special_bonus_hp_150"
+		"Ability11"		"special_bonus_exp_boost_20"
+		"Ability12"		"special_bonus_hp_regen_14"
+		"Ability13"		"special_bonus_intelligence_20"
+		"Ability14"		"special_bonus_spell_amplify_5"
+		"Ability15"		"special_bonus_cast_range_150"
+		"Ability16"		"special_bonus_unique_timbersaw"
+		"Ability17"		"special_bonus_strength_20"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
+
+		"AttributeBaseStrength"		"210"
+		"AttributeStrengthGain"		"20.10000"
+		"AttributeBaseAgility"		"160"
+		"AttributeAgilityGain"		"10.300000"
+		"AttributeBaseIntelligence"		"210"
+		"AttributeIntelligenceGain"		"20.400000"
+
+	}
+	
+	"npc_dota_hero_morphling"
+	{
+		"IsDisabled"		"4"
+		"Model"				"models/heroes/hero_ronan/ronan.vmdl"
+		"ModelScale"		"20"
+		"DisableWearables"	"1"
+		"VoiceFile"			""
+		"IsComics"			"1"
+		
+		"Ability1"		""
+		"Ability2"		""
+		"Ability3"		""
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		""
+		
+		"Ability10"		"special_bonus_agility_8"
+		"Ability11"		"special_bonus_mp_200"
+		"Ability12"		"special_bonus_attack_speed_25"
+		"Ability13"		"special_bonus_cooldown_reduction_12"
+		"Ability14"		"special_bonus_all_stats_12"
+		"Ability15"		"special_bonus_attack_damage_40"
+		"Ability16"		"special_bonus_unique_morphling_1"
+		"Ability17"		"special_bonus_unique_morphling_5"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"23.1"
+		"AttributeStrengthGain"		"1.8"	
+		"AttributeBaseIntelligence"		"18"
+		"AttributeIntelligenceGain"		"1.4"	
+		"AttributeBaseAgility"		"34"
+		"AttributeAgilityGain"		"2.7"
+
+	}
+	"npc_dota_hero_bristleback"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"bristleback_viscous_nasal_goo"
+		"Ability2"		"bristleback_quill_spray"
+		"Ability3"		"bristleback_bristleback"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"bristleback_warpath"
+		"Ability10"		"special_bonus_strength_8"
+		"Ability11"		"special_bonus_mp_regen_2"
+		"Ability12"		"special_bonus_hp_225"
+		"Ability13"		"special_bonus_unique_bristleback"
+		"Ability14"		"special_bonus_green_damage_pct_10"
+		"Ability15"		"special_bonus_spell_lifesteal_10"
+		"Ability16"		"special_bonus_primary_stats_20"
+		"Ability17"		"special_bonus_unique_bristleback_2"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
+
+		"AttributeBaseStrength"		"220"
+		"AttributeStrengthGain"		"20.200000"
+		"AttributeBaseAgility"		"170"
+		"AttributeAgilityGain"		"10.800000"
+		"AttributeBaseIntelligence"		"140"
+		"AttributeIntelligenceGain"		"20.800000"
+
+	}
+	"npc_dota_hero_tusk"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"tusk_ice_shards"
+		"Ability2"		"tusk_snowball"
+		"Ability3"		"tusk_frozen_sigil"
+		"Ability4"		"tusk_walrus_kick"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"tusk_walrus_punch"
+		"Ability7"		"tusk_launch_snowball"
+		"Ability10"		"special_bonus_exp_boost_40"
+		"Ability11"		"special_bonus_attack_damage_35"
+		"Ability12"		"special_bonus_unique_tusk_2"
+		"Ability13"		"special_bonus_gold_income_15"
+		"Ability14"		"special_bonus_armor_6"
+		"Ability15"		"special_bonus_magic_resistance_12"
+		"Ability16"		"special_bonus_hp_700"
+		"Ability17"		"special_bonus_unique_tusk"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
+
+		"AttributeBaseStrength"		"230"
+		"AttributeStrengthGain"		"20.600000"
+		"AttributeBaseAgility"		"230"
+		"AttributeAgilityGain"		"20.100000"
+		"AttributeBaseIntelligence"		"180"
+		"AttributeIntelligenceGain"		"10.700000"
+	}
+	"npc_dota_hero_abaddon"
+	{
+		"IsNew"			"1"
+		"IsDisabled"	"4"
+		"Ability1"		"abaddon_death_coil"
+		"Ability2"		"abaddon_aphotic_shield"
+		"Ability3"		"abaddon_frostmourne"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"abaddon_borrowed_time"
+		"Ability10"		"special_bonus_attack_damage_25"
+		"Ability11"		"special_bonus_exp_boost_20"
+		"Ability12"		"special_bonus_incoming_10"
+		"Ability13"		"special_bonus_armor_5"
+		"Ability14"		"special_bonus_attack_damage_30"
+		"Ability15"		"special_bonus_cooldown_reduction_15"
+		"Ability16"		"special_bonus_strength_25"
+		"Ability17"		"special_bonus_unique_abaddon"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"230"
+		"AttributeStrengthGain"		"20.600000"
+		"AttributeBaseAgility"		"170"
+		"AttributeAgilityGain"		"10.500000"
+		"AttributeBaseIntelligence"		"210"
+		"AttributeIntelligenceGain"		"20.00000"
+
+	}
+	"npc_dota_hero_elder_titan"
+	{
+		"IsNew"			"1"
+		"IsDisabled"	"4"
+		"Ability1"		"elder_titan_echo_stomp"
+		"Ability2"		"elder_titan_ancestral_spirit"
+		"Ability3"		"elder_titan_natural_order"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"elder_titan_earth_splitter"
+		"Ability7"		"elder_titan_return_spirit"
+		"Ability10"		"special_bonus_mp_200"
+		"Ability11"		"special_bonus_strength_10"
+		"Ability12"		"special_bonus_hp_275"
+		"Ability13"		"special_bonus_unique_elder_titan_2"
+		"Ability14"		"special_bonus_magic_resistance_12"
+		"Ability15"		"special_bonus_attack_speed_50"
+		"Ability16"		"special_bonus_armor_15"
+		"Ability17"		"special_bonus_unique_elder_titan"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"240"
+		"AttributeStrengthGain"		"20.600000"
+		"AttributeBaseAgility"		"140"
+		"AttributeAgilityGain"		"10.800000"
+		"AttributeBaseIntelligence"		"230"
+		"AttributeIntelligenceGain"		"10.600000"
+
+	}
+	"npc_dota_hero_legion_commander"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"legion_commander_overwhelming_odds"
+		"Ability2"		"legion_commander_press_the_attack"
+		"Ability3"		"legion_commander_moment_of_courage"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"legion_commander_duel"
+		"Ability10"		"special_bonus_strength_7"
+		"Ability11"		"special_bonus_exp_boost_20"
+		"Ability12"		"special_bonus_attack_damage_30"
+		"Ability13"		"special_bonus_strength_10"
+		"Ability14"		"special_bonus_armor_7"
+		"Ability15"		"special_bonus_unique_legion_commander_3"
+		"Ability16"		"special_bonus_unique_legion_commander"
+		"Ability17"		"special_bonus_incoming_15"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
+
+		"AttributeBaseStrength"		"260"
+		"AttributeStrengthGain"		"20.900000"
+		"AttributeBaseAgility"		"180"
+		"AttributeAgilityGain"		"10.700000"
+		"AttributeBaseIntelligence"		"200"
+		"AttributeIntelligenceGain"		"20.200000"
+
+	}
+	"npc_dota_hero_ember_spirit"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"ember_spirit_searing_chains"
+		"Ability2"		"ember_spirit_sleight_of_fist"
+		"Ability3"		"ember_spirit_flame_guard"
+		"Ability4"		"ember_spirit_activate_fire_remnant"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"ember_spirit_fire_remnant"
+		"Ability10"		"special_bonus_spell_amplify_8"
+		"Ability11"		"special_bonus_attack_damage_30"
+		"Ability12"		"special_bonus_truestrike"
+		"Ability13"		"special_bonus_all_stats_6"
+		"Ability14"		"special_bonus_unique_ember_spirit_1"
+		"Ability15"		"special_bonus_armor_10"
+		"Ability16"		"special_bonus_cooldown_reduction_20"
+		"Ability17"		"special_bonus_unique_ember_spirit_2"
+
+		"AttributePrimary"				"DOTA_ATTRIBUTE_AGILITY"
+
+		"AttributeBaseStrength"		"190"
+		"AttributeStrengthGain"		"20.100000"
+		"AttributeBaseAgility"		"220"
+		"AttributeAgilityGain"		"10.800000"
+		"AttributeBaseIntelligence"		"200"
+		"AttributeIntelligenceGain"		"10.800000"
+
+	}
+	"npc_dota_hero_earth_spirit"
+	{
+		"IsDisabled"	"4"
+		"IsNew"			"1"
+		"Ability1"		"earth_spirit_boulder_smash"
+		"Ability2"		"earth_spirit_rolling_boulder"
+		"Ability3"		"earth_spirit_geomagnetic_grip"
+		"Ability4"		"earth_spirit_stone_caller"
+		"Ability5"		"earth_spirit_petrify"
+		"Ability6"		"earth_spirit_magnetize"
+		"Ability10"		"special_bonus_intelligence_10"
+		"Ability11"		"special_bonus_armor_4"
+		"Ability12"		"special_bonus_magic_resistance_15"
+		"Ability13"		"special_bonus_gold_income_15"
+		"Ability14"		"special_bonus_spell_amplify_15"
+		"Ability15"		"special_bonus_hp_300"
+		"Ability16"		"special_bonus_unique_earth_spirit_2"
+		"Ability17"		"special_bonus_unique_earth_spirit"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"210"
+		"AttributeStrengthGain"		"30.200000"
+		"AttributeBaseAgility"		"170"
+		"AttributeAgilityGain"		"10.500000"
+		"AttributeBaseIntelligence"		"180"
+		"AttributeIntelligenceGain"		"20.100000"
+
+	}
+	"npc_dota_hero_terrorblade"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"terrorblade_reflection"
+		"Ability2"		"terrorblade_conjure_image"
+		"Ability3"		"terrorblade_metamorphosis"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"terrorblade_sunder"
+		"Ability10"		"special_bonus_hp_regen_6"
+		"Ability11"		"special_bonus_attack_speed_15"
+		"Ability12"		"special_bonus_attack_damage_25"
+		"Ability13"		"special_bonus_hp_200"
+		"Ability14"		"special_bonus_agility_15"
+		"Ability15"		"special_bonus_attack_damage_100"
+		"Ability16"		"special_bonus_all_stats_15"
+		"Ability17"		"special_bonus_unique_terrorblade"
+
+		"AttributePrimary"				"DOTA_ATTRIBUTE_AGILITY"
+
+		"AttributeBaseStrength"		"150"
+		"AttributeStrengthGain"		"10.700000"
+		"AttributeBaseIntelligence"		"190"
+		"AttributeIntelligenceGain"		"10.750000"
+		"AttributeBaseAgility"		"220"
+		"AttributeAgilityGain"		"30.200000"
+
+	}
+	"npc_dota_hero_oracle"
+	{
+		"IsNew"			"1"
+		"IsDisabled"	"4"
+		"Ability1"		"oracle_fortunes_end"
+		"Ability2"		"oracle_fates_edict"
+		"Ability3"		"oracle_purifying_flames"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"oracle_false_promise"
+		"Ability10"		"special_bonus_unique_oracle_2"
+		"Ability11"		"special_bonus_exp_boost_20"
+		"Ability12"		"special_bonus_hp_200"
+		"Ability13"		"special_bonus_gold_income_10"
+		"Ability14"		"special_bonus_spell_amplify_6"
+		"Ability15"		"special_bonus_intelligence_20"
+		"Ability16"		"special_bonus_cast_range_250"
+		"Ability17"		"special_bonus_unique_oracle"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"180"
+		"AttributeStrengthGain"		"20.200000"
+		"AttributeBaseIntelligence"		"230"
+		"AttributeIntelligenceGain"		"20.900000"
+		"AttributeBaseAgility"		"150"
+		"AttributeAgilityGain"		"10.700000"
+
+	}
+	"npc_dota_hero_techies"
+	{
+		"IsDisabled"	"4"
+		"Ability1"		"techies_land_mines"
+		"Ability2"		"techies_stasis_trap"
+		"Ability3"		"techies_suicide"
+		"Ability4"		"techies_focused_detonate"
+		"Ability5"		"techies_minefield_sign"
+		"Ability6"		"techies_remote_mines"
+		"Ability10"		"special_bonus_movespeed_600"
+		"Ability11"		"special_bonus_mp_regen_2"
+		"Ability12"		"special_bonus_exp_boost_30"
+		"Ability13"		"special_bonus_cast_range_200"
+		"Ability14"		"special_bonus_gold_income_20"
+		"Ability15"		"special_bonus_unique_techies"
+		"Ability16"		"special_bonus_cooldown_reduction_20"
+		"Ability17"		"special_bonus_attack_damage_250"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"170"
+		"AttributeStrengthGain"		"20.300000"
+		"AttributeBaseIntelligence"		"220"
+		"AttributeIntelligenceGain"		"20.900000"
+		"AttributeBaseAgility"		"140"
+		"AttributeAgilityGain"		"10.300000"
+
+	}
+	"npc_dota_hero_winter_wyvern"
+	{
+		"IsNew"			"1"
+		"Ability1"		"winter_wyvern_arctic_burn"
+		"Ability2"		"winter_wyvern_splinter_blast"
+		"Ability3"		"winter_wyvern_cold_embrace"
+		"Ability6"		"winter_wyvern_winters_curse"
+		"Ability10"		"special_bonus_intelligence_8"
+		"Ability11"		"special_bonus_strength_7"
+		"Ability12"		"special_bonus_movespeed_600"
+		"Ability13"		"special_bonus_attack_damage_50"
+		"Ability14"		"special_bonus_gold_income_20"
+		"Ability15"		"special_bonus_unique_winter_wyvern_3"
+		"Ability16"		"special_bonus_unique_winter_wyvern_1"
+		"Ability17"		"special_bonus_unique_winter_wyvern_2"
+		"IsDisabled"	"4"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"24"
+		"AttributeStrengthGain"		"2.400000"
+		"AttributeBaseIntelligence"		"25"
+		"AttributeIntelligenceGain"		"3.100000"
+		"AttributeBaseAgility"		"16"
+		"AttributeAgilityGain"		"1.900000"
+
+	}
+
+	//=================================================================================================================
+	// HERO: Underlord
+	//=================================================================================================================
+	"npc_dota_hero_abyssal_underlord"
+	{
+	
+		"Ability1"		"abyssal_underlord_firestorm"
+		"Ability2"		"abyssal_underlord_pit_of_malice"
+		"Ability3"		"abyssal_underlord_atrophy_aura"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"Kachalka_underlord"
+		"Ability10"		"special_bonus_armor_5"
+		"Ability11"		"special_bonus_mp_regen_2"
+		"Ability12"		"special_bonus_attack_damage_100"
+		"Ability13"		"special_bonus_spell_amplify_12"
+		"Ability14"		"special_bonus_attack_speed_60"
+		"Ability15"		"special_bonus_cast_range_125"
+		"Ability16"		"special_bonus_hp_regen_50"
+		"Ability17"		"special_bonus_unique_underlord"
+		"IsDisabled"	"4"
+		"AttributeBaseStrength"		"250"
+		"AttributeStrengthGain"		"20.900000"
+		"AttributeBaseAgility"		"120"
+		"AttributeAgilityGain"		"10.300000"
+		"AttributeBaseIntelligence"		"170"
+		"AttributeIntelligenceGain"		"20.600000"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
+
+	}
+//====================================================================
+// Anime Heroes (Герои из Аниме)
+//====================================================================
+	
+//====================================================================
+//Naruto
+//====================================================================
+	
+	"npc_dota_hero_ancient_apparition"
+	{
+		"IsAnime"					"1"
+		"Model"         	    "models/naruto_new/naruto.vmdl"
+		"ModelScale"			"0.9"
+		"LoadoutScale"			"0.9" 
+		"DisableWearables"      "1"
+		"AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackRange"		    "150"
+		"VoiceFile"					""
+		
+		"Ability1"		"naruto_illusion1"
+		"Ability2"		"naruto_rasenshuriken"
+		"Ability3"		"naruto_chakra"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"naruto_ult"
+		"Ability10"		"special_bonus_naruto_5"
+		"Ability11"		"special_bonus_naruto_6"
+		"Ability12"		"special_bonus_naruto_1"
+		"Ability13"		"special_bonus_naruto_2"
+		"Ability14"		"special_bonus_spell_block_15"
+		"Ability15"		"special_bonus_incoming_15"
+		"Ability16"		"special_bonus_naruto_4"
+		"Ability17"		"special_bonus_naruto_3"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"			"27"
+		"AttributeStrengthGain"			"2.1"
+		
+		"AttributeBaseIntelligence"		"32"
+		"AttributeIntelligenceGain"		"3.2"
+		
+		"AttributeBaseAgility"			"24"
+		"AttributeAgilityGain"			"1.9"
+	}
+	
+	//==============================================
+	//HERO: МЕГУМИН
+	//==============================================
+	
+	"npc_dota_hero_phoenix"
+	{
+		"IsAnime"					"1"
+		"Model"						"models/hero_megumin/hero_megumin_base.vmdl"
+	    "DisableWearables"     		"1"
+		"ModelScale"				"1"
+		"IsDisabled"				"4"
+		"HeroSelectSoundEffect"		"ComicsVsAnime.pick_megumin"
+		"VoiceFile"					""
+		"Ability1"		""
+		"Ability2"		""
+		"Ability3"		""
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		""
+		"Ability10"		"special_bonus_gold_income_15"
+		"Ability11"		"special_bonus_unique_phoenix_1"
+		"Ability12"		"special_bonus_all_stats_10"
+		"Ability13"		"special_bonus_cooldown_reduction_15"
+		"Ability14"		"special_bonus_spell_amplify_15"
+		"Ability15"		"special_bonus_unique_phoenix_2"
+		"Ability16"		"special_bonus_unique_phoenix_3"
+		"Ability17"		"special_bonus_primary_stats_50"
+		"ProjectileModel"		"particles/units/heroes/hero_visage/visage_base_attack.vpcf"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseIntelligence"		"18"
+		"AttributeIntelligenceGain"		"3.2"
+    }
+	
+	//==============================================
+	// Ulqiorra
+	//==============================================
+	
+	"npc_dota_hero_monkey_king"
+	{
+		"IsAnime"					"1"
+		"DisableWearables"	"1"
+		"Model"			"models/hero_ulquiorra/hero_ulquiorra_base.vmdl"
+		"IsDisabled"	"0"
+		"VoiceFile"					""
+		"ModelScale"	"0.8"
+		
+		"Ability1"		"ulquiorra_bala"
+		"Ability2"		"ulquiorra_sero"
+		"Ability3"		"ulquiorra_ierro"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"ulquiorra_ult"
+		"Ability10"		"special_bonus_ulquiorra_4"
+		"Ability11"		"special_bonus_ulquiorra_5"
+		"Ability12"		"special_bonus_ulquiorra_3"
+		"Ability13"		"special_bonus_spell_block_15"
+		"Ability14"		"special_bonus_ulquiorra_2"
+		"Ability15"		"special_bonus_ulquiorra_7"
+		"Ability16"		"special_bonus_ulquiorra_1"
+		"Ability17"		"special_bonus_ulquiorra_8"
+		
+		
+		"AttributePrimary"				"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"			"25"
+		"AttributeStrengthGain"			"2.5"
+		
+		"AttributeBaseIntelligence"		"32"
+		"AttributeIntelligenceGain"		"3.1"
+		
+		"AttributeBaseAgility"			"21"
+		"AttributeAgilityGain"			"1.8"
+	}
+	
+//===============================================================
+//ШИНОБУ
+//===============================================================
+
+	"npc_dota_hero_shinobu"
+	{
+		"IsCustom"					"1"
+		"BaseClass"					"npc_dota_hero"
+		"HeroID"					"116"
+		"Model"						"models/hero_shinobu/shinobu_01.vmdl"	
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"ModelScale"				"0.7"
+		"MovementTurnRate"			"1.5"
+		"MovementSpeed"				"325"
+		"VoiceFile"					""
+
+		"AbilityLayout"		"5"
+		"Ability1"		"shinobu_lifesteal"
+		"Ability2"		"shinobu_hp_dmg"
+		"Ability3"		"shinobu_blood"
+		"Ability4"      "generic_hidden"
+		"Ability5"      "generic_hidden"
+		"Ability6"		"shinobu_invisible_ult"
+		
+		"Ability10"		"special_bonus_shinobu_2"
+		"Ability11"		"special_bonus_shinobu_4"
+		"Ability12"		"special_bonus_shinobu_5"
+		"Ability13"		"special_bonus_truestrike"
+		"Ability14"		"special_bonus_shinobu_1"
+		"Ability15"		"special_bonus_shinobu_3"
+		"Ability16"		"special_bonus_shinobu_7"
+		"Ability17"		"special_bonus_shinobu_6"
+
+		"AttackCapabilities"			"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"				"31"
+		"AttackDamageMax"				"33"
+		"AttackRate"					"1.6"		
+		"AttackDamageType"				"DAMAGE_TYPE_ArmorPhysical"
+		"AttackAnimationPoint"			"0.3"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"					"150"
+		"ProjectileModel"				"particles/base_attacks/ranged_hero.vpcf"
+		"ProjectileSpeed"				"900"
+		"MagicalResistance"				"25"
+		"ArmorPhysical"				"5"
+		"StatusHealthRegen"			"3.25"
+		
+		"VisionDaytimeRange"		"1800"
+		"VisionNighttimeRange"		"800"
+		
+		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"25.3"
+		"AttributeStrengthGain"		"2.1"
+		"AttributeBaseAgility"		"34"
+		"AttributeAgilityGain"		"2.9"
+		"AttributeBaseIntelligence"	"19.2"
+		"AttributeIntelligenceGain"	"2.1"
+		"HasInventory"				"1"	
+
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+	}
+		
+	//=================================================================================================================
+    // HERO: Maka
+    //=================================================================================================================
+	"npc_dota_hero_dark_willow"
+	{
+		"IsDisabled"	"0"
+		"IsAnime"		"1"
+		"Model"			"models/units/maka/maka.vmdl"
+		"ModelScale"	"0.9"
+		"DisableWearables"	"1"
+		"VoiceFile"		""
+		
+		"Ability1"		"maka_weapon_gene"
+		"Ability2"		"maka_black_blood"
+		"Ability3"		"maka_soul"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"maka_anti_demon"
+		"Ability10"		"special_bonus_maka_2"
+		"Ability11"		"special_bonus_maka_6"
+		"Ability12"		"special_bonus_maka_5"
+		"Ability13"		"special_bonus_truestrike"
+		"Ability14"		"special_bonus_maka_1"
+		"Ability15"		"special_bonus_maka_3"
+		"Ability16"		"special_bonus_maka_7"
+		"Ability17"		"special_bonus_maka_4"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+		"AttackCapabilities"			"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackRange"					"250"
+		
+		"AttributeBaseStrength"			"24"
+		"AttributeStrengthGain"			"2.3"
+		
+		"AttributeBaseIntelligence"		"19.2"
+		"AttributeIntelligenceGain"		"1.9"
+		
+		"AttributeBaseAgility"			"30"
+		"AttributeAgilityGain"			"2.8"
+	}
+	
+	//=================================================================================================================
+	// HERO: AKAME
+	//=================================================================================================================
+	
+	"npc_dota_hero_slark"
+	{	
+		"IsDisabled"		"0"
+		"Model"				"models/heroes/akame/akame.vmdl"
+		"ModelScale"		"1.2"
+		"DisableWearables"	"1"
+		"IsAnime"			"1"	
+		"VoiceFile"			""
+		
+		"Ability1"		"akame_doping"
+		"Ability2"		"akame_runner"
+		"Ability3"		"akame_ennoodzuno"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"akame_muramasa"
+		"Ability10"		"special_bonus_akame_4"
+		"Ability11"		"special_bonus_akame_5"
+		"Ability12"		"special_bonus_akame_3"
+		"Ability13"		"special_bonus_akame_7"
+		"Ability14"		"special_bonus_akame_6"
+		"Ability15"		"special_bonus_akame_2"
+		"Ability16"		"special_bonus_akame_8"
+		"Ability17"		"special_bonus_akame_1"
+		
+		"AttributePrimary"				"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"			"23"
+		"AttributeStrengthGain"			"2.3"
+		"AttributeBaseIntelligence"		"16"
+		"AttributeIntelligenceGain"		"1.2"
+		"AttributeBaseAgility"			"28"
+		"AttributeAgilityGain"			"3.2"
+	}
+	//==========================================
+	// Kurumi
+	//==========================================
+	"npc_dota_hero_skywrath_mage"
+	{
+		"IsDisabled"		"0"
+		"Model"				"models/heroes/weaver/kurumi.vmdl"
+		"ModelScale"		"1"
+		"IsAnime"			"1"
+		"VoiceFile"			""
+		"DisableWearables"	"1"
+		"ProjectileModel"			"particles/base_attacks/comics_vs_anime_kurumi_base_attack_osnova.vpcf"
+		
+		"Ability1"		"kurumi_eight_bullet_chet"
+		"Ability2"		"kurumi_absorcia"
+		"Ability3"		"kurumi_bullet_swap"
+		"Ability4"		"kurumi_empty_slot_bullet"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"kurumi_devouring_time"
+		"Ability10"		"special_bonus_kurumi_2"
+		"Ability11"		"special_bonus_kurumi_4"
+		"Ability12"		"special_bonus_kurumi_5"
+		"Ability13"		"special_bonus_kurumi_6"
+		"Ability14"		"special_bonus_kurumi_8"
+		"Ability15"		"special_bonus_kurumi_3"
+		"Ability16"		"special_bonus_kurumi_7"
+		"Ability17"		"special_bonus_kurumi_1"
+
+		"AttributePrimary"				"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"			"24"
+		"AttributeStrengthGain"			"2.1"
+		"AttributeBaseAgility"			"26"
+		"AttributeAgilityGain"			"3.2"
+		"AttributeBaseIntelligence"		"14"
+		"AttributeIntelligenceGain"		"1.8"
+	
+	}
+	
+	//==============================================
+	//HERO: Rem
+	//==============================================
+	
+	"npc_dota_hero_crystal_maiden"
+	{
+		"Model"				   "models/hero_rem/hero_rem_base.vmdl"
+		"DisableWearables"     "1"
+        "Modelscale"           "0.75"
+		"IsAnime"			   "1"
+		"VoiceFile"				""
+		"ModelScale"			"1.2"
+		"ProjectileModel"		"particles/units/heroes/hero_visage/visage_base_attack.vpcf"
+		"IsDisabled"	"0"
+		
+		// Abilities
+		//-------------------------------------------------------------------------------------------------------------
+		"Ability1"		"rem_mana_steal"
+		"Ability2"		"rem_gates"
+		"Ability3"		"rem_demon"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"ability6"      "rem_water_waves"
+		
+		"Ability10"		"special_bonus_rem_3"
+		"Ability11"		"special_bonus_rem_4"
+		"Ability12"		"special_bonus_rem_5"
+		"Ability13"		"special_bonus_rem_6"
+		"Ability14"		"special_bonus_rem_2"
+		"Ability15"		"special_bonus_magical_crit_35"
+		"Ability16"		"special_bonus_rem_1"
+		"Ability17"		"special_bonus_rem_7"
+		
+		"AttackCapabilities"		  "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackRange"                 "150"
+		
+		"AttributePrimary"		      "DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		  "25"
+		"AttributeStrengthGain"		  "2.1"
+		"AttributeBaseIntelligence"   "34"
+		"AttributeIntelligenceGain"	  "2.9"
+		"AttributeBaseAgility"		  "21"
+		"AttributeAgilityGain"		  "1.7"
+
+	}
+	
+	//==============================================
+	//HERO: Star Platinum
+	//==============================================
+	
+	"npc_dota_hero_queenofpain"
+	{
+		"Model"					"models/heroes/star_platinum/star_platinum.vmdl"
+		"ModelScale"			"2.5"
+		"IsAnime"			   	"1"
+		"VoiceFile"				""
+		"DisableWearables"     	"1"
+		"IsDisabled"			"0"
+		
+		"Ability1"		"star_ora_ora"
+		"Ability2"		"star_attack_basher"
+		"Ability3"		"star_armor_hp"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"star_za_warundo"
+		
+		"Ability11"		"special_bonus_star_3"
+		"Ability12"		"special_bonus_star_4"
+		"Ability13"		"special_bonus_star_5"
+		"Ability14"		"special_bonus_star_6"
+		"Ability15"		"special_bonus_star_7"
+		"Ability16"		"special_bonus_star_2"
+		"Ability17"		"special_bonus_star_1"
+		"Ability18"		"special_bonus_star_8"
+
+		"AttackCapabilities"		  "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackRange"                 "135"
+		
+		"AttributePrimary"		      "DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		  "25"
+		"AttributeStrengthGain"		  "2.1"
+		"AttributeBaseIntelligence"   "10"
+		"AttributeIntelligenceGain"	  "1.2"
+		"AttributeBaseAgility"		  "20"
+		"AttributeAgilityGain"		  "1.8"
+	}
+	
+	//==============================================
+	//HERO: Ichigo
+	//==============================================
+	
+	"npc_dota_hero_windrunner"
+	{
+		"Model"					"models/hero_ichigo/hero_ichigo_bankai_base.vmdl"
+		"ModelScale"			"1"
+		"IsAnime"			   	"1"
+		"VoiceFile"				""
+		"DisableWearables"     	"1"
+		"IsDisabled"			"0"
+		
+		"Ability1"		"ichigo_getsuca"
+		"Ability2"		"ichigo_footsteps"
+		"Ability3"		"ichigo_tensa"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"ichigo_form_blank"
+		"Ability10"		"special_bonus_ichigo_4"
+		"Ability11"		"special_bonus_ichigo_5"
+		"Ability12"		"special_bonus_ichigo_7"
+		"Ability13"		"special_bonus_ichigo_6"
+		"Ability14"		"special_bonus_ichigo_3"
+		"Ability15"		"special_bonus_ichigo_2"
+		"Ability16"		"special_bonus_ichigo_8"
+		"Ability17"		"special_bonus_ichigo_1"
+		"AttributeBaseStrength"			"32"
+		"AttributeStrengthGain"			"3"
+		"AttributeBaseIntelligence"		"19"
+		"AttributeIntelligenceGain"		"1.6"
+		"AttributeBaseAgility"			"24"
+		"AttributeAgilityGain"			"2.1"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
+		"AttackCapabilities"			"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackRange"					"150"
+
+	}
+	
+	//=================================================================================================================
+	// HERO: Sasuke
+	//=================================================================================================================
+	"npc_dota_hero_arc_warden"
+	{
+		"IsDisabled"	"0"
+		"IsAnime"		"1"
+		"Model"				"models/sasuke_new/sasuke.vmdl"
+		"ModelScale"		"1.15"
+		"DisableWearables"	"1"
+		"VoiceFile"			""
+		// Abilities
+		//-------------------------------------------------------------------------------------------------------------
+		"Ability1"		"sasuke_amaterrasu"
+		"Ability2"		"sasuke_chidori"
+		"Ability3"		"sasuke_rinnengan"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"sasuke_kirin"
+		"Ability10"		"special_bonus_sasuke_1"
+		"Ability11"		"special_bonus_sasuke_2"
+		"Ability12"		"special_bonus_sasuke_3"
+		"Ability13"		"special_bonus_sasuke_4"
+		"Ability14"		"special_bonus_sasuke_5"
+		"Ability15"		"special_bonus_sasuke_6"
+		"Ability16"		"special_bonus_sasuke_7"
+		"Ability17"		"special_bonus_sasuke_8"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_AGILITY"
+		"AttackCapabilities"			"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackRange"					"150"
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"25"
+		"AttributeStrengthGain"		"2.1"
+		"AttributeBaseIntelligence"		"21"
+		"AttributeIntelligenceGain"		"1.6"
+		"AttributeBaseAgility"		"27"
+		"AttributeAgilityGain"		"2.7"
+	}
+	
+//====================================================================
+// Comics Heroes (Герои из комиксов)
+//====================================================================
+
+//====================================================================
+// Black Panther(Чёрная Пантера)
+//====================================================================
+
+	"npc_dota_hero_storm_spirit"
+	{
+		"Model"				"models/heroes/hero_black_panther/black_panther.vmdl"
+		"ModelScale"		"1.150000"
+		"DisableWearables"	"1"
+		"IsComics"			"1"
+		"VoiceFile"			""
+
+		"Ability1"		"black_panther_kogti"
+		"Ability2"		"black_panther_kostume"
+		"Ability3"		"black_panther_rage"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"black_panther_ultimate"
+		"Ability10"		"special_bonus_black_panther_5"
+		"Ability11"		"special_bonus_black_panther_6"
+		"Ability12"		"special_bonus_black_panther_2"			// + % урона от когтей
+		"Ability13"		"special_bonus_black_panther_3"			// +количество когтей
+		"Ability14"		"special_bonus_black_panther_7"
+		"Ability15"		"special_bonus_black_panther_1"			// Шанс кровотечения
+		"Ability16"		"special_bonus_black_panther_8"			
+		"Ability17"		"special_bonus_black_panther_4"
+		
+		"AttackCapabilities"			"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackRange"					"150"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"			"30.2"
+		"AttributeStrengthGain"			"3.2"
+		"AttributeBaseIntelligence"		"15.2"
+		"AttributeIntelligenceGain"		"1.2"
+		"AttributeBaseAgility"			"24.3"
+		"AttributeAgilityGain"			"1.8"
+	}
+	
+	//====================================================================
+	//HERO: Hulk
+	//====================================================================
+	"npc_dota_hero_silencer"
+	{
+		"Model"					"models/heroes/hero_hulk/hulk.vmdl"
+		"DisableWearables"		"1"
+		"IsDisabled"			"0"
+		"ModelScale"            "4.0"
+		"HealthBarOffset"       "140"
+		"IsComics"				"1"
+		"VoiceFile"				""
+
+		"Ability1"		"hulk_jump"
+		"Ability2"		"hulk_rage"
+		"Ability3"		"hulk_cry"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"hulk_agression"
+		"Ability10"		"special_bonus_hulk_4"
+		"Ability11"		"special_bonus_hulk_5"
+		"Ability12"		"special_bonus_hulk_6"			
+		"Ability13"		"special_bonus_hulk_1"			
+		"Ability14"		"special_bonus_hulk_7"
+		"Ability15"		"special_bonus_hulk_8"
+		"Ability16"		"special_bonus_hulk_3"			
+		"Ability17"		"special_bonus_hulk_2"
+		
+		"AttackCapabilities"			"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackRange"					"150"
+		"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"			"36"
+		"AttributeStrengthGain"			"3.6"
+		"AttributeBaseIntelligence"		"18"
+		"AttributeIntelligenceGain"		"1.5"
+		"AttributeBaseAgility"			"20"
+		"AttributeAgilityGain"			"2.1"
+	}
+	//=================================================================================================================
+	// HERO: Iron Man
+	//=================================================================================================================
+	"npc_dota_hero_pangolier"
+	{
+		"IsDisabled"				"4"
+		"Model"						"models/heroes/hero_ironman/ironman.vmdl"
+		"ModelScale"				"2.4"
+		"DisableWearables"			"1"
+		"VoiceFile"					""
+		"Ability1"					""
+		"Ability2"					"iron_man_rakets"
+		"Ability3"					""
+		"Ability4"					"generic_hidden"
+		"Ability5"					"generic_hidden"
+		"Ability6"					""
+		"Ability7"					""
+		"Ability10"					"special_bonus_lifesteal_10"
+		"Ability11"					"special_bonus_incoming_10"
+		"Ability12"					"special_bonus_unique_pangolier_2"
+		"Ability13"					"special_bonus_damage_pct_bonus_10"
+		"Ability14"					"special_bonus_unique_pangolier_3"
+		"Ability15"					"special_bonus_strength_20"
+		"Ability16"					"special_bonus_unique_pangolier_4"
+		"Ability17"					"special_bonus_unique_pangolier_5"
+		"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"		
+		
+		"AttributeBaseStrength"		"23.3"
+		"AttributeStrengthGain"		"2.1"
+		
+		"AttributeBaseAgility"		"19.2"
+		"AttributeAgilityGain"		"1.9"
+		
+		"AttributeBaseIntelligence"	"26"
+		"AttributeIntelligenceGain"	"2.6"
+	}
+	//==============================================
+	//HERO: Thanos
+	//==============================================
+		"npc_dota_hero_lycan"
+	{		
+		"IsComics"			"1"
+		"IsDisabled"		"0"
+		"SoundSet"			"0"
+		"Model"				"models/heroes/hero_thanos/thanos.vmdl"
+		"ModelScale"		"1.9"
+		"DisableWearables"	"1"
+		"VoiceFile"			""
+		"Ability1"		"Thanos_damage_convert"
+		"Ability2"		"thanos_attack_passive"
+		"Ability3"		"thanos_skin"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"thanos_ult"
+		"Ability10"		"special_bonus_thanos_6"
+		"Ability11"		"special_bonus_thanos_7"
+		"Ability12"		"special_bonus_thanos_2"
+		"Ability13"		"special_bonus_thanos_1"
+		"Ability14"		"special_bonus_thanos_8"
+		"Ability15"		"special_bonus_thanos_3"
+		"Ability17"		"special_bonus_thanos_4"
+		"Ability16"		"special_bonus_thanos_5"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		
+		"AttributeBaseStrength"		"32.1"
+		"AttributeStrengthGain"		"3.1"
+		
+		"AttributeBaseAgility"		"23"
+		"AttributeAgilityGain"		"2.4"
+		
+		"AttributeBaseIntelligence"	"23"
+		"AttributeIntelligenceGain"	"2.3"
+
+	}
+	//==============================================
+	//HERO: Doctor Strange
+	//==============================================
+	"npc_dota_hero_lich"
+	{
+		"IsDisabled"		"0"
+		"DisableWearables"	"1"
+		"IsComics"			"1"
+		"VoiceFile"			""
+	    "Model"				"models/heroes/hero_drstrange/dr_strange.vmdl"
+		"ModelScale"		"5.3"
+		"Ability1"		"strange_lightning"
+		"Ability2"		"strange_blink"
+		"Ability3"		"strange_shield"
+		"Ability6"		"strange_illusion"
+		"Ability10"		"special_bonus_strange_4"
+		"Ability11"		"special_bonus_strange_1"
+		"Ability12"		"special_bonus_strange_6"
+		"Ability13"		"special_bonus_strange_5"
+		"Ability14"		"special_bonus_strange_8"
+		"Ability15"		"special_bonus_strange_7"
+		"Ability16"		"special_bonus_strange_2"
+		"Ability17"		"special_bonus_strange_3"
+		"ProjectileModel"		"particles/base_attacks/comics_vs_anime_strange_base_attack.vpcf"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"			"27.2"
+		"AttributeStrengthGain"			"1.9"
+		"AttributeBaseIntelligence"		"36"
+		"AttributeIntelligenceGain"		"3.2"
+		"AttributeBaseAgility"			"23"
+		"AttributeAgilityGain"			"1.8"
+	
+	}
+	
+	//====================================================
+	//HERO: ANT MAN
+	//====================================================
+	
+	"npc_dota_hero_sven"
+	{
+		"IsDisabled"		"4"
+		"Model"				"models/heroes/antman/antman.vmdl"
+		"DisableWearables"	"1"
+		"ModelScale"		"0.4"
+		"VoiceFile"			""
+		
+		"Ability1"		""
+		"Ability2"		""
+		"Ability3"		"Ant_man_big"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		""
+		"Ability10"		"special_bonus_strength_10"
+		"Ability11"		"special_bonus_incoming_15"
+		"Ability12"		"special_bonus_movement_speed_20"
+		"Ability13"		"special_bonus_all_stats_15"
+		"Ability14"		"special_bonus_kirill_2"
+		"Ability15"		"special_bonus_unique_sven"
+		"Ability16"		"special_bonus_kirill_1"
+		"Ability17"		"special_bonus_kirill_3"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+	}
+	
+	//==============================================
+	//HERO: Venom
+	//==============================================
+	
+	"npc_dota_hero_treant"
+	{
+		"IsComics"			"1"
+		"IsDisabled"		"0"
+		"Model"				"models/heroes/venom/venom.vmdl"
+		"ModelScale"		"1.6"
+		"DisableWearables"	"1"
+		"VoiceFile"			""
+		
+		"Ability1"		"venom_damage_bonus"
+		"Ability2"		"venom_jump"
+		"Ability3"		"venom_block_damage"
+		"Ability4"		"venom_poison"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"venom_rage"
+		"Ability10"		"special_bonus_venom_7"
+		"Ability11"		"special_bonus_venom_6"
+		"Ability12"		"special_bonus_venom_1"
+		"Ability13"		"special_bonus_venom_8"
+		"Ability14"		"special_bonus_damage_pct_bonus_10"
+		"Ability15"		"special_bonus_venom_5"
+		"Ability16"		"special_bonus_venom_3"
+		"Ability17"		"special_bonus_venom_2"
+		
+		"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"			"29.3"
+		"AttributeStrengthGain"			"2.4"
+		"AttributeBaseAgility"			"26.3"
+		"AttributeAgilityGain"			"2.2"
+		"AttributeBaseIntelligence"		"19.2"
+		"AttributeIntelligenceGain"		"1.6"
+		"MovementSpeed"					"350"
+		"AttackRate"					"1.7"
+	}
+	
+	//==============================================
+	//HERO: Flash
+	//==============================================
+	
+	"npc_dota_hero_batrider"
+	{
+		"IsDisabled"		"0"
+		"Model"				"models/heroes/hero_flash/flash.vmdl"
+		"ModelScale"		"1.1"
+		"DisableWearables"	"1"
+		"VoiceFile"			""
+		"IsComics"			"1"
+		
+		"Ability1"		"flash_thunder"
+		"Ability2"		"flash_double_attack"
+		"Ability3"		"flash_kulak"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"flash_max_speed"
+		"Ability10"		"special_bonus_incoming_10"
+		"Ability11"		"special_bonus_flash_1"
+		"Ability12"		"special_bonus_flash_5"
+		"Ability13"		"special_bonus_flash_6"
+		"Ability14"		"special_bonus_flash_7"
+		"Ability15"		"special_bonus_flash_3"
+		"Ability16"		"special_bonus_flash_8"
+		"Ability17"		"special_bonus_flash_2"
+		
+		"AttributePrimary"				"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"			"23.1"
+		"AttributeStrengthGain"			"1.9"
+		"AttributeBaseAgility"			"32.3"
+		"AttributeAgilityGain"			"2.5"
+		"AttributeBaseIntelligence"		"18.2"
+		"AttributeIntelligenceGain"		"1.1"
+		"AttackCapabilities"		    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackRange"                   "150"
+	}
+	
+	"npc_dota_hero_chaos_knight"
+	{
+		"IsDisabled"		"0"
+		"Model"				"models/heroes/hero_loki/loki.vmdl"
+		"ModelScale"		"1.6"
+		"DisableWearables"	"1"
+		"VoiceFile"			""
+		"IsComics"			"1"
+		
+		"Ability1"		"loki_blink_strike"
+		"Ability2"		"loki_poison"
+		"Ability3"		"loki_illusion_invis"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"loki_swap_models"
+		
+		"Ability10"		"special_bonus_loki_4"
+		"Ability11"		"special_bonus_loki_8"
+		"Ability12"		"special_bonus_loki_6"
+		"Ability13"		"special_bonus_loki_7"
+		"Ability14"		"special_bonus_loki_1"
+		"Ability15"		"special_bonus_loki_2"
+		"Ability16"		"special_bonus_loki_3"
+		"Ability17"		"special_bonus_loki_5"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"23.1"
+		"AttributeStrengthGain"		"1.8"	
+		"AttributeBaseIntelligence"		"18"
+		"AttributeIntelligenceGain"		"1.4"	
+		"AttributeBaseAgility"		"34"
+		"AttributeAgilityGain"		"2.7"
+
+	}
+	
+	//==============================================
+	//HERO: Thor
+	//==============================================
+	
+		"npc_dota_hero_ursa"
+	{
+		"IsDisabled"		"0"
+		"Model"				"models/heroes/hero_thor/thor.vmdl"
+		"ModelScale"		"1"
+		"DisableWearables"	"1"
+		"VoiceFile"			""
+		"IsComics"			"1"
+		
+		"Ability1"		"thor_mjollnir"
+		"Ability2"		"thor_storm"
+		"Ability3"		"thor_lightning"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"thor_lightning_hammer"
+		"Ability10"		"special_bonus_thor_5"
+		"Ability11"		"special_bonus_thor_4"
+		"Ability12"		"special_bonus_thor_7"
+		"Ability13"		"special_bonus_thor_3"
+		"Ability14"		"special_bonus_thor_6"
+		"Ability15"		"special_bonus_thor_2"
+		"Ability16"		"special_bonus_thor_1"
+		"Ability17"		"special_bonus_thor_8"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+	}
+	//======================================
+	// Illidan
+	//======================================
+	"npc_dota_hero_antimage"
+	{
+		"IsDisabled"		"0"
+		"Model"				"models/heroes/antimage/base_illidan.vmdl" // OFF
+		"ModelScale"		"1.4"
+		"DisableWearables"	"1"
+		"VoiceFile"			""
+		"IsComics"			"1"
+
+		"Ability1"		""
+		"Ability2"		""
+		"Ability3"		""
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		""
+		
+		"Ability10"		"special_bonus_hp_125"
+		"Ability11"		"special_bonus_attack_damage_20"
+		"Ability12"		"special_bonus_guma_2"
+		"Ability13"		"special_bonus_unique_antimage"
+		"Ability14"		"special_bonus_guma_1"
+		"Ability15"		"special_bonus_all_stats_10"
+		"Ability16"		"special_bonus_incoming_15"
+		"Ability17"		"special_bonus_primary_stats_50"
+
+		"IsDisabled"	"4"
+		// Attributes
+		//-------------------------------------------------------------------------------------------------------------
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"	
+		"AttributeBaseStrength"		    "27"
+		"AttributeStrengthGain"		    "2.1"	
+		"AttributeBaseIntelligence"		"19"
+		"AttributeIntelligenceGain"		"1.8"	
+		"AttributeBaseAgility"		    "21"
+		"AttributeAgilityGain"		    "2"
+	}
+}

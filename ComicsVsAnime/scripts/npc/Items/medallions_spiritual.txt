@@ -1,0 +1,67 @@
+""
+	{
+	
+		"item_recipe_medallions_spiritual"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"21321"						
+			"Model"							"models/props_gameplay/recipe.mdl"
+			"AbilityTextureName"			"item_recipe"
+			"BaseClass"                     "item_datadriven"
+		
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"1200"	
+			"ItemShopTags"					"artifacts"
+			
+			// Recipe
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemRecipe"					"1"
+			"ItemResult"					"item_medallions_spiritual"
+			"ItemRequirements"
+			{
+				"01"						"item_mystic_staff"
+			}
+		}
+	
+		"item_medallions_spiritual"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"item_lua"
+			"AbilityTextureName" 			"custom/item_medallions_spiritual"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+			"ScriptFile"					"items/item_medallions_spiritual.lua"
+			// Stats
+			//-------------------------------------------------------------------------------------------------------------
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"4000"
+			"ItemShopTags"					"magic;amplify;magic crit;crit;magic"
+			"ItemQuality"					"legendary"
+			"ItemAliases"					"magic medallion"
+			"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{				
+				"03"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_amplify"			"35"
+				}				
+				"04"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_int"				"65"
+				}				
+				"05"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"block_spiritual"		"25"
+				}
+			}
+		}
+	}

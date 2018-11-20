@@ -1,0 +1,259 @@
+""
+	{
+	
+		"item_recipe_katanes_deadpool"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"19000"						
+			"Model"							"models/props_gameplay/recipe.mdl"
+			"AbilityTextureName"			"item_recipe"
+			"BaseClass"                     "item_datadriven"
+		
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"550"	
+			"ItemShopTags"					"artifacts"
+			
+			// Recipe
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemRecipe"					"1"
+			"ItemResult"					"item_katanes_deadpool"
+			"ItemRequirements"
+			{
+				"01"						"item_left_katana_deadpool;item_right_katana_deadpool"
+			}
+		}
+		
+		"item_recipe_left_katana_deadpool"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"19001"						
+			"Model"							"models/props_gameplay/recipe.mdl"
+			"AbilityTextureName"			"item_recipe"
+			"BaseClass"                     "item_datadriven"
+		
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"1100"	
+			"ItemShopTags"					"artifacts"
+			
+			// Recipe
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemRecipe"					"1"
+			"ItemResult"					"item_left_katana_deadpool"
+			"ItemRequirements"
+			{
+				"01"						"item_yasha"
+			}
+		}
+		
+		"item_recipe_right_katana_deadpool"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"19002"						
+			"Model"							"models/props_gameplay/recipe.mdl"
+			"AbilityTextureName"			"item_recipe"
+			"BaseClass"                     "item_datadriven"
+		
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"1400"	
+			"ItemShopTags"					"artifacts"
+			
+			// Recipe
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemRecipe"					"1"
+			"ItemResult"					"item_right_katana_deadpool"
+			"ItemRequirements"
+			{
+				"01"						"item_sange"
+			}
+		}
+	
+		"item_katanes_deadpool"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"item_lua"
+			"AbilityTextureName" 			"custom/item_katanes_deadpool"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+			"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+			"ScriptFile"					"items/item_katanes_deadpool.lua"
+			"AbilityUnitTargetTeam"     	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"AbilityUnitTargetType"     	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+
+			// Stats
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityCooldown"				"35"
+			"AbilitySharedCooldown"			"item_sange_yasha_1"
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"0"
+			"ItemShopTags"					"sange;yasha;sange yasha"
+			"ItemQuality"					"common"
+			"ItemAliases"					"sange and yasha"
+			"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
+			"AbilityManaCost"				"120"
+			"AbilityCastRange"				"250"
+
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_damage"					"230"
+					"CalculateSpellDamageTooltip"	"0"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_strength"				"40"
+					
+				}
+				"03"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_agility"					"35"
+				}
+				"04"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_attack_speed"			"16"
+				}
+				"05"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_damage_attack"			"5"
+				}
+				"06"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"duration"						"7"
+				}
+				"07"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"dur_active"					"3.0"
+				}
+			}
+		}
+		
+		"item_left_katana_deadpool"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"item_lua"
+			"AbilityTextureName" 			"custom/item_left_katana_deadpool"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+			"ScriptFile"					"items/item_katanes_deadpool.lua"
+
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"0"
+			"ItemShopTags"					"katanes;deadpool;katanes deadpool"
+			"ItemQuality"					"common"
+			"ItemAliases"					"left katanes"
+			"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"	
+
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_damage"					"100"
+					"CalculateSpellDamageTooltip"	"0"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_strength"				"10"
+					
+				}
+				"03"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_agility"					"25"
+				}
+				"04"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_attack_speed"			"10"
+				}
+				"05"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_damage_attack"			"4"
+				}
+				"06"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"duration"						"4"
+				}
+			}
+		}
+		
+		"item_right_katana_deadpool"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"item_lua"
+			"AbilityTextureName" 			"custom/item_right_katana_deadpool"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+			"ScriptFile"					"items/item_katanes_deadpool.lua"
+
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"0"
+			"ItemShopTags"					"sange;yasha;sange yasha"
+			"ItemQuality"					"common"
+			"ItemAliases"					"sange and yasha"
+			"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"	
+
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_damage"					"85"
+					"CalculateSpellDamageTooltip"	"0"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_strength"				"35"
+					
+				}
+				"03"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_agility"					"10"
+				}
+				"04"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_attack_speed"			"6"
+				}
+				"05"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_damage_attack"			"10"
+				}
+				"06"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"duration"						"3"
+				}
+			}
+		}
+	}

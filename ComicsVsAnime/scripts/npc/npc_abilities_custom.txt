@@ -1,0 +1,603 @@
+// Anime Heroes
+//#base "abilities/anime/megumin.txt" -- OFF
+#base "abilities/anime/naruto.txt"
+#base "abilities/anime/shinobu.txt"
+#base "abilities/anime/ulqiorra.txt"
+#base "abilities/anime/maka.txt"
+#base "abilities/anime/akame.txt"
+#base "abilities/anime/kurumi.txt"
+#base "abilities/anime/rem.txt"
+#base "abilities/anime/star.txt"
+#base "abilities/anime/ichigo.txt"
+#base "abilities/anime/sasuke.txt"
+
+// Comics heroes
+#base "abilities/comics/black_panther.txt"
+#base "abilities/comics/thanos.txt"
+#base "abilities/comics/venom.txt"
+#base "abilities/comics/strange.txt"
+#base "abilities/comics/hulk.txt"
+#base "abilities/comics/loki.txt"
+//#base "abilities/comics/antman.txt" -- OFF
+#base "abilities/comics/flash.txt"
+#base "abilities/comics/thor.txt"
+
+// Other
+#base "abilities/talent_custom_bonuses.txt"
+#base "abilities/test_skills.txt"
+#base "abilities/tower_ability.txt"
+//#base "abilities/bosses.txt"
+
+// Dota Heroes File
+"DOTAAbilities"
+{
+	"Version"		"1"
+
+	//=================================================================================================================
+	// Ability: Base 
+	// Note: This is loaded and overriden/added to by values in the specific ability chunks.
+	//=================================================================================================================
+	"ability_base"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"0"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NONE"
+		"OnCastbar"						"1"
+		"OnLearnbar"					"1"
+		"FightRecapLevel"				"0"
+	
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"0"
+		"AbilityCastRangeBuffer"		"250"
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityChannelTime"			"0.0 0.0 0.0 0.0"
+		"AbilityCooldown"				"0.0 0.0 0.0 0.0"
+		"AbilityDuration"				"0.0 0.0 0.0 0.0"
+		"AbilitySharedCooldown"			""
+		"AbilityDamage"					"0 0 0 0"
+		"AbilityManaCost"				"0 0 0 0"
+		"AbilityModifierSupportValue"	"1.0"	// for stats tracking.
+		"AbilityModifierSupportBonus"	"0"		// for stats tracking.
+		
+		// Item Info	
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemInitialCharges"			"0"
+		"ItemCombinable"				"1"
+		"ItemPermanent"					"1"
+		"ItemStackable"					"0"
+		"ItemRecipe"					"0"
+		"ItemDroppable"					"1"
+		"ItemPurchasable"				"1"
+		"ItemSellable"					"1"
+		"ItemRequiresCharges"			"0"
+		"ItemKillable"					"1"
+		"ItemDisassemblable"			"0"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemDeclaresPurchase"			"0"
+	}
+	
+	"check_talents"
+    {
+        "BaseClass"                 "ability_datadriven"
+        "MaxLevel"                  "1"
+		"AbilityBehavior"		    "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        "Modifiers"
+        {
+	        "talent_check"
+            {
+			    "Passive"		"1"
+			    "IsHidden"		"1"
+			    "ThinkInterval"	"0.1"
+			    "OnIntervalThink"
+			    {
+				   "RunScript"
+				   {
+					"ScriptFile"	"util/kv.lua"
+					"Function"		"talent_check"
+				   }
+			    }
+            }
+        }
+    }
+	
+
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_undefined"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"6285"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"0"
+			}
+		}
+	}
+//============================================================
+//CUSTOM
+//============================================================
+	"dota_ability_throw_coin"
+	{
+		"BaseClass"							"ability_datadriven"
+		"AbilityName"						"dota_ability_throw_coin"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityCastAnimation"				"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCastPoint"					"1.5"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"overboss.lua"
+				"Function"				"ThrowCoin"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_dota_ability_throw_coin"
+			{
+				"IsHidden"				"1"
+				"Passive"				"1"
+				
+				"States"
+				{
+					"MODIFIER_STATE_UNSELECTABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_OUT_OF_GAME"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+	
+	"dota_ability_throw_coin_long"
+	{
+		"BaseClass"							"ability_datadriven"
+		"AbilityName"						"dota_ability_throw_coin_long"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityCastAnimation"				"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityCastPoint"					"2.5"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"overboss.lua"
+				"Function"				"ThrowCoin"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_dota_ability_throw_coin"
+			{
+				"IsHidden"				"1"
+				"Passive"				"1"
+				
+				"States"
+				{
+					"MODIFIER_STATE_UNSELECTABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_OUT_OF_GAME"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+	
+	"dota_ability_celebrate"
+	{
+		"BaseClass"							"ability_datadriven"
+		"AbilityName"						"dota_ability_celebrate"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityCastAnimation"				"ACT_DOTA_CAST_ABILITY_3"
+
+		"Modifiers"
+		{
+			"modifier_dota_ability_celebrate"
+			{
+				"IsHidden"				"1"
+				"Passive"				"1"
+				
+				"States"
+				{
+					"MODIFIER_STATE_UNSELECTABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_OUT_OF_GAME"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+
+	"dota_ability_vision_revealer"
+	{
+		"BaseClass"          			    "ability_datadriven"
+		"AbilityName"           			"dota_ability_vision_revealer"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"Modifiers"
+		{
+			"modifier_dota_ability_vision_revealer"
+			{
+				"IsHidden"				"1"
+				"Passive"				"1"
+				
+				"States"
+				{
+					"MODIFIER_STATE_PROVIDES_VISION"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_UNSELECTABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_OUT_OF_GAME"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+
+	"dota_ability_xp_granter"
+	{
+		"BaseClass"          			    "ability_datadriven"
+		"AbilityName"           			"dota_ability_xp_granter"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"Modifiers"
+		{
+			"modifier_dota_ability_xp_granter"
+			{
+				"IsHidden"				"1"
+				"Passive"				"1"
+				
+				"Aura"					"modifier_get_xp"
+				"Aura_Radius"			"1000"
+				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+				"Aura_Types"			"DOTA_UNIT_TARGET_HERO"
+				"Aura_ApplyToCaster"	"0"
+				"Aura_Flags"    		"DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS"
+
+				"States"
+				{
+					"MODIFIER_STATE_UNSELECTABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_OUT_OF_GAME"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+
+			"modifier_get_xp"
+			{
+				"Passive"       "1"
+				"IsHidden"		"1"	
+				"EffectName"	""
+				"TextureName"	"custom_ability/custom_aura"
+				"ThinkInterval"	"0.8"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"util/kv.lua"
+						"Function"		"ring_gold"
+					}
+				}	
+			}
+		}
+	}
+
+	"dota_ability_xp_granter2"
+	{
+		"BaseClass"          			    "ability_datadriven"
+		"AbilityName"           			"dota_ability_xp_granter"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"Modifiers"
+		{
+			"modifier_dota_ability_xp_granter"
+			{
+				"IsHidden"				"1"
+				"Passive"				"1"
+				
+				"Aura"					"modifier_get_xp"
+				"Aura_Radius"			"1400"
+				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+				"Aura_Types"			"DOTA_UNIT_TARGET_HERO"
+				"Aura_ApplyToCaster"	"0"
+				"Aura_Flags"    		"DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS | DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
+
+				"States"
+				{
+					"MODIFIER_STATE_UNSELECTABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_OUT_OF_GAME"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+
+			"modifier_get_xp"
+			{
+				"Passive"       "1"
+				"IsHidden"		"1"	
+				"EffectName"	""
+				"TextureName"	"custom_ability/custom_aura"
+				"ThinkInterval"	"0.8"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"util/kv.lua"
+						"Function"		"ring_gold"
+					}
+				}
+			}
+		}
+	}
+
+	"dota_ability_xp_global"
+	{
+		"BaseClass"          			    "ability_datadriven"
+		"AbilityName"           			"dota_ability_xp_global"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"Modifiers"
+		{
+			"modifier_dota_ability_xp_global"
+			{
+				"IsHidden"				"1"
+				"Passive"				"1"
+				
+				"Aura"					"modifier_get_xp_global"
+				"Aura_Radius"			"8000"
+				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+				"Aura_Types"			"DOTA_UNIT_TARGET_HERO"
+				"Aura_ApplyToCaster"	"0"
+				"Aura_Flags"    		"DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS | DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
+
+				"States"
+				{
+					"MODIFIER_STATE_UNSELECTABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_OUT_OF_GAME"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+
+			"modifier_get_xp_global"
+			{
+				"Passive"           "1"
+				"IsHidden"			"1"
+				"EffectName"	    ""
+				"TextureName"	    "custom_ability/aura_mass"
+				"ThinkInterval"	"0.8"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"util/kv.lua"
+						"Function"		"global_gold"
+					}
+				}
+			}
+		}
+	}
+
+	"dota_ability_reveal_invis"
+    {
+           "BaseClass"							"ability_datadriven"
+           "AbilityName"						"dota_ability_reveal_invis"
+           "AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+           "Modifiers"
+           {
+                "modifier_dota_ability_reveal_invis"
+                {
+                     "IsHidden"					"1"
+                     "Passive"					"1"
+                     
+                     "Aura"						"modifier_invis_revealed"
+                     "Aura_Radius"				"350"
+                     "Aura_Teams"				"DOTA_UNIT_TARGET_TEAM_BOTH"
+                     "Aura_Types"				"DOTA_UNIT_TARGET_ALL"
+                     "Aura_Flags"				"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
+
+                     "States"
+                     {
+                           "MODIFIER_STATE_UNSELECTABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+                           "MODIFIER_STATE_NO_HEALTH_BAR"		"MODIFIER_STATE_VALUE_ENABLED"
+                           "MODIFIER_STATE_INVULNERABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+                           "MODIFIER_STATE_OUT_OF_GAME"	        "MODIFIER_STATE_VALUE_ENABLED"
+                     }
+                }
+
+                "modifier_invis_revealed"
+                {
+                     "Passive"					"1"
+                     "TextureName"				"item_gem"
+                     "Priority"					"MODIFIER_PRIORITY_HIGH"
+                     "States"
+                     {
+                           "MODIFIER_STATE_INVISIBLE"			"MODIFIER_STATE_VALUE_DISABLED"
+                     }
+                }
+           }
+    }
+
+	/=================================================================================================================
+	// Ability: Treasure Courier
+	//=================================================================================================================
+	"dota_ability_treasure_courier"
+	{
+		"BaseClass"          			    "ability_datadriven"
+		"AbilityName"           			"dota_ability_health_granter"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"Modifiers"
+		{
+			"modifier_dota_ability_treasure_courier"
+			{
+				"IsHidden"				"1"
+				"Passive"				"1"
+				
+				"Aura"					""
+				"Aura_Radius"			"600"
+				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+				"Aura_Types"			"DOTA_UNIT_TARGET_HERO"
+				"Aura_ApplyToCaster"	"0"
+
+				"States"
+				{
+					"MODIFIER_STATE_UNSELECTABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_ATTACK_IMMUNE"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_MAGIC_IMMUNE"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_OUT_OF_GAME"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Dummy
+	//=================================================================================================================
+	"dota_ability_dummy"
+	{
+		"BaseClass"          			    "ability_datadriven"
+		"AbilityName"           			"dota_ability_dummy"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"Modifiers"
+		{
+			"modifier_dota_ability_dummy"
+			{
+				"IsHidden"				"1"
+				"Passive"				"1"
+				
+				"States"
+				{
+					//"MODIFIER_STATE_INVULNERABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_UNSELECTABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NOT_ON_MINIMAP"		"MODIFIER_STATE_VALUE_ENABLED"
+					//"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_ATTACK_IMMUNE"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_MAGIC_IMMUNE"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}	
+	//=================================================================================================================
+	// Ability: Traps
+	//=================================================================================================================
+	"trap_unselectable"
+  	{
+	    "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	    
+	    "BaseClass"             "ability_datadriven"
+	    
+	    "Modifiers"
+	    {
+			"modifier_unselectable"
+			{
+				"Passive" "1"
+				"States"
+				{
+					"MODIFIER_STATE_UNSELECTABLE"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NOT_ON_MINIMAP"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_PROVIDES_VISION"		"MODIFIER_STATE_VALUE_DISABLED"
+					"MODIFIER_STATE_ROOTED"					"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_DISARMED"				"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_LOW_ATTACK_PRIORITY"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_FLYING"					"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_BLOCK_DISABLED"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_OUT_OF_GAME"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_BLIND"					"MODIFIER_STATE_VALUE_ENABLED"
+		        }
+	      	}
+	    }
+	}
+
+	"custom_point_dummy" 
+	{
+		"BaseClass" "ability_datadriven"
+
+		"MaxLevel" "1"
+		"AbilityBehavior"   "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"Modifiers"
+		{ 
+			"custom_vision_dummy_modifier"
+			{
+				"Passive"   "1"
+				"IsHidden"  "1"
+				"States"
+				{
+					"MODIFIER_STATE_NO_HEALTH_BAR" 		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_UNSELECTABLE" 		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NOT_ON_MINIMAP" 	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION" 	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_ATTACK_IMMUNE" 		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_MAGIC_IMMUNE" 		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_TEAM_SELECT" 	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_TEAM_MOVE_TO" 	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+	"comics_vs_anime_rune"
+	{
+		"AbilityBehavior"		 	"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"BaseClass"					"ability_datadriven"
+		"MaxLevel"					"1"
+
+		"OnCreated"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"util/kv.lua"
+				"Function"		"SetMaxLevel"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_custom_rune"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"States"
+				{
+					"MODIFIER_STATE_NO_HEALTH_BAR"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_MAGIC_IMMUNE"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_LOW_ATTACK_PRIORITY"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL" "1"
+					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL" "1"
+					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PURE" "1"
+					"MODIFIER_PROPERTY_MIN_HEALTH" "1"
+				}
+			}
+		}
+	}
+}

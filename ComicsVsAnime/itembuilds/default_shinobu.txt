@@ -1,0 +1,31 @@
+"itembuilds"
+{
+	"author"		"HappyFeedFriends"
+	"hero"			"npc_dota_hero_shinobu"
+	"Title"			"Custom hero shinobu"
+	
+		"items"
+	{
+		"#DOTA_Item_Build_Starting_Items"
+		{
+
+			"item"		""
+		}
+		"#DOTA_Item_Build_Core_Items"
+		{
+			"item"		"item_Desolator_2"
+			"item"		"item_Desolator_3"
+			"item"		"item_butterfly_2"
+			"item"		"item_butterfly_3"
+		}
+		"#DOTA_Item_Build_Late_Items"
+		{
+			"item"		"item_courass_titan"
+			"item"		"item_blade_mail2"
+			"item"		"item_aghanim2"
+			"item"		"item_abbysal_datadriven_custom"
+			"item"      "item_vladimir_2"
+			"item"		"item_mkb"
+		}
+	}
+}

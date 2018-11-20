@@ -1,0 +1,455 @@
+""
+{
+
+	"maka_soul"
+	{
+			
+		"BaseClass"                 "ability_datadriven"
+		"AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityUnitTargetTeam"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"		"DOTA_UNIT_TARGET_HERO"
+		"AbilityTextureName"        "custom_ability/maka_soul"
+		"AbilityCastRange"			"1400"
+		"AbilityCooldown"			"30 25 20 20"
+		"AbilityManaCost"			"50 50 50 40"
+		"AbilitySpecial"
+		{
+		   "01"
+		    {
+		      "var_type"   "FIELD_INTEGER"
+			  "soul_creep"          "1"
+			}
+			"02"
+		    {
+		      "var_type"   			"FIELD_INTEGER"
+			  "soul_hero"          		"6"
+			  "LinkedSpecialBonus"	"special_bonus_maka_6"
+			}
+			"03"
+			{
+		      "var_type"   "FIELD_INTEGER"
+			  "radius"          	"1400"
+			}
+			"04"
+			{
+		      "var_type"   "FIELD_INTEGER"
+			  "duration"          	"12"
+			}
+	    }
+		"OnSpellStart"
+		{
+			"RunScript"   
+		    {
+		        "ScriptFile"    "heroes/maka/maka_soul.lua"
+				"Function"     	"maka_soul_activate"
+			}
+		}
+			
+		"Modifiers"
+		{
+		    "modifier_maka_soul_passive"
+			{
+			   "Passive"       "1"
+			   "IsHidden"      "1"
+			   "IsPurgable"    "0"
+			   
+			   "OnKill"
+			    {
+			       "RunScript"   
+				    {
+				        "ScriptFile"    "heroes/maka/maka_soul.lua"
+						"Function"     	"maka_soul"
+				    }
+				}
+			}
+		
+			"modifier_maka_soul"
+			{
+			    "Passive"            "0"
+				"IsBuff"             "1"
+				"Attributes"		 "MODIFIER_ATTRIBUTE_PERMANENT"
+				"IsPurgable"         "0"
+			}
+		}
+	}
+	
+	"maka_black_blood"
+	{		
+		"BaseClass"                 "ability_lua"
+		"ScriptFile"				"heroes/maka/maka_black_blood.lua"
+		"AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"        "custom_ability/maka_black_blood"
+		"AbilityCooldown"			"20"
+		"AbilityManaCost"			"1"
+		"AbilitySpecial"
+		{
+		   "01"
+		    {
+		      "var_type"   "FIELD_INTEGER"
+			  "mana_cost"          "20"
+			}
+			"01"
+		    {
+		      "var_type"   "FIELD_INTEGER"
+			  "mana_cost_soul"          "3"
+			}
+			"02"
+			{
+		      "var_type"   "FIELD_INTEGER"
+			  "duration"          	"8"
+			  "LinkedSpecialBonus" "special_bonus_maka_3"
+			}
+			"03"
+			{
+		      "var_type"   "FIELD_INTEGER"
+			  "armor_bonus"         "20 24 27 30"
+			}
+			"04"
+			{
+		      "var_type"   "FIELD_INTEGER"
+			  "soul_cast"          "5"
+			}	
+	    }
+	}
+	
+	"maka_anti_demon"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"	   
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"			"custom_ability/maka_anti_demon"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"650 700 900"
+		"AbilityCastPoint"				"0.1"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"60 45 30"
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"320"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"650 800 1200"
+				"LinkedSpecialBonus"	"special_bonus_maka_7"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"chance"				"25"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_burn"				"35"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_soul"			"5"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"150"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"start_radius"			"125"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"end_radius"			"150"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"650 700 900"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"1050"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"vision"				"250"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/maka/maka_anti_demon_fire.lua"
+				"Function"		"maka_cast_spell"
+			}
+		}
+		
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit" "1"
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/maka/maka_anti_demon_fire.lua"
+				"Function"		"maka_spell_end"
+			}
+		}
+	}
+	
+	"maka_weapon_gene"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"	   
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"			"custom_ability/maka_weapon_gene"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"35"
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"150"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"reflect_dmg"			"50 75 100 125"
+				"LinkedSpecialBonus"	"special_bonus_maka_5"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"absorb_damage"			"30"
+				"LinkedSpecialBonus"	"special_bonus_maka_2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"10"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"chance"				"25"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+		    "ApplyModifier"
+		    {
+		        "ModifierName"  "modifier_maka_reflect_activate"
+		        "Target"        "CASTER"
+				"Duration"		"%duration"
+		    }
+		}
+		"Modifiers"
+		{
+			"modifier_maka_reflect_passive"
+			{
+				"IsBuff"			"1"
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"OnTakeDamage"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/maka/maka_reflect.lua"
+						"Function"		"maka_reflect_passive"
+						"DamageTaken"	"%attack_damage"
+					}
+				}
+			}
+			"modifier_maka_reflect_activate"
+			{
+				"IsBuff"			"1"
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"EffectName"		"particles/moka/comics_vs_anime_moka_effect_2.vpcf"
+				"OnTakeDamage"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/maka/maka_reflect.lua"
+						"Function"		"maka_reflect_activate"
+						"DamageTaken"	"%attack_damage"
+					}
+				}
+			}
+		}
+	}
+	
+	"special_bonus_maka_1"
+	{
+		// General
+		//----------------------------------------------------------------------------------
+		"BaseClass"                     "special_bonus_undefined"
+		"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"                      "1"
+
+		// Special
+		//----------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"                  "FIELD_FLOAT"
+				"value"                     "-5"
+			}
+		}
+	}
+	
+	"special_bonus_maka_2"
+	{
+		// General
+		//----------------------------------------------------------------------------------
+		"BaseClass"                     "special_bonus_undefined"
+		"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"                      "1"
+
+		// Special
+		//----------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"                  "FIELD_FLOAT"
+				"value"                     "10"
+			}
+		}
+	}
+	"special_bonus_maka_3"
+	{
+		// General
+		//----------------------------------------------------------------------------------
+		"BaseClass"                     "special_bonus_undefined"
+		"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"                      "1"
+
+		// Special
+		//----------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"                  "FIELD_FLOAT"
+				"value"                     "4"
+			}
+		}
+	}
+	"special_bonus_maka_4"
+	{
+		// General
+		//----------------------------------------------------------------------------------
+		"BaseClass"                     "special_bonus_undefined"
+		"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"                      "1"
+
+		// Special
+		//----------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"                  "FIELD_FLOAT"
+				"value"                     "8"
+			}
+		}
+	}	
+	"special_bonus_maka_5"
+	{
+		// General
+		//----------------------------------------------------------------------------------
+		"BaseClass"                     "special_bonus_undefined"
+		"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"                      "1"
+
+		// Special
+		//----------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"                  "FIELD_FLOAT"
+				"value"                     "15"
+			}
+		}
+	}	
+	"special_bonus_maka_6"
+	{
+		// General
+		//----------------------------------------------------------------------------------
+		"BaseClass"                     "special_bonus_undefined"
+		"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"                      "1"
+
+		// Special
+		//----------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"                  "FIELD_FLOAT"
+				"value"                     "3"
+			}
+		}
+	}	
+	"special_bonus_maka_7"
+	{
+		// General
+		//----------------------------------------------------------------------------------
+		"BaseClass"                     "special_bonus_undefined"
+		"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"                      "1"
+
+		// Special
+		//----------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"                  "FIELD_FLOAT"
+				"value"                     "800"
+			}
+		}
+	}	
+}

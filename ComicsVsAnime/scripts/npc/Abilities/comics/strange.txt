@@ -1,0 +1,397 @@
+""
+	{
+		"strange_lightning"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"ability_datadriven"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+			"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+			"FightRecapLevel"				"1"
+			"AbilityTextureName"			"custom_ability/strange_lightning"
+			
+			// Casting
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityCastRange"				"800"
+			"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+			
+			// Time		
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityCooldown"				"20 15 14 12"
+
+			// Cost
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityManaCost"				"100"
+
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"					"FIELD_INTEGER"
+					"damage"					"250 330 450 500"
+					"LinkedSpecialBonus"		"special_bonus_strange_4"
+				}
+				"02"
+				{
+					"var_type"					"FIELD_FLOAT"
+					"dur_stun"					"0.4 0.6 0.8 1"
+				}
+				"03"
+				{
+					"var_type"					"FIELD_FLOAT"
+					"water_mult"				"2 2 2 2.3"
+				}
+			}
+			"OnSpellStart"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/strange/strange_lightning.lua"
+					"Function"		"strange_lightning"
+				}
+			}
+		}
+		
+		"strange_shield"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"ability_datadriven"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+			"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+			"FightRecapLevel"				"1"
+			"AbilityTextureName"			"custom_ability/strange_shield"
+			
+			// Casting
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityCastRange"				"250"
+			"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+			
+			// Time		
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityCooldown"				"25"
+
+			// Cost
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityManaCost"				"180"
+
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"					"FIELD_INTEGER"
+					"block_damage"				"300 450 650 800"
+					"LinkedSpecialBonus"		"special_bonus_strange_8"
+				}
+				"02"
+				{
+					"var_type"					"FIELD_FLOAT"
+					"damage"					"15 30 35 45"
+				}
+				"03"
+				{
+					"var_type"					"FIELD_FLOAT"
+					"radius"					"250"
+				}
+				"04"
+				{
+					"var_type"					"FIELD_FLOAT"
+					"interval"					"0.35"
+				}
+				"05"
+				{
+					"var_type"					"FIELD_FLOAT"
+					"duration"					"10"
+				}
+			}
+			"OnSpellStart"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/strange/strange_shield.lua"
+					"Function"		"strange_shield"
+				}
+			}
+		}
+		
+		"strange_blink"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"ability_datadriven"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+			"AbilityTextureName"			"custom_ability/strange_blink"
+			"AbilityCooldown"				"12"
+			"AbilityManaCost"				"55"
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"blink_range"			"650 800 1120 1300"
+				}
+			}
+
+			"OnSpellStart"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/strange/strange_blink.lua"
+					"Function"		"strange_blink"
+					"Target"		"POINT"
+				}
+			}
+		}
+		
+		"strange_illusion"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"ability_datadriven"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+			"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+			"FightRecapLevel"				"2"
+			"AbilityTextureName"			"custom_ability/strange_illusion"			
+			// Casting
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityCastPoint"				"0.4 0.4 0.4"
+
+			// Time		
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityCooldown"				"140"
+
+			// Cost
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityManaCost"				"125 200 275"
+
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"					"FIELD_INTEGER"
+					"images_count"				"3 3 4"
+					"LinkedSpecialBonus"		"special_bonus_strange_7"
+				}
+				"02"
+				{
+					"var_type"					"FIELD_FLOAT"
+					"illusion_duration"			"12"
+				}	
+				"03"
+				{
+					"var_type"					"FIELD_INTEGER"
+					"outgoing_damage"			"100 100 125"
+					"LinkedSpecialBonus"		"special_bonus_strange_5"
+				}	
+				"04"
+				{
+					"var_type"					"FIELD_INTEGER"
+					"incoming_damage"			"500"
+					"LinkedSpecialBonus"		"special_bonus_strange_3"
+				}			
+				"05"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"vision_radius"			"400"
+				}			
+			}
+
+			"OnSpellStart"
+			{
+
+				"RunScript"
+				{
+					"ScriptFile"    "heroes/strange/strange_illusion.lua"
+					"Function"      "strange_illusion"
+				}		
+			}
+		}
+		
+		"special_bonus_strange_1"
+		{
+			// General
+			//----------------------------------------------------------------------------------
+			"BaseClass"                     "special_bonus_undefined"
+			"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MaxLevel"                      "1"
+
+			// Special
+			//----------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"                  "FIELD_FLOAT"
+					"value"                     "4"
+				}
+				"02"
+				{
+					"var_type"                  "FIELD_FLOAT"
+					"radius"                     "450"
+				}
+			}
+		}
+		
+		"special_bonus_strange_2"
+		{
+			// General
+			//----------------------------------------------------------------------------------
+			"BaseClass"                     "special_bonus_undefined"
+			"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MaxLevel"                      "1"
+
+			// Special
+			//----------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"                  "FIELD_FLOAT"
+					"value"                     "45"
+				}
+			}
+		}
+		
+		"special_bonus_strange_3"
+		{
+			// General
+			//----------------------------------------------------------------------------------
+			"BaseClass"                     "special_bonus_undefined"
+			"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MaxLevel"                      "1"
+
+			// Special
+			//----------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"                  "FIELD_FLOAT"
+					"value"                     "-100"
+				}
+			}
+		}		
+		"special_bonus_strange_4"
+		{
+			// General
+			//----------------------------------------------------------------------------------
+			"BaseClass"                     "special_bonus_undefined"
+			"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MaxLevel"                      "1"
+
+			// Special
+			//----------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"                  "FIELD_FLOAT"
+					"value"                     "100"
+				}
+			}
+		}		
+		"special_bonus_strange_5"
+		{
+			// General
+			//----------------------------------------------------------------------------------
+			"BaseClass"                     "special_bonus_undefined"
+			"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MaxLevel"                      "1"
+
+			// Special
+			//----------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"                  "FIELD_FLOAT"
+					"value"                     "10"
+				}
+			}
+		}		
+		"special_bonus_strange_6"
+		{
+			// General
+			//----------------------------------------------------------------------------------
+			"BaseClass"                     "special_bonus_undefined"
+			"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MaxLevel"                      "1"
+
+			// Special
+			//----------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"                  "FIELD_FLOAT"
+					"value"                     "125"
+				}				
+				"02"
+				{
+					"var_type"                  "FIELD_FLOAT"
+					"radius"                     "450"
+				}
+			}
+		}		
+		"special_bonus_strange_7"
+		{
+			// General
+			//----------------------------------------------------------------------------------
+			"BaseClass"                     "special_bonus_undefined"
+			"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MaxLevel"                      "1"
+
+			// Special
+			//----------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"                  "FIELD_FLOAT"
+					"value"                     "1"
+				}
+			}
+		}		
+		"special_bonus_strange_8"
+		{
+			// General
+			//----------------------------------------------------------------------------------
+			"BaseClass"                     "special_bonus_undefined"
+			"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MaxLevel"                      "1"
+
+			// Special
+			//----------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"                  "FIELD_FLOAT"
+					"value"                     "350"
+				}				
+			}
+		}
+	}

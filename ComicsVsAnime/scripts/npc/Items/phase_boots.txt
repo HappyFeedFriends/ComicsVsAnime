@@ -1,0 +1,353 @@
+""
+	{
+		"item_recipe_phase_boots_1"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"12323"						
+			"Model"							"models/props_gameplay/recipe.mdl"
+			"AbilityTextureName"			"item_recipe"
+			"BaseClass"                     "item_datadriven"
+		
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"0"	
+			"ItemShopTags"					"artifacts"
+			
+			// Recipe
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemRecipe"					"1"
+			"ItemResult"					"item_phase_boots_1"
+			"ItemRequirements"
+			{
+				"01"						"item_phase_boots;item_boots"
+			}
+		}
+		
+		"item_recipe_phase_boots_2"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"12322"						
+			"Model"							"models/props_gameplay/recipe.mdl"
+			"AbilityTextureName"			"item_recipe"
+			"BaseClass"                     "item_datadriven"
+		
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"1600"	
+			"ItemShopTags"					"artifacts"
+			
+			// Recipe
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemRecipe"					"1"
+			"ItemResult"					"item_phase_boots_2"
+			"ItemRequirements"
+			{
+				"01"						"item_phase_boots_1"
+			}
+		}
+		
+		"item_recipe_phase_boots_3"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"12321"						
+			"Model"							"models/props_gameplay/recipe.mdl"
+			"AbilityTextureName"			"item_recipe"
+			"BaseClass"                     "item_datadriven"
+		
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"2100"	
+			"ItemShopTags"					"artifacts"
+			
+			// Recipe
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemRecipe"					"1"
+			"ItemResult"					"item_phase_boots_3"
+			"ItemRequirements"
+			{
+				"01"						"item_phase_boots_2"
+			}
+		}
+		
+		"item_recipe_phase_boots_4"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"12320"						
+			"Model"							"models/props_gameplay/recipe.mdl"
+			"AbilityTextureName"			"item_recipe"
+			"BaseClass"                     "item_datadriven"
+		
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"1500"	
+			"ItemShopTags"					"artifacts"
+			
+			// Recipe
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemRecipe"					"1"
+			"ItemResult"					"item_phase_boots_4"
+			"ItemRequirements"
+			{
+				"01"						"item_phase_boots_3"
+			}
+		}
+	
+		"item_phase_boots_1"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"item_lua"
+			"AbilityTextureName" 			"custom/item_phase_boots_1"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+			"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+			"ScriptFile"					"items/item_phase_boots.lua"
+
+			// Stats
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityCooldown"				"20"
+			"AbilitySharedCooldown"			"item_phase_boots_1"
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"4000"
+			"ItemShopTags"					"damage;move_speed;hard_to_tag"
+			"ItemQuality"					"common"
+			"ItemAliases"					"phase boots"
+			"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
+			"MaxUpgradeLevel"				"3"
+			"ItemBaseLevel"					"1"
+			"AbilityManaCost"				"120"
+
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_movement_speed"			"55 70 90"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_damage"					"65 85 110"
+					"CalculateSpellDamageTooltip"	"0"
+				}
+				"03"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"proc_spd"					"20 25 30"
+				}
+				"04"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"phase_duration"			"6"
+				}
+				"05"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"ms_limit"					"600 700 700"
+				}
+				"06"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_strength"		"25 35 45"
+				}
+			}
+		}
+		
+		"item_phase_boots_2"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"item_lua"
+			"AbilityTextureName" 			"custom/item_phase_boots_1"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+			"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+			"ScriptFile"					"items/item_phase_boots.lua"
+
+			// Stats
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityCooldown"				"16"
+			"AbilitySharedCooldown"			"item_phase_boots_1"
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"4000"
+			"ItemShopTags"					"damage;move_speed;hard_to_tag"
+			"ItemQuality"					"common"
+			"ItemAliases"					"phase boots"
+			"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
+			"MaxUpgradeLevel"				"3"
+			"ItemBaseLevel"					"2"		
+			"AbilityManaCost"				"120"	
+
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_movement_speed"			"55 70 90"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_damage"					"65 85 110"
+					"CalculateSpellDamageTooltip"	"0"
+				}
+				"03"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"proc_spd"					"20 25 30"
+				}
+				"04"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"phase_duration"			"6"
+				}
+				"05"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"ms_limit"					"600 700 700"
+				}
+				"06"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_strength"		"25 35 45"
+				}
+			}
+		}
+		
+		"item_phase_boots_3"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"item_lua"
+			"AbilityTextureName" 			"custom/item_phase_boots_1"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+			"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+			"ScriptFile"					"items/item_phase_boots.lua"
+
+			// Stats
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityCooldown"				"12"
+			"AbilitySharedCooldown"			"item_phase_boots_1"
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"4000"
+			"ItemShopTags"					"damage;move_speed;hard_to_tag"
+			"ItemQuality"					"common"
+			"ItemAliases"					"phase boots"
+			"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
+			"MaxUpgradeLevel"				"3"
+			"ItemBaseLevel"					"3"
+			"AbilityManaCost"				"120"	
+
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_movement_speed"			"55 70 90"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_damage"					"65 85 110"
+					"CalculateSpellDamageTooltip"	"0"
+				}
+				"03"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"proc_spd"					"20 25 30"
+				}
+				"04"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"phase_duration"			"6"
+				}
+				"05"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"ms_limit"					"600 700 700"
+				}
+				"06"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_strength"		"25 35 45"
+				}
+			}
+		}
+		
+		"item_phase_boots_4"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"item_lua"
+			"AbilityTextureName" 			"custom/item_phase_boots_4"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+			"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+			"ScriptFile"					"items/item_phase_boots.lua"
+
+			// Stats
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityCooldown"				"25"
+			"AbilitySharedCooldown"			"item_phase_boots_4"
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"4000"
+			"ItemShopTags"					"damage;move_speed;hard_to_tag"
+			"ItemQuality"					"common"
+			"ItemAliases"					"phase boots"
+			"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
+			"AbilityManaCost"				"120"	
+
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_movement_speed"			"110"
+				}
+
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_damage"					"160"
+					"CalculateSpellDamageTooltip"	"0"
+				}
+
+				"03"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"proc_spd"						"45"
+				}
+
+				"04"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"phase_duration"				"8"
+				}
+
+				"05"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"ms_limit"						"750"
+				}
+
+				"06"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_strength"				"60"
+				}
+			}
+		}
+	}

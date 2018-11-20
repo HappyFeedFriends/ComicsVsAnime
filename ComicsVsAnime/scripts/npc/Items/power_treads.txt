@@ -1,0 +1,136 @@
+""
+	{
+	
+		"item_recipe_boots_agility_1"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"12421"						
+			"Model"							"models/props_gameplay/recipe.mdl"
+			"AbilityTextureName"			"item_recipe"
+			"BaseClass"                     "item_datadriven"
+		
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"0"	
+			"ItemShopTags"					"artifacts"
+			
+			// Recipe
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemRecipe"					"1"
+			"ItemResult"					"item_boots_agility_1"
+			"ItemRequirements"
+			{
+				"01"						"item_power_treads;item_power_treads"
+			}
+		}
+		
+		"item_boots_strength_1"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"item_lua"
+			"AbilityTextureName" 			"custom/item_boots_strength_1"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+			"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+			"ScriptFile"					"items/item_boots.lua"
+
+			"ItemCost"						"4000"
+			"ItemShopTags"					"boots;str;boots strength;strength"
+			"ItemQuality"					"legendary"
+			"ItemAliases"					"boots of strength"
+			"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_str"				"35"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_ms"				"80"
+				}
+				"03"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_damage"			"70"
+				}
+			}
+		}
+		"item_boots_agility_1"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"item_lua"
+			"AbilityTextureName" 			"custom/item_boots_agility_1"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+			"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+			"ScriptFile"					"items/item_boots.lua"
+
+			"ItemCost"						"4000"
+			"ItemShopTags"					"boots;str;boots agility;agility"
+			"ItemQuality"					"legendary"
+			"ItemAliases"					"boots of agility"
+			"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_agi"				"35"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_ms"				"80"
+				}
+				"03"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_damage"			"70"
+				}
+			}
+		}
+		"item_boots_intellegence_1"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"item_lua"
+			"AbilityTextureName" 			"custom/item_boots_intellegence_1"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+			"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+			"ScriptFile"					"items/item_boots.lua"
+
+			"ItemCost"						"4000"
+			"ItemShopTags"					"boots;int;boots intellect;intellect"
+			"ItemQuality"					"legendary"
+			"ItemAliases"					"boots of intellegence"
+			"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_int"				"35"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_ms"				"80"
+				}
+				"03"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_damage"			"70"
+				}
+			}
+		}
+	}

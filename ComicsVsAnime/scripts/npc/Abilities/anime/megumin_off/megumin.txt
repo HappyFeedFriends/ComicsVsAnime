@@ -1,0 +1,939 @@
+""
+{
+
+	"megumin_fireballs"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     "ability_lua"
+		"ScriptFile"                    "heroes/megumin/megumin_fireballs.lua"
+		"AbilityTextureName"            "custom_ability/megumin_fireballs"
+		"AbilityType"                   "DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"   
+		"SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"          "SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"               "2"
+		"AbilityManaCost"				"500 1000 1500"
+		"AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_4"
+
+		// Time     
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"               "100"
+		"AbilityChannelTime"            "8.0"
+		"AbilityCastPoint"              "0.1"
+			 
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"                  "FIELD_INTEGER"
+				"effect_radius"             "2000"
+			}
+			"02"
+			{
+				"var_type"                  "FIELD_FLOAT"
+				"delay"                     "1.0"
+			}
+			"03"
+			{
+				"var_type"                  "FIELD_INTEGER"
+				"radius"                    "500"
+			}
+			"04"
+			{
+				"var_type"                  "FIELD_INTEGER"
+				"blast_damage"              "300 600 900"
+			}
+			"05"
+			{
+				"var_type"                  "FIELD_FLOAT"
+				"channel_duration"          "8.0"
+			}
+			"06"
+			{
+				"var_type"                  "FIELD_FLOAT"
+				"interval"                  "0.06"
+			}
+			"07"
+			{
+				"var_type"                  "FIELD_FLOAT"
+				"dur_stunned"            	"2.5"
+			}
+		}
+	}
+
+	"megumin_fire"
+	{
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_lina/lina_spell_dragon_slave.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_lina.vsndevts"
+		}
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"custom_ability/megumin_fire"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityProcsMagicStick"		"True"
+		"FightRecapLevel"				"1"
+		"AbilityCooldown"				"26 24 22 20"
+		"AbilityManaCost"				"120 140 160 180"
+		"AbilityCastRange"				"1050"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"fire_damage"				"120 180 220 250"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"fire_damage_small"			"30 45 55 62"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"distance"					"1200"
+			}
+		}
+		
+		"OnUpgrade"
+		{
+			"LevelUpAbility"
+			{
+				"Target" 		"CASTER"
+				"AbilityName"	"megumin_earth"
+			}
+			"LevelUpAbility"
+			{
+				"Target" 		"CASTER"
+				"AbilityName"	"megumin_air"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"	"Hero_Lina.DragonSlave"
+				"Target" 		"CASTER"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/megumin/megumin_fire.lua"
+				"Function"		"Launch_Flames"
+				"Target"		"POINT"
+				"particle"		"particles/units/heroes/hero_lina/lina_spell_dragon_slave.vpcf"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"0"
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/megumin/megumin_fire.lua"
+				"Function"		"OnProjectileHit"
+				"impact_damage"	"%fire_damage"
+				"particle"		"particles/units/heroes/hero_lina/lina_spell_dragon_slave.vpcf"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_megumin_fire"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsPurgable"		"0"
+				"IsDebuff"			"1"
+			}
+			"modifier_megumin_fire_2"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsPurgable"		"0"
+				"IsDebuff"			"1"
+			}
+		}
+	}
+	
+	//=================================================================================================================
+	// megumin_air
+	//=================================================================================================================
+	"megumin_air"
+	{
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_invoker/invoker_tornado.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
+		}
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"custom_ability/megumin_air"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET  | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityProcsMagicStick"		"True"
+		"FightRecapLevel"				"1"
+		"AbilityCooldown"				"26 24 22 20"
+		"AbilityManaCost"				"120 140 160 180"
+		"AbilityCastRange"				"2000"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		"RequiredLevel"					"3"
+		"LevelsBetweenUpgrades"			"0"
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"air_damage"				"100 125 160 180"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"air_duration"				"0.5 1.0 1.5 2.0"
+			}
+		}
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"	"Hero_Invoker.Tornado.Cast"
+				"Target" 		"CASTER"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/megumin/megumin_air.lua"
+				"Function"		"Launch_Tornadoes"
+				"Target"		"POINT"
+				"particle"  	"particles/units/heroes/hero_invoker/invoker_tornado.vpcf"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"0"
+			"Knockback"
+			{
+				"Target"            "TARGET"
+				"Center" 	        "CASTER"
+				"Distance"	        "0"
+				"Duration"	        "%air_duration"
+				"Height"	        "500"
+				"IsFixedDistance"	"1"
+				"ShouldStun"        "1"
+			}
+			"DelayedAction"
+			{
+				"Delay"     "%air_duration"
+				"Action"    
+				{
+					"Damage"
+					{
+						"Target"		"TARGET"
+						"Type"			"DAMAGE_TYPE_MAGICAL"
+						"Damage"		"%air_damage"
+					}
+				}
+			}
+		}
+	}
+	
+	//=================================================================================================================
+	// megumin_earth
+	//=================================================================================================================
+	"megumin_earth"
+	{
+		"precache"
+		{
+			"particle"  "particles/econ/items/earthshaker/egteam_set/hero_earthshaker_egset/earthshaker_echoslam_start_fallback_low_egset.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_leshrac.vsndevts"
+		}
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"custom_ability/megumin_earth"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_AOE  | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityProcsMagicStick"		"True"
+		"FightRecapLevel"				"1"
+		"AbilityCooldown"				"26 24 22 20"
+		"AbilityManaCost"				"120 140 160 180"
+		"AbilityCastRange"				"1050"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		"AOERadius"						"%radius"
+		"RequiredLevel"					"30"
+		"LevelsBetweenUpgrades"			"30"
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"earth_damage"				"200 240 260 300"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"350 400 550 600"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"stun_duration_tooltip"		"1.8 2.2 2.6 3.0"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"knockback"					"450 500 550 600"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"stun_duration"				"1.4 1.8 2.2 2.6"
+			}
+		}
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"	"Hero_Leshrac.Split_Earth"
+				"Target" 		"CASTER"
+			}
+			"CreateThinker"
+			{
+				"ModifierName"	"modifier_megumin_earth"
+				"Target" 		"POINT"
+			}
+			"CreateThinker"
+			{
+				"ModifierName"	"modifier_megumin_earth_anim"
+				"Target" 		"POINT"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/megumin/megumin_earth.lua"
+				"Function"		"Swap_Abilities"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_megumin_earth"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsPurgable"		"0"
+				"IsBuff"			"1"
+				"IsDebuff"			"0"
+				"IsStunDebuff"		"0"
+				"OnCreated"
+				{
+					"ActOnTargets"
+					{
+						"Target"
+						{
+							"Center"  	"TARGET"
+							"Radius" 	"%radius"
+							"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+							"Flags"     "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+						}
+						"Action"    
+						{
+							"Knockback"
+							{
+								"Target"            "TARGET"
+								"Center" 	        "POINT"
+								"Distance"	        "%knockback"
+								"Duration"	        "0.4"
+								"Height"	        "200"
+								"IsFixedDistance"	"1"
+								"ShouldStun"        "1"	
+							}
+							"DelayedAction"
+							{
+								"Delay"     "0.4"
+								"Action"    
+								{
+									"Stun"
+									{
+										"Duration"   "%stun_duration"
+										"Target" 	 "TARGET"
+									}
+									"Damage"
+									{
+										"Target"		"TARGET"
+										"Type"			"DAMAGE_TYPE_PHYSICAL"
+										"Damage"		"%earth_damage"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			"modifier_megumin_earth_anim"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsPurgable"		"0"
+				"IsBuff"			"1"
+				"IsDebuff"			"0"
+				"IsStunDebuff"		"0"
+				"OnCreated"
+				{
+					"FireEffect"
+					{
+						"EffectName"        "particles/econ/items/earthshaker/egteam_set/hero_earthshaker_egset/earthshaker_echoslam_start_fallback_low_egset.vpcf"
+						"EffectAttachType"  "follow_customorigin"
+						"Target"            "TARGET"
+						"ControlPoints"
+						{
+							"01"	"%radius %radius %radius"
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	"Megumin_povazka"
+{
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"custom_ability/megumin_povyazka"
+	"MaxLevel" 						"4"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityCastRange"			     "900"
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"chane_uncd_ability_tooltip"	"0"//15.5 17.0 18.5 20.0
+		}
+		"02"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"mana_reduction"	"15"
+		}
+		"03"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"mana_bonus"	    "500"
+		}
+		"04"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"int_bonus"	        "15 20 25 30"
+		}
+		"05"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"radius"			"900"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_megumin_povazka"
+		{
+			"Passive"			"1"
+			"IsHidden"			"1"
+			"IsBuff"			"1"
+			"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+			"Aura"          	"modifier_m_create"
+			"Aura_Radius"   	"%radius"
+			"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+			"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE"
+			"Aura_ApplyToCaster" "1"
+			
+			"ThinkInterval"		"0.25"
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"abilities/no_die.lua"
+					"Function"		"RefreshAbilityMegumin"
+				}
+			}
+		}
+		"modifier_m_create"
+		{
+			"IsBuff"			"1"
+		    "IsHidden"			"1"
+			"ThinkInterval"		"0.08"
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"abilities/no_die.lua"
+					"Function"		"AddModifierMegumin"
+				}
+			}
+		}
+		
+			"modifier_mana_bonus"
+			{
+			    "Passive"   "1"
+			    "IsHidden"  "1"
+				"EffectName"	    ""
+				"EffectAttachType"   "follow_origin"
+			    "Properties"
+			    {
+			        "MODIFIER_PROPERTY_MANA_BONUS"             "%mana_bonus"
+				    "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"  "%int_bonus"
+			    }
+			}
+	}
+}
+
+	"Megumin_ult"
+{
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"custom_ability/megumin_ult"
+	"MaxLevel" 						"3"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityCooldown"				"210 190 170"
+	"AbilityManaCost"				"0"
+	"AbilityCastRange"				"1900"
+	"AbilityCastPoint"				"0.1"
+	"AbilityChannelTime"			"8.2"
+	"HasScepterUpgrade"		"1"
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"damage"			"75"
+			"CalculateSpellDamageTooltip"	"0"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"mana"				"50"
+		}
+		"03"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"radius"				"1900"
+		}
+		"04"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"duration_stun"		"0"
+		}
+		"05"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"duration"			"8.0"
+		}
+		"06"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"duration_effect"	"0.2"
+		}
+		"07"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"move"	            "-100"
+		}
+		"08"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"move1"	            "100"
+		}
+	}
+	"OnAbilityPhaseStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/megumin/megumin_ult.lua"
+			"Function"		"MeguminCheckCastable"
+		}
+	}
+	"OnChannelSucceeded"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/megumin/megumin_ult.lua"
+			"Function"		"AddModifierMeguminRefresh"
+		}
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/megumin/megumin_ult.lua"
+			"Function"		"DamageAll"
+		}
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_effects_megumin"
+			"Target" 		"CASTER"
+			"Duration"		"%duration_effect"
+		}
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_stun_megumin"
+			"Target" 		"CASTER"
+			"Duration"		"%duration_stun"
+		}
+	}
+	"OnChannelInterrupted"
+	{
+		"RemoveModifier"
+		{
+			"ModifierName"	"modifier_anim_megumin"
+			"Target" 		"CASTER"
+		}
+		"RemoveModifier"
+		{
+			"ModifierName"	"modifier_effects_megumin"
+			"Target" 		"CASTER"
+		}
+		"RemoveModifier"
+		{
+			"ModifierName"	"modifier_stun_megumin"
+			"Target" 		"CASTER"
+		}
+	}
+	"OnSpellStart"
+	{
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_anim_megumin"
+			"Target" 		"CASTER"
+			"Duration"		"%duration"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_stun_megumin"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsDebuff"			"1"
+			
+			"States"
+			{
+				"MODIFIER_STATE_STUNNED"			"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+		"modifier_effects_megumin"
+		{
+			"Passive"			"0"
+			"IsHidden"			"1"
+			"IsDebuff"			"0"
+			
+			"OnCreated"
+			{
+				"FireEffect"
+				{
+					"EffectName"        "particles/units/heroes/hero_phoenix/phoenix_supernova_reborn.vpcf"
+					"EffectAttachType"  "start_at_customorigin"
+					"Target"            "CASTER"
+					"ControlPoints"
+					{
+						"01"		"4500 4500 1"
+					}
+				}
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/megumin/megumin_ult.lua"
+					"Function"		"EmitMeguminSound"
+				}
+			}
+		
+			"ThinkInterval"  "0.3"
+			"OnIntervalThink"
+			{
+				"FireEffect"
+				{
+					"EffectName"        "particles/units/heroes/hero_phoenix/phoenix_supernova_reborn.vpcf"
+					"EffectAttachType"  "start_at_customorigin"
+					"Target"            "CASTER"
+					"ControlPoints"
+					{
+						"01"		"4500 4500 1"
+					}
+				}
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/megumin/megumin_ult.lua"
+					"Function"		"EmitMeguminSound"
+				}
+			}
+		}
+		"modifier_linken_sphere_stop_megumin"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsPurgable"		"0"
+			
+			"Aura" 				"modifier_megumin_speed_slow"
+			"Aura_Radius" 		"25000"
+			"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"Aura_Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"EffectName"		"particles/items_fx/immunity_sphere_buff.vpcf"
+					"EffectAttachType"	"PATTACH_ABSORIGIN_FOLLOW"
+					"Target"			"CASTER"
+					
+					"ControlPointEntities"
+					{
+						"CASTER"	"attach_hitloc"
+					}
+				}
+			}
+		}
+		"modifier_anim_megumin"
+		{
+			"Passive"			"0"
+			"IsHidden"			"1"
+			"IsBuff"			"1"
+			"ModelName"		"models/heroes/phoenix/phoenix_egg.vmdl"
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"EffectName"		"particles/units/heroes/hero_phoenix/phoenix_supernova_egg.vpcf"
+					"EffectAttachType"	"PATTACH_ABSORIGIN_FOLLOW"
+					"Target"			"CASTER"
+					
+					"ControlPointEntities"
+					{
+						"CASTER"	"attach_origin"
+						"CASTER"	"attach_hitloc"
+					}
+				}
+				
+			}
+		}
+		"modifier_megumin_attack_immune"
+		{
+			"Passive"			"0"
+			"IsHidden"			"1"
+			"IsBuff"			"1"
+			"States"
+			{
+				"MODIFIER_STATE_ATTACK_IMMUNE"		          "MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+		"modifier_megumin_magic_immune"
+		{
+			"Passive"			"0"
+			"IsHidden"			"1"
+			"IsBuff"			"1"
+			"States"
+			{
+				"MODIFIER_STATE_MAGIC_IMMUNE"		           "MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+		
+		"modifier_megumin_speed_slow"
+		{
+			"Passive"			"0"
+			"IsHidden"			"1"
+			"IsBuff"			"1"
+			"Properties"
+			{
+			"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"     "%move"
+			}
+		}
+	}
+}
+
+	//=================================================================================================================
+	// Phoenix: Fire Spirits
+	//=================================================================================================================
+	"phoenix_fire_spirits"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5625"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Phoenix.FireSpirits.Cast"
+		"AbilityTextureName"            "custom_ability/megumin_2spell"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1400"
+		"AbilityCastPoint"				"0.01 0.01 0.01 0.01"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"45 40 35 30"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"80 90 100 110"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"hp_cost_perc"		"20"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"spirit_duration"	"20"
+			}
+			"03"
+			{	
+				"var_type"			"FIELD_INTEGER"
+				"spirit_speed"		"900 900 900 900"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"175 175 175 175"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"4.0"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"attackspeed_slow"	"-80 -100 -120 -140"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_per_second"				"55 76 100 150"
+				"LinkedSpecialBonus"	"special_bonus_unique_phoenix_3"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"spirit_count"		"4"
+			}
+			"09"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"tick_interval"		"1.0"
+			}
+		}
+	}
+	
+	//=================================================================================================================
+	// Phoenix: Launch Fire Spirit
+	//=================================================================================================================
+	"phoenix_launch_fire_spirit"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5631"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilitySound"					"Hero_Phoenix.FireSpirits.Launch"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1400"
+		"AbilityCastPoint"				"0.01 0.01 0.01 0.01"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0 0 0 0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0 0 0 0"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"hp_cost_perc"		"20"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"spirit_duration"	"16.0 16.0 16.0 16.0"
+			}
+			"03"
+			{	
+				"var_type"			"FIELD_INTEGER"
+				"spirit_speed"		"900 900 900 900"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"175 175 175 175"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"4.0"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"attackspeed_slow"	"-80 -100 -120 -140"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_per_second"				"55 76 100 150"
+			     "LinkedSpecialBonus"	"special_bonus_unique_phoenix_3"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"spirit_count"		"4"
+			}
+			"09"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"tick_interval"		"1.0"
+			}
+		}
+	}
+
+
+}

@@ -1,0 +1,196 @@
+""
+{
+	  "item_recipe_Desolator_osnova_2"
+  	{
+  		"BaseClass"                 "item_datadriven"
+  		"AbilityTextureName"        "recipe"
+  		"Model"						"models/props_gameplay/recipe.mdl"
+  		"ItemCost"					"1200"
+		"ItemShopTags"				""
+		"ItemRecipe"				"1"
+		"ItemResult"				"item_Desolator_osnova_2"
+		"ItemRequirements"
+		{
+			"01" "item_desolator"
+		}
+  	}
+	
+	"item_Desolator_osnova_2"
+  	{
+  		"BaseClass"                 "item_datadriven"
+  		"ID"						"2222"
+  		"AbilityTextureName"        "custom/item_Desolator_osnova_2"
+  		"AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+  		"ItemCost"					"4100"
+		"ItemShopTags"				"damage"
+		"ItemQuality"				"artifact"
+		"ItemDeclarations"			"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"MaxUpgradeLevel"				"2"
+		"ItemBaseLevel"					"1"
+		
+		"AbilitySpecial"
+		{
+		    "01"
+		    {
+		        "var_type"          "FIELD_INTEGER"
+		        "bonus_damage"      "125 175"
+		    }
+		    "03"
+		    {
+		    	"var_type"			"FIELD_INTEGER"
+		    	"coruprion_armor"	"-19 -25"
+		    }
+		    "02"
+		    {
+		        "var_type"          "FIELD_FLOAT"
+		        "duration"          "12"
+		    }	
+		}
+		
+		"Modifiers"
+		{
+		    "modifier_desolator_osnova_2"
+		    {
+		        "Passive"           "1"
+		        "IsHidden"          "1"
+		        "IsDebuff"          "0"
+		        "Properties"
+		        {
+		            "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" 		"%bonus_damage"
+		        }
+		        "Orb"
+		        {
+		            "Priority"          "DOTA_ORB_PRIORITY_ITEM"
+		            "ProjectileName"    "particles/arena/items_fx/desolator2_projectile.vpcf"
+		            "CastAttack"         "0"
+		        }
+		        
+		        "OnOrbFire"
+		        {
+		            "FireSound"
+		            {
+		                "EffectName"    "Item_Desolator.Target"
+		                "Target"        "TARGET"
+		            }
+		        }
+				"OnOrbImpact"
+				{
+						"ApplyModifier"
+					{
+						"ModifierName"	"modifier_desolator_osnova2"
+						"Duration"		"%duration"
+						"TARGET"		"TARGET"
+					}
+				}
+		    }
+			"modifier_desolator_osnova2"
+		    {
+		        "Passive"           "0"
+		        "IsHidden"          "0"
+		        "IsDebuff"          "1"
+		
+		        "Properties"
+		        {
+		            "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" 		"%coruprion_armor"
+		        }
+			}
+		}
+	}
+	
+		"item_recipe_Desolator_osnova_3"
+  	{
+  		"BaseClass"                 "item_datadriven"
+  		"AbilityTextureName"        "recipe"
+  		"Model"						"models/props_gameplay/recipe.mdl"
+  		"ItemCost"					"1500"
+		"ItemShopTags"				""
+		"ItemRecipe"				"1"
+		"ItemResult"				"item_Desolator_osnova_3"
+		"ItemRequirements"
+		{
+			"01" "item_Desolator_osnova_2"
+		}
+  	}
+	
+		"item_Desolator_osnova_3"
+  	{
+  		"BaseClass"                 "item_datadriven"
+  		"ID"						"2223"
+  		"AbilityTextureName"        "custom/item_Desolator_osnova_3"
+  		"AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxUpgradeLevel"				"2"
+		"ItemBaseLevel"					"2"
+  		"ItemCost"					"4100"
+		"ItemShopTags"				"damage"
+		"ItemQuality"				"artifact"
+		"ItemDeclarations"			"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+		"AbilitySpecial"
+		{
+		    "01"
+		    {
+		        "var_type"          "FIELD_INTEGER"
+		        "bonus_damage"      "125 175"
+		    }
+		    "03"
+		    {
+		    	"var_type"			"FIELD_INTEGER"
+		    	"coruprion_armor"	"-19 -25"
+		    }
+		    "02"
+		    {
+		        "var_type"          "FIELD_FLOAT"
+		        "duration"          "12"
+		    }	
+		}
+		
+		"Modifiers"
+		{
+		    "modifier_desolator_osnova_3"
+		    {
+		        "Passive"           "1"
+		        "IsHidden"          "1"
+		        "IsDebuff"          "0"
+		        "Properties"
+		        {
+		            "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" 		"%bonus_damage"
+		        }
+		        "Orb"
+		        {
+		            "Priority"          "DOTA_ORB_PRIORITY_ITEM"
+		            "ProjectileName"    "particles/arena/items_fx/desolator2_projectile.vpcf"
+		            "CastAttack"         "0"
+		        }
+		        
+		        "OnOrbFire"
+		        {
+		            "FireSound"
+		            {
+		                "EffectName"    "Item_Desolator.Target"
+		                "Target"        "TARGET"
+		            }
+		        }
+				"OnOrbImpact"
+				{
+						"ApplyModifier"
+					{
+						"ModifierName"	"modifier_desolator_osnova3"
+						"Duration"		"%duration"
+						"TARGET"		"TARGET"
+					}
+				}
+		    }
+			"modifier_desolator_osnova3"
+		    {
+		        "Passive"           "0"
+		        "IsHidden"          "0"
+		        "IsDebuff"          "1"
+		
+		        "Properties"
+		        {
+		            "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" 		"%coruprion_armor"
+		        }
+			}
+		}
+	}
+}

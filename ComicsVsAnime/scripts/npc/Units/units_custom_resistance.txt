@@ -1,0 +1,29 @@
+"units_custom_resistance"
+{
+	"npc_dota_hero_windrunner"
+	{
+		"resistances"
+		{
+			"fire"   "-50"
+			"water"  "20"
+			"earth"  "-10"
+			"air"    "100"
+		}
+		//auto attack damage type
+		"damagetype" "air"
+		"amplifier"	"1"
+	}
+	"npc_dota_hero_juggernaut"
+	{
+		"resistances"
+		{
+			"fire"   "100"
+			"water"  "-50"
+			"earth"  "-10"
+			"air"    "50"	
+		}
+		//auto attack damage type
+		"damagetype" "air"
+		"amplifier"	"1"
+	}
+}

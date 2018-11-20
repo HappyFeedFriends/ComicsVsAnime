@@ -1,0 +1,21 @@
+""
+	{
+		"madara_health_bonus"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"ability_lua"
+			"ScriptFile"					"heroes/units/madara.lua"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"FightRecapLevel"				"1"
+			"AbilityTextureName"        	"custom_ability/madara_health_bonus"
+			"AbilitySpecial"
+			{	
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"health_bonus"			"1"
+				}
+			}
+		}
+	}

@@ -1,0 +1,498 @@
+""
+	{
+		"shinobu_lifesteal"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"ability_datadriven"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"AbilityTextureName"			"custom_ability/shinobu_lifesteal"
+			"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"        
+			"AbilityUnitTargetTeam"     	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"AbilityUnitTargetType"     	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"SpellImmunityType"         	"SPELL_IMMUNITY_ENEMIES_NO"
+			"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+	
+			"AbilitySpecial"
+			{
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"vampiric"				"9 12 14 15"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"damage"				"30 50 75 100"
+				}
+			}
+			"Modifiers"
+			{
+
+				"modifier_shinobu_lifesteal_passive"
+				{
+					"IsHidden"		"1"
+					"Passive"	    "1"
+					
+					"OnDealDamage"
+					{
+						"Lifesteal"
+						{	
+							"TARGET"				"ATTACKER"
+							"LifestealPercent"		"%vampiric"
+						}
+					}
+				}
+				"modifier_shinobu_damage_passive"
+				{
+					"IsHidden"		"1"
+					"Passive"	    "1"
+					
+					"OnAttack"
+					{
+						"Damage"
+						{
+							"Target"    "TARGET"
+							"Type"      "DAMAGE_TYPE_MAGICAL"
+							"Damage"    "%damage"
+						}
+					}	
+				}
+			}
+		}
+	"shinobu_hp_dmg"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_TOGGLE"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"		
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+	"AbilityTextureName"			"custom_ability/shinobu_hp_dmg"
+	"AbilityCooldown"				"10"
+
+	// Precache	
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"particle"	"particles/generic_gameplay/generic_manaburn.vpcf"
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts"
+	}
+
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"damage"				"60 70 100 110"			
+			"LinkedSpecialBonus"	"special_bonus_shinobu_3"
+			"CalculateSpellDamageTooltip"	"0"
+		}		
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"regeneration"			"-8 -7 -6 -5"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"armor_damage"			"125"
+			"LinkedSpecialBonus"	"special_bonus_shinobu_4"
+			"CalculateSpellDamageTooltip"	"0"
+		}
+
+	}
+
+		"OnToggleOn"
+		{
+		    "ApplyModifier"
+		    {
+		        "ModifierName"  "modifier_shinobi_hp_damage_activate"
+		        "Target"        "CASTER"
+		    }
+			"ApplyModifier"
+		    {
+		        "ModifierName"  "modifier_shinobu_hp"
+		        "Target"        "CASTER"
+		    }
+		}
+		"OnToggleOff"
+		{
+		    "RemoveModifier"
+		    {
+		        "ModifierName"  "modifier_shinobi_hp_damage_activate"
+		        "Target"        "CASTER"
+		    }
+			"RemoveModifier"
+		    {
+		        "ModifierName"  "modifier_shinobu_hp"
+		        "Target"        "CASTER"
+		    }			
+		}
+	
+	"Modifiers"
+	{
+		"modifier_shinobi_hp_damage_activate"
+		{
+			"Passive"	"0"
+			"IsHidden"	"0"
+
+			"Orb"
+			{
+				"Priority"	"DOTA_ORB_PRIORITY_ABILITY"
+			}
+
+			"OnOrbImpact"
+			{
+				"FireSound"
+				{
+					"EffectName"	"particles/units/heroes/hero_nyx_assassin/nyx_assassin_mana_burn_start.vpcf"
+					"Target"
+					{
+						"Center"	"TARGET"
+						"Flags"		"DOTA_UNIT_TARGET_FLAG_MANA_ONLY"
+					}
+				}
+
+				"FireEffect"
+				{
+					"EffectName"	"particles/units/heroes/hero_nyx_assassin/nyx_assassin_mana_burn_start.vpcf"
+					"EffectAttachType"	"attach_hitloc"
+					"Target"
+					{
+						"Center"	"TARGET"
+						"Flags"		"DOTA_UNIT_TARGET_FLAG_MANA_ONLY"
+					}
+				}
+
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/shinobu/shinobu_hp_dmg.lua"
+					"Function"		"hp_damage"
+					"Target"		"TARGET"
+				}				
+			}
+		}
+	}
+}
+
+"shinobu_invisible_ult"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"FightRecapLevel"				"2"
+	"AbilityTextureName"			"custom_ability/shinobu_invisible"
+	"HasScepterUpgrade"					"1"
+	"AbilityCooldown"				"120 100 80"
+	"AbilityManaCost"				"120 200 250"
+	"AbilitySpecial"
+	{
+		
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"15 18 22"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"fade_time"				"0"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_damage"			"300 350 650"
+			"LinkedSpecialBonus"	"special_bonus_shinobu_1"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"bonus_damage_mult"		"2"//Аганим
+		}
+		"05"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"mult_dmg_modifier"		"1.5"//Модификатор
+			"LinkedSpecialBonus"	"special_bonus_shinobu_6"
+		}
+	}
+		
+	"OnSpellStart"
+	{
+		"DelayedAction"
+		{
+			"Delay"						"%fade_time"
+			"Action"
+			{
+			
+				"ApplyModifier"
+				{
+					"Target"				"CASTER"
+					"ModifierName"			"modifier_shinobu_invisible"
+				}
+				
+				"ApplyModifier"
+				{
+					"Target"				"CASTER"
+					"ModifierName"			"modifier_invisible"
+					"Duration"				"%duration"
+				}
+			}
+		}
+	}
+	
+	"Modifiers"
+	{
+		"modifier_shinobu_invisible"
+		{
+			"Duration"					"%duration"
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"Target"			"TARGET"
+					"EffectName"		"particles/units/heroes/hero_nyx_assassin/nyx_assassin_vendetta_start.vpcf"
+					"EffectAttachType"	"start_at_origin"
+				}
+			}
+		
+			"OnAttack"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/shinobu/shinobu_invisible.lua"
+					"Function"		"shinobu_attack"
+				}
+			}
+	
+			"States"
+			{
+				"MODIFIER_STATE_NO_UNIT_COLLISION"		"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+	}
+}
+
+	"shinobu_blood"
+	{
+			
+		"BaseClass"                 "ability_datadriven"
+		"AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"        "custom_ability/shinobu_blood"
+		"MaxLevel"                  "4"
+		"AbilitySpecial"
+		{
+		   "01"
+		    {
+		      "var_type"   		"FIELD_FLOAT"
+			  "stack"          		"10 10 20 25"
+			}
+			"02"
+		    {
+		      "var_type"   		"FIELD_FLOAT"
+			  "limit"          		"300 250 200 200"
+			}
+			"03"
+		    {
+		      "var_type"  		 "FIELD_FLOAT"
+			  "agi_bonus"         	 "3"
+			  "LinkedSpecialBonus"	"special_bonus_shinobu_7"
+			}
+			"04"
+		    {
+		      "var_type"  		 "FIELD_FLOAT"
+			  "stack_bonus"         "1.5" //при убийстве множитель
+			}			
+	    }		
+		"Modifiers"
+		{
+		    "shinobu_blood_death"
+			{
+			   "Passive"       "1"
+			   "IsHidden"      "1"
+			   "IsPurgable"    "0"
+				"OnHeroKilled"
+			    {
+			       "RunScript"   
+				    {
+				        "ScriptFile"    "heroes/shinobu//shinobu_blood.lua"
+						"Function"      "Shinobu_death"
+				    }
+					"ApplyModifier"
+					{
+					    "ModifierName"   "effect"
+						"Target"         "CASTER"
+					}
+				}
+				"OnAttack"
+			    {
+			       "RunScript"   
+				    {
+				        "ScriptFile"    "heroes/shinobu//shinobu_blood.lua"
+						"Function"     "shinobu_attack"
+				    }
+				}	
+			}
+		
+			"modifier_shinobu_agi"
+			{
+			    "Passive"            "0"
+				"IsBuff"             "1"
+				"IsPurgable"         "0"
+			}
+		}
+	}
+	
+
+		"special_bonus_shinobu_5"
+		{
+			// General
+			//----------------------------------------------------------------------------------
+			"BaseClass"                     "special_bonus_undefined"
+			"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MaxLevel"                      "1"
+
+			// Special
+			//----------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"                  "FIELD_FLOAT"
+					"value"                     "1"
+				}
+			}
+		}
+		"special_bonus_shinobu_6"
+		{
+			// General
+			//----------------------------------------------------------------------------------
+			"BaseClass"                     "special_bonus_undefined"
+			"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MaxLevel"                      "1"
+
+			// Special
+			//----------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"                  "FIELD_FLOAT"
+					"value"                     "0.5"
+				}
+			}
+		}
+		"special_bonus_shinobu_7"
+		{
+			// General
+			//----------------------------------------------------------------------------------
+			"BaseClass"                     "special_bonus_undefined"
+			"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MaxLevel"                      "1"
+
+			// Special
+			//----------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"                  "FIELD_FLOAT"
+					"value"                     "2"
+				}
+			}
+		}	
+			
+		"special_bonus_shinobu_4"
+		{
+			// General
+			//----------------------------------------------------------------------------------
+			"BaseClass"                     "special_bonus_undefined"
+			"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MaxLevel"                      "1"
+
+			// Special
+			//----------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"                  "FIELD_FLOAT"
+					"value"                     "50"
+				}
+			}
+		}
+		"special_bonus_shinobu_3"
+		{
+			// General
+			//----------------------------------------------------------------------------------
+			"BaseClass"                     "special_bonus_undefined"
+			"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MaxLevel"                      "1"
+
+			// Special
+			//----------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"                  "FIELD_FLOAT"
+					"value"                     "50"
+				}
+			}
+		}
+		"special_bonus_shinobu_2"
+		{
+			// General
+			//----------------------------------------------------------------------------------
+			"BaseClass"                     "special_bonus_undefined"
+			"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MaxLevel"                      "1"
+
+			// Special
+			//----------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"                  "FIELD_FLOAT"
+					"value"                     "1"
+				}
+			}
+		}
+
+		"special_bonus_shinobu_1"
+		{
+			// General
+			//----------------------------------------------------------------------------------
+			"BaseClass"                     "special_bonus_undefined"
+			"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MaxLevel"                      "1"
+
+			// Special
+			//----------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"                  "FIELD_FLOAT"
+					"value"                     "250"
+				}
+			}
+		}
+	}

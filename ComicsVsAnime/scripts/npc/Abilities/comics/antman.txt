@@ -1,0 +1,43 @@
+""
+	{
+	
+		"Ant_man_big"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"ability_lua"
+			"ScriptFile"					"heroes/antman/Ant_man_big.lua"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"	
+			"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+			"AbilityTextureName"			"custom_ability/Ant_man_big"
+			
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"damage"				"220 350 650 700"	
+				}		
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"movespeed"			"0.01 0.02 0.03 0.04"
+				}
+				"03"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"dur_big"				"2.5"
+				}
+				"03"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"dur_big"				"2.5"
+				}
+				"03"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"slow"					"0.45 0.30 0.25 0.20"
+				}
+			}
+		}
+	}

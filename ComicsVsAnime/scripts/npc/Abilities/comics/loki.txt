@@ -1,0 +1,391 @@
+""
+	{
+		"loki_blink_strike"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"ability_lua"
+			"ScriptFile"					"heroes/loki/loki_blink_strike.lua"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"	
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+			"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+			"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+			"AbilityTextureName"			"custom_ability/loki_blink_strike"
+			"AbilityCooldown"				"20 15 13 12"
+			"AbilityCastRange"				"700"
+			"AbilityManaCost"				"120"
+			
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"damage"				"120 160 180 230"	
+				}		
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"critical_damage"		"150 180 210 240"
+					"LinkedSpecialBonus"	"special_bonus_loki_6"
+				}				
+				"03"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"slow"					"-25 -35 -40 -45"
+				}				
+				"04"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"dur_slow"				"3 4 6 7"
+				}
+			}
+		}
+		
+		"loki_illusion_invis"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"ability_lua"
+			"ScriptFile"					"heroes/loki/loki_illusion_invis.lua"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"	
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+			"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+			"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+			"AbilityTextureName"			"custom_ability/loki_illusion_invis"
+			"AbilityCooldown"				"25"
+			"AbilityManaCost"				"60"
+			"HasScepterUpgrade"				"1"
+			
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"num_illusion"					"1 1 2 3"	
+				}		
+				"02"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"delay_invis"					"0.2"
+				}				
+				"03"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"radius"						"250"
+				}				
+				"04"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"ougoing_damage"				"25 35 40 40"
+					"LinkedSpecialBonus"	"special_bonus_loki_7"
+				}				
+				"04"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"incoming_damage"				"300"
+				}				
+				"05"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"duration_illusion"				"7 9 12 15"
+				}				
+				"06"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"duration_invis"				"5"
+				}				
+				"06"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"aghanim_bonus_ms"				"45"
+				}
+			}
+		}
+		
+		"loki_poison"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"ability_lua"
+			"ScriptFile"					"heroes/loki/loki_poison.lua"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"	
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+			"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+			"AbilityTextureName"			"custom_ability/loki_poison"
+			"AbilityCooldown"				"20 15 12 8"
+			
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"damage"					"120 150 180 330"	
+					"LinkedSpecialBonus"		"special_bonus_loki_3"
+				}		
+				"02"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"blind"						"40 45 60 70"
+				}				
+				"03"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"slowdown"					"25 30 35 55"
+					"LinkedSpecialBonus"	"special_bonus_loki_8"
+				}				
+				"03"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"duration"					"9 7 5 3"
+				}				
+				"04"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"interval"					"0.3"
+				}				
+			}
+		}
+		
+		"loki_swap_models"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"ability_lua"
+			"ScriptFile"					"heroes/loki/loki_swap_models.lua"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"	
+			"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+			"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+			"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+			"AbilityTextureName"			"custom_ability/loki_swap_models"
+			"AbilityCooldown"				"45"
+			"AbilityManaCost"				"240"
+			"AbilityCastRange"				"650"
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"duration"				"25 30 45"	
+				}
+			}
+		}
+		
+		"special_bonus_loki_1"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"special_bonus_undefined"													// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+			"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MaxLevel"						"1"
+			
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"					"FIELD_INTEGER"
+					"duration"				"10"
+				}				
+				"02"
+				{
+					"var_type"					"FIELD_INTEGER"
+					"radius"				"300"
+				}				
+				"03"
+				{
+					"var_type"					"FIELD_INTEGER"
+					"damage"				"60"
+				}				
+			}
+			// Tooltip Talent Manager
+			"LinkedTalentManager"
+			{
+				"01"	"loki_blink_strike"
+			}
+		}		
+		"special_bonus_loki_2"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"special_bonus_undefined"													// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+			"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MaxLevel"						"1"
+			
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"					"FIELD_INTEGER"
+					"value"						"1"
+				}				
+			}
+			// Tooltip Talent Manager
+			"LinkedTalentManager"
+			{
+				"01"	"loki_swap_models"
+			}
+		}
+		"special_bonus_loki_3"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"special_bonus_undefined"													// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+			"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MaxLevel"						"1"
+			
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"					"FIELD_INTEGER"
+					"value"						"400" 
+				}				
+			}
+		}		
+		"special_bonus_loki_4"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"special_bonus_undefined"													// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+			"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MaxLevel"						"1"
+			
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"					"FIELD_INTEGER"
+					"value"						"400" 
+				}				
+			}
+			// Tooltip Talent Manager
+			"LinkedTalentManager"
+			{
+				"01"	"loki_illusion_invis"
+			}
+		}		
+		"special_bonus_loki_5"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"special_bonus_undefined"													// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+			"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MaxLevel"						"1"
+			
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"					"FIELD_INTEGER"
+					"num_charges"				"3" 
+				}				
+				"01"
+				{
+					"var_type"					"FIELD_INTEGER"
+					"charges_cooldown"			"12" 
+				}				
+			}
+			// Tooltip Talent Manager
+			"LinkedTalentManager"
+			{
+				"01"	"loki_blink_strike"
+			}
+		}		
+		"special_bonus_loki_6"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"special_bonus_undefined"													// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+			"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MaxLevel"						"1"
+			
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"					"FIELD_INTEGER"
+					"value"						"40" 
+				}				
+			}
+			// Tooltip Talent Manager
+			"LinkedTalentManager"
+			{
+				"01"	"loki_blink_strike"
+			}
+		}		
+		"special_bonus_loki_7"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"special_bonus_undefined"													// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+			"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MaxLevel"						"1"
+			
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"					"FIELD_INTEGER"
+					"value"						"20" 
+				}				
+			}
+			// Tooltip Talent Manager
+			"LinkedTalentManager"
+			{
+				"01"	"loki_poison"
+			}
+		}		
+		"special_bonus_loki_8"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"special_bonus_undefined"													// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+			"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MaxLevel"						"1"
+			
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"					"FIELD_INTEGER"
+					"value"						"25" 
+				}				
+			}
+			// Tooltip Talent Manager
+			"LinkedTalentManager"
+			{
+				"01"	"loki_poison"
+			}
+		}
+	}

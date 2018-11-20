@@ -1,0 +1,295 @@
+""
+	{
+	
+		"item_recipe_blink_1"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"21450"						
+			"Model"							"models/props_gameplay/recipe.mdl"
+			"AbilityTextureName"			"item_recipe"
+			"BaseClass"                     "item_datadriven"
+		
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"450"	
+			"ItemShopTags"					"artifacts"
+			
+			// Recipe
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemRecipe"					"1"
+			"ItemResult"					"item_blink_1"
+			"ItemRequirements"
+			{
+				"01"						"item_blink"
+			}
+		}
+		
+		"item_recipe_blink_2"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"21451"						
+			"Model"							"models/props_gameplay/recipe.mdl"
+			"AbilityTextureName"			"item_recipe"
+			"BaseClass"                     "item_datadriven"
+		
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"650"	
+			"ItemShopTags"					"artifacts"
+			
+			// Recipe
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemRecipe"					"1"
+			"ItemResult"					"item_blink_2"
+			"ItemRequirements"
+			{
+				"01"						"item_blink_1"
+			}
+		}
+		
+		"item_recipe_blink_3"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"21452"						
+			"Model"							"models/props_gameplay/recipe.mdl"
+			"AbilityTextureName"			"item_recipe"
+			"BaseClass"                     "item_datadriven"
+		
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"550"	
+			"ItemShopTags"					"artifacts"
+			
+			// Recipe
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemRecipe"					"1"
+			"ItemResult"					"item_blink_3"
+			"ItemRequirements"
+			{
+				"01"						"item_blink_2"
+			}
+		}
+		
+		"item_recipe_blink_4"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"21453"						
+			"Model"							"models/props_gameplay/recipe.mdl"
+			"AbilityTextureName"			"item_recipe"
+			"BaseClass"                     "item_datadriven"
+		
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"1000"	
+			"ItemShopTags"					"artifacts"
+			
+			// Recipe
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemRecipe"					"1"
+			"ItemResult"					"item_blink_4"
+			"ItemRequirements"
+			{
+				"01"						"item_blink_3"
+			}
+		}
+
+		"item_blink_1"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"item_lua"
+			"AbilityTextureName" 			"custom/item_blink_1"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+			"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+			"ScriptFile"					"items/item_blink.lua"
+			"AbilityCooldown"				"10"
+			"AbilityManaCost"				"10"
+			"MaxUpgradeLevel"				"4"
+			"ItemBaseLevel"					"1"
+			"AbilitySharedCooldown"			"blink"
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"0"
+			"ItemShopTags"					"blink;blink dagger;dagger"
+			"ItemQuality"					"legendary"
+			"ItemAliases"					"blink dagger"
+			"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"range"						"1500 1800 2100 2400"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"dur"						"2"
+				}
+			}
+		}
+		
+		"item_blink_2"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"item_lua"
+			"AbilityTextureName" 			"custom/item_blink_2"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+			"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+			"ScriptFile"					"items/item_blink.lua"
+			"AbilityCooldown"				"10"
+			"AbilityManaCost"				"10"
+			"MaxUpgradeLevel"				"4"
+			"ItemBaseLevel"					"2"
+			"AbilitySharedCooldown"			"blink"
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"0"
+			"ItemShopTags"					"blink;blink dagger;dagger"
+			"ItemQuality"					"legendary"
+			"ItemAliases"					"blink dagger"
+			"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"range"						"1500 1800 2100 2400"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"dur"						"2"
+				}
+			}
+		}
+		
+		"item_blink_3"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"item_lua"
+			"AbilityTextureName" 			"custom/item_blink_3"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+			"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+			"ScriptFile"					"items/item_blink.lua"
+			"AbilityCooldown"				"10"
+			"AbilityManaCost"				"10"
+			"MaxUpgradeLevel"				"4"
+			"ItemBaseLevel"					"3"
+			"AbilitySharedCooldown"			"blink"
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"0"
+			"ItemShopTags"					"blink;blink dagger;dagger"
+			"ItemQuality"					"legendary"
+			"ItemAliases"					"blink dagger"
+			"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"range"						"1500 1800 2100 2400"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"dur"						"2"
+				}
+			}
+		}
+		
+		"item_blink_4"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"item_lua"
+			"AbilityTextureName" 			"custom/item_blink_4"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+			"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+			"ScriptFile"					"items/item_blink.lua"
+			"AbilityCooldown"				"10"
+			"AbilityManaCost"				"10"
+			"MaxUpgradeLevel"				"4"
+			"ItemBaseLevel"					"4"
+			"AbilitySharedCooldown"			"blink"
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"0"
+			"ItemShopTags"					"blink;blink dagger;dagger"
+			"ItemQuality"					"legendary"
+			"ItemAliases"					"blink dagger"
+			"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"range"						"1500 1800 2100 2400"
+				}
+			}
+		}
+		
+		"item_blink_godly"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"item_lua"
+			"AbilityTextureName" 			"custom/item_blink_godly"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+			"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+			"ScriptFile"					"items/item_blink.lua"
+			"AbilityCooldown"				"7"
+			"AbilityManaCost"				"10"
+			"ItemRequiresCharges"			"1"
+			"ItemInitialCharges"			"5"
+			"ItemPurchasable"		 		"0"
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"12000"
+			"ItemShopTags"					"blink;blink dagger;dagger"
+			"ItemQuality"					"legendary"
+			"ItemAliases"					"blink dagger"
+			"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"range"						"3000"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_range"				"220"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"cooldown_charges"			"8"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"max_charges"				"5"
+				}
+			}
+		}
+	
+	}

@@ -1,0 +1,312 @@
+""
+	{
+		"star_ora_ora"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"ability_lua"
+			"ScriptFile"					"heroes/star/star_ora_ora.lua"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"	
+			"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+			"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+			"FightRecapLevel"				"1"
+			"AbilityTextureName"        	"custom_ability/star_ora_ora"
+			"AbilityChannelTime"			"4"
+			"HasScepterUpgrade"				"1"
+			"AbilitySpecial"
+			{	
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"damage_attacks"			"20 25 35 65"
+					"LinkedSpecialBonus"	"special_bonus_star_3"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"damage_bonus_scepter"			"10"
+				}
+				"03"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_atk"					"5 7 10 12"
+					"LinkedSpecialBonus"	"special_bonus_star_6"
+				}
+				"04"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"duration"					"8 10 12 16"
+				}
+				"05"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"limit"						"10"
+				}	
+				"06"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"interval_attack"			"0.15"
+				}				
+			}
+		}
+		
+		"star_za_warundo"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"ability_lua"
+			"ScriptFile"					"heroes/star/star_za_warundo.lua"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"	
+			"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+			"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+			"FightRecapLevel"				"1"
+			"AbilityTextureName"        	"custom_ability/star_za_warundo"
+			"AbilityCooldown"				"150 130 100"
+			"AbilityManaCost"				"150 150 140"
+			"AbilitySpecial"
+			{	
+				"01"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"duration"				"1.9 2.7 3.4"
+					"LinkedSpecialBonus"	"special_bonus_star_2"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"radius"				"300"
+				}
+				"3"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"ms"					"550"
+					"LinkedSpecialBonus"	"special_bonus_star_7"
+				}				
+			}
+		}
+		
+		"star_attack_basher"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"ability_lua"
+			"ScriptFile"					"heroes/star/star_attack_basher.lua"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"	
+			"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+			"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+			"FightRecapLevel"				"1"
+			"AbilityTextureName"        	"custom_ability/star_attack_basher"
+			"AbilityCooldown"				"20 15 10 10"
+			"AbilitySpecial"
+			{	
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"chance"				"15"
+					"LinkedSpecialBonus"	"special_bonus_star_5"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"damage"				"75 100 125 140"
+					"LinkedSpecialBonus"	"special_bonus_star_4"
+				}
+				"03"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"duration"				"0.15 0.25 0.35 0.4"
+				}				
+			}
+		}
+		
+		"star_armor_hp"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"ability_lua"
+			"ScriptFile"					"heroes/star/star_armor_hp.lua"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"FightRecapLevel"				"1"
+			"AbilityTextureName"        	"custom_ability/star_armor_hp"
+			"AbilitySpecial"
+			{	
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"armor"					"10 15 18 23"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"health"				"150 200 250 400"
+				}				
+			}
+		}
+
+		"special_bonus_star_1"
+		{
+			// General
+			//----------------------------------------------------------------------------------
+			"BaseClass"                     "special_bonus_undefined"
+			"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MaxLevel"                      "1"
+
+			// Special
+			//----------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"                  "FIELD_FLOAT"
+					"value"                     "1" // Не важно
+				}
+			}
+		}
+		"special_bonus_star_2"
+		{
+			// General
+			//----------------------------------------------------------------------------------
+			"BaseClass"                     "special_bonus_undefined"
+			"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MaxLevel"                      "1"
+
+			// Special
+			//----------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"                  "FIELD_FLOAT"
+					"value"                     "1.6" 
+				}
+			}
+		}		
+		"special_bonus_star_3"
+		{
+			// General
+			//----------------------------------------------------------------------------------
+			"BaseClass"                     "special_bonus_undefined"
+			"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MaxLevel"                      "1"
+
+			// Special
+			//----------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"                  "FIELD_FLOAT"
+					"value"                     "15" 
+				}
+			}
+		}		
+		"special_bonus_star_4"
+		{
+			// General
+			//----------------------------------------------------------------------------------
+			"BaseClass"                     "special_bonus_undefined"
+			"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MaxLevel"                      "1"
+
+			// Special
+			//----------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"                  "FIELD_FLOAT"
+					"value"                     "40" 
+				}
+			}
+		}		
+		"special_bonus_star_5"
+		{
+			// General
+			//----------------------------------------------------------------------------------
+			"BaseClass"                     "special_bonus_undefined"
+			"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MaxLevel"                      "1"
+
+			// Special
+			//----------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"                  "FIELD_FLOAT"
+					"value"                     "5" 
+				}
+			}
+		}		
+		"special_bonus_star_6"
+		{
+			// General
+			//----------------------------------------------------------------------------------
+			"BaseClass"                     "special_bonus_undefined"
+			"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MaxLevel"                      "1"
+
+			// Special
+			//----------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"                  "FIELD_FLOAT"
+					"value"                     "4" 
+				}
+			}
+		}		
+		"special_bonus_star_7"
+		{
+			// General
+			//----------------------------------------------------------------------------------
+			"BaseClass"                     "special_bonus_undefined"
+			"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MaxLevel"                      "1"
+
+			// Special
+			//----------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"                  "FIELD_FLOAT"
+					"value"                     "150" 
+				}
+			}
+		}		
+		"special_bonus_star_8"
+		{
+			// General
+			//----------------------------------------------------------------------------------
+			"BaseClass"                     "special_bonus_undefined"
+			"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MaxLevel"                      "1"
+
+			// Special
+			//----------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"                  "FIELD_FLOAT"
+					"value"                     "1" 
+				}
+			}
+		}
+	}

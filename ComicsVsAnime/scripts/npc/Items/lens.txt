@@ -1,0 +1,168 @@
+""
+{
+
+	"item_recipe_lens2"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"8111"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"0"
+		"ItemShopTags"					"lens"
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_lens2"
+		"ItemRequirements"
+		{
+			"01"						"item_aether_lens;item_aether_lens"
+		}
+	}
+
+"item_lens2" 
+  {
+    "ID"                      "8112"
+    "BaseClass"               "item_datadriven"
+	"AbilityBehavior"         "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityTextureName"      "custom/lens2"
+    "Model"                   "models/props_gameplay/red_box.vmdl" 
+    "Effect"                  "particles/generic_gameplay/dropped_item.vpcf"
+    "ItemQuality"             "artifact"
+
+    "ItemCost"     "1"
+    "ItemKillable" "0" 
+    "ItemSellable" "1"
+    "ItemPurchasable" "1"
+    "ItemDroppable" "1"
+    "ItemShareability" "ITEM_NOT_SHAREABLE"
+	
+
+    "SideShop"     "1" 
+    "SecretShop"   "0"
+	
+    "ItemStackable" "0"
+    "ItemPermanent" "1"
+    "ItemDisassembleRule" "DOTA_ITEM_DISASSEMBLE_ALWAYS"
+
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"      "FIELD_INTEGER"
+            "spell_damage"    "15"
+        }
+		
+		"02"
+        {
+            "var_type"      "FIELD_INTEGER"
+            "bonus_int"    "45"
+        }
+    }
+
+    "Modifiers"
+    {
+        "modifier_item_lens2"
+        {
+            "Passive"  "1"
+            "IsHidden" "1" 
+            "Properties"
+            {
+				"MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE"    "%spell_damage"
+				"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"       "%bonus_int"
+            }
+        } 
+    }
+ }
+ 
+ 	"item_recipe_lens3"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"8113"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"1100"
+		"ItemShopTags"					"lens"
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_lens3"
+		"ItemRequirements"
+		{
+			"01"						"item_lens2"
+		}
+	}
+
+"item_lens3" 
+  {
+    "ID"                      "8114"
+    "BaseClass"               "item_datadriven"
+	"AbilityBehavior"         "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityTextureName"      "custom/lens3"
+    "Model"                   "models/props_gameplay/red_box.vmdl" 
+    "Effect"                  "particles/generic_gameplay/dropped_item.vpcf"
+    "ItemQuality"             "artifact"
+    "ItemCost"     			  	"1"
+    "ItemKillable" 				"0" 
+    "ItemSellable" 				"1"
+    "ItemPurchasable" 			"1"
+    "ItemDroppable" 			"1"
+    "ItemShareability" 			"ITEM_NOT_SHAREABLE"
+    "SideShop"     				"1" 
+    "SecretShop"   				"0"
+    "ItemStackable"				"0"
+    "ItemPermanent" 			"1"
+    "ItemDisassembleRule"		"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"      "FIELD_INTEGER"
+            "spell_damage"    "23"
+        }
+		
+		"02"
+        {
+            "var_type"      "FIELD_INTEGER"
+            "bonus_int"    "80"
+        }
+		"03"
+		{
+            "var_type"      "FIELD_INTEGER"
+            "cast_range_bonus"    "800"
+		}
+        "02"
+        {
+            "var_type"         "FIELD_INTEGER"
+            "spell_amp"             "0"
+        }
+    }
+
+    "Modifiers"
+    {
+        "modifier_item_lens3"
+        {
+            "Passive"  "1"
+            "IsHidden" "1" 
+            "Properties"
+            {
+				"MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE"          "%spell_damage"
+				"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"             "%bonus_int"
+            }
+			"Oncreated"
+			{
+			   "ApplyModifier"
+			    {
+			      "ModifierName"  "modifier_item_aether_lens"
+			      "TARGET"        "CASTER"
+			    }
+			}
+			"OnDestroy"
+			{
+			   "RemoveModifier"
+			    {
+			      "ModifierName"  "modifier_item_aether_lens"
+			      "TARGET"        "CASTER"
+			    }
+			}
+        } 
+    }
+ }
+
+ }

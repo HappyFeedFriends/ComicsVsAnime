@@ -1,0 +1,349 @@
+""
+	{
+		"hulk_rage"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"ability_lua"
+			"ScriptFile"					"heroes/hulk/hulk_rage.lua"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+			"FightRecapLevel"				"1"
+			"AbilityTextureName"        	"custom_ability/hulk_rage"
+			"AbilitySpecial"
+			{	
+				"01"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"health"			"0.20 0.35 0.55 0.85"
+					"LinkedSpecialBonus"	"special_bonus_hulk_8"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"armor"					"0.15 0.3 0.45 0.6"
+					"LinkedSpecialBonus"	"special_bonus_hulk_7"
+				}
+				"03"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"stack_per_hp"		"1"
+				}				
+			}
+		}
+		
+		"hulk_cry"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"ability_lua"
+			"ScriptFile"					"heroes/hulk/hulk_cry.lua"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+			"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+			"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+			"FightRecapLevel"				"1"
+			"AbilityTextureName"        	"custom_ability/hulk_cry"
+			"AbilityCooldown"				"30 26 22 18"
+			"AbilityCastRange"				"500"
+			"AbilityManaCost"				"125"
+			"AbilitySpecial"
+			{	
+				"01"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"duration"				"1.25 1.5 2.3 2.6"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"damage"				"75 100 125 150"
+					"LinkedSpecialBonus"	"special_bonus_hulk_6"
+				}	
+				"03"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"radius"				"500"
+				}
+				"04"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"chance"				"45"
+				}
+				"05"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"slow"					"-35"
+				}				
+			}
+		}
+		
+		"hulk_agression"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"ability_lua"
+			"ScriptFile"					"heroes/hulk/hulk_agression.lua"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+			"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+			//"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+			"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+			"FightRecapLevel"				"1"
+			"AbilityTextureName"        	"custom_ability/hulk_agression"
+			"AbilityCooldown"				"120 120 100"
+			"AbilityManaCost"				"220"
+			"AbilitySpecial"
+			{	
+				"01"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"health"				"600 800 1200"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"damage_bonus_pct"		"80 115 150"
+				}	
+				"03"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"bonus_attack_speed"	"250"
+				}
+				"04"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"duration"				"35"
+				}
+			}
+		}
+		
+		"hulk_jump"
+		{
+
+			"BaseClass"						"ability_lua"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT_TARGET"
+			"AbilityTextureName"			"custom_ability/hulk_jump"
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"	
+			"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+			"ScriptFile"					"heroes/hulk/hulk_jump.lua"
+
+
+			// Casting
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityCastRange"				"1200 1550 1700 2000"
+			"AbilityCastPoint"				"0.4"
+			"FightRecapLevel"				"1"
+
+			// Time
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityCooldown"				"25 25 21 19"
+
+			// Cost
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityManaCost"				"125"
+			"precache"
+			{
+				"particle"  "particles/econ/items/earthshaker/earthshaker_totem_ti6/earthshaker_totem_ti6_cast.vpcf"
+				"particle"  "particles/econ/items/undying/undying_manyone/undying_pale_tombstone_ambient_eyes.vpcf"
+			}
+			
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"					"FIELD_INTEGER"
+					"cast_range"				"1200 1550 1700 2000"
+				}
+				"02"
+				{
+					"var_type"					"FIELD_INTEGER"
+					"damage"					"200 230 270 350"
+					"LinkedSpecialBonus"	"special_bonus_hulk_5"
+				}
+				"03"
+				{
+					"var_type"					"FIELD_INTEGER"
+					"radius"					"250 350 400 450"
+				}
+				"05"
+				{
+					"var_type"					"FIELD_INTEGER"
+					"dur_slow"						"4"
+				}
+				"06"
+				{
+					"var_type"					"FIELD_INTEGER"
+					"move_slow"						"-15 -25 -30 -35"
+					"LinkedSpecialBonus"			"special_bonus_hulk_4"
+				}
+			}
+		}
+		
+		"special_bonus_hulk_1"
+		{
+			// General
+			//----------------------------------------------------------------------------------
+			"BaseClass"                     "special_bonus_undefined"
+			"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MaxLevel"                      "1"
+
+			// Special
+			//----------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"                  "FIELD_FLOAT"
+					"value"                     "150"
+				}
+			}
+		}
+		
+		"special_bonus_hulk_2"
+		{
+			// General
+			//----------------------------------------------------------------------------------
+			"BaseClass"                     "special_bonus_undefined"
+			"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MaxLevel"                      "1"
+
+			// Special
+			//----------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"                  "FIELD_FLOAT"
+					"value"                     "1"
+				}
+			}
+		}
+		
+		"special_bonus_hulk_3"
+		{
+			// General
+			//----------------------------------------------------------------------------------
+			"BaseClass"                     "special_bonus_undefined"
+			"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MaxLevel"                      "1"
+
+			// Special
+			//----------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"                  "FIELD_FLOAT"
+					"value"                     "1"
+				}
+			}
+		}		
+		"special_bonus_hulk_4"
+		{
+			// General
+			//----------------------------------------------------------------------------------
+			"BaseClass"                     "special_bonus_undefined"
+			"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MaxLevel"                      "1"
+
+			// Special
+			//----------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"                  "FIELD_FLOAT"
+					"value"                     "-10"
+				}
+			}
+		}		
+		"special_bonus_hulk_5"
+		{
+			// General
+			//----------------------------------------------------------------------------------
+			"BaseClass"                     "special_bonus_undefined"
+			"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MaxLevel"                      "1"
+
+			// Special
+			//----------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"                  "FIELD_FLOAT"
+					"value"                     "50"
+				}
+			}
+		}		
+		"special_bonus_hulk_6"
+		{
+			// General
+			//----------------------------------------------------------------------------------
+			"BaseClass"                     "special_bonus_undefined"
+			"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MaxLevel"                      "1"
+
+			// Special
+			//----------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"                  "FIELD_FLOAT"
+					"value"                     "75"
+				}
+			}
+		}		
+		"special_bonus_hulk_7"
+		{
+			// General
+			//----------------------------------------------------------------------------------
+			"BaseClass"                     "special_bonus_undefined"
+			"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MaxLevel"                      "1"
+
+			// Special
+			//----------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"                  "FIELD_FLOAT"
+					"value"                     "0.15"
+				}
+			}
+		}		
+		"special_bonus_hulk_8"
+		{
+			// General
+			//----------------------------------------------------------------------------------
+			"BaseClass"                     "special_bonus_undefined"
+			"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MaxLevel"                      "1"
+
+			// Special
+			//----------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"                  "FIELD_FLOAT"
+					"value"                     "0.10"
+				}
+			}
+		}
+	}

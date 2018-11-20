@@ -1,0 +1,382 @@
+""
+{
+	"rem_water_waves"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING  | DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"        	"custom_ability/rem_water_waves"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"%range"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCooldown"				"90"
+		"AbilityManaCost"				"250"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"						"900 1000 1400"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"					"0.4 0.5 0.77"	
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"					"12"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"					"450 650 650"
+				"LinkedSpecialBonus"	"special_bonus_rem_7"
+			}	
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"vision_radius"				"120"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"Slow"						"-10 -20 -30"
+				"LinkedSpecialBonus"	"special_bonus_rem_5"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"ice_balls"					"1"
+				"LinkedSpecialBonus"	"special_bonus_rem_1"
+			}			
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/rem/rem_water_waves.lua"
+				"Function"		"rem_water_waves"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"1"
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/rem/rem_water_waves.lua"
+				"Function"		"rem_water_waves_hit"
+			}
+		}
+	}
+	
+	"rem_mana_steal"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_AURA  | DOTA_ABILITY_BEHAVIOR_NO_TARGET "
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"        	"custom_ability/rem_mana_steal"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"%radius"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCooldown"				"15"
+		"AbilityManaCost"				"45"
+		
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"10 15 20 25"
+				"LinkedSpecialBonus"	"special_bonus_rem_3"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_steal"			"6 7 10 12"
+				"LinkedSpecialBonus"	"special_bonus_rem_2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"4"	
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"					"1200"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"interval"					"0.7"
+			}			
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/rem/rem_mana_steal.lua"
+				"Function"		"rem_mana_steal"
+			}
+		}
+	}
+	
+	"rem_demon"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"        	"custom_ability/rem_demon"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"%radius"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCooldown"				"45"
+		"AbilityManaCost"				"65"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"					"12 18 20 23"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_stats"				"15 25 30 35"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"split_hero"				"2 4 6 7"	
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"					"800 1000 1200"	
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_ice"				"0.25 0.35 0.45 0.45"	
+			}			
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/rem/rem_demon.lua"
+				"Function"		"rem_demon"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"1"
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/rem/rem_demon.lua"
+				"Function"		"rem_demon_attack"
+			}
+		}
+	}
+	
+	"rem_gates"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/rem/rem_gates.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"        	"custom_ability/rem_gates"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"int"					"2 3 4 5"
+			}	
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"600 800 1000 1200"
+				"LinkedSpecialBonus"	"special_bonus_rem_4"
+			}			
+		}
+	}
+	
+	"special_bonus_rem_1"
+	{
+		// General
+		//----------------------------------------------------------------------------------
+		"BaseClass"                     "special_bonus_undefined"
+		"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"                      "1"
+
+		// Special
+		//----------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"                  "FIELD_FLOAT"
+				"value"                     	"3"
+			}
+		}
+	}	
+	"special_bonus_rem_2"
+	{
+		// General
+		//----------------------------------------------------------------------------------
+		"BaseClass"                     "special_bonus_undefined"
+		"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"                      "1"
+
+		// Special
+		//----------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"                  "FIELD_FLOAT"
+				"value"                     	"3"
+			}
+		}
+	}	
+	"special_bonus_rem_3"
+	{
+		// General
+		//----------------------------------------------------------------------------------
+		"BaseClass"                     "special_bonus_undefined"
+		"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"                      "1"
+
+		// Special
+		//----------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"                  "FIELD_FLOAT"
+				"value"                     	"15"
+			}
+		}
+	}	
+	"special_bonus_rem_4"
+	{
+		// General
+		//----------------------------------------------------------------------------------
+		"BaseClass"                     "special_bonus_undefined"
+		"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"                      "1"
+
+		// Special
+		//----------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"                  "FIELD_FLOAT"
+				"value"                     	"250"
+			}
+		}
+	}	
+	"special_bonus_rem_5"
+	{
+		// General
+		//----------------------------------------------------------------------------------
+		"BaseClass"                     "special_bonus_undefined"
+		"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"                      "1"
+
+		// Special
+		//----------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"                  "FIELD_FLOAT"
+				"value"                     	"-10"
+			}
+		}
+	}	
+	"special_bonus_rem_6"
+	{
+		// General
+		//----------------------------------------------------------------------------------
+		"BaseClass"                     "special_bonus_undefined"
+		"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"                      "1"
+
+		// Special
+		//----------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"                  "FIELD_FLOAT"
+				"value"                     	"-15"
+			}
+		}
+	}	
+	"special_bonus_rem_7"
+	{
+		// General
+		//----------------------------------------------------------------------------------
+		"BaseClass"                     "special_bonus_undefined"
+		"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"                      "1"
+
+		// Special
+		//----------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"                  "FIELD_FLOAT"
+				"value"                     	"450"
+			}
+		}
+	}
+}

@@ -1,0 +1,87 @@
+""
+{
+
+	"item_recipe_blade_of_knight_1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"21000"						
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"BaseClass"                     "item_datadriven"
+	
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2250"	
+		"ItemShopTags"					"artifacts"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_blade_of_knight_1"
+		"ItemRequirements"
+		{
+			"01"						"item_bloodthorn"
+		}
+	}
+
+	"item_blade_of_knight_1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_lua"
+		"AbilityTextureName" 			"custom/item_blade_of_knight_1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"ScriptFile"					"items/item_blade_of_knight.lua"
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"%cast_range"
+		"AbilityCooldown"				"35"
+		"AbilityManaCost"				"200"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"4000"
+		"ItemShopTags"					"blade;knight;blade of knight;blade knight"
+		"ItemQuality"					"legendary"
+		"ItemAliases"					"blade of knight"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_saved"				"65"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all"					"60"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"					"8"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"chance_crit"				"40"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_crit"				"250"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"				"450"
+			}
+		}
+	}
+}

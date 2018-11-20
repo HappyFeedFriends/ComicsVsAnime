@@ -1,0 +1,817 @@
+""
+	{
+		//=======================================================
+		// TIER 1
+		//=======================================================
+		"tower_tier_1_1" // range
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"								"ability_lua"
+			"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"AbilityTextureName"					"custom_ability/tower_tier_1_1"
+			"AbilityUnitTargetTeam"     			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+			"AbilityUnitTargetType"     			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"MaxLevel"								"1"
+			"AbilityCastRange"						"900"
+			"ScriptFile"							"heroes/tower_ability/tower_ability_lvl1.lua"
+
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"						"FIELD_INTEGER"
+					"bonus_range"					"125"
+				}
+
+				"02"
+				{
+					"var_type"						"FIELD_INTEGER"
+					"aura_radius"					"900"
+				}
+			}
+		}
+		
+		"tower_tier_1_2" // damage
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"								"ability_lua"
+			"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"AbilityTextureName"					"custom_ability/tower_tier_1_2"
+			"AbilityUnitTargetTeam"     			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+			"AbilityUnitTargetType"     			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"MaxLevel"								"1"
+			"AbilitySharedWithTeammates"			"1"
+			"AbilityCastRange"						"900"
+			"ScriptFile"							"heroes/tower_ability/tower_ability_lvl1.lua"
+
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"						"FIELD_INTEGER"
+					"bonus_damage"					"75"
+				}
+
+				"02"
+				{
+					"var_type"						"FIELD_INTEGER"
+					"aura_radius"					"900"
+				}
+			}
+		}
+		
+		"tower_tier_1_3" //Armor
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"								"ability_lua"
+			"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"AbilityUnitTargetTeam"     			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+			"AbilityUnitTargetType"     			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"AbilityTextureName"					"custom_ability/tower_tier_1_3"
+			"MaxLevel"								"1"
+			"AbilitySharedWithTeammates"			"1"
+			"AbilityCastRange"						"900"
+			"ScriptFile"							"heroes/tower_ability/tower_ability_lvl1.lua"
+
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"						"FIELD_INTEGER"
+					"bonus_armor"					"15"
+				}
+				"02"
+				{
+					"var_type"						"FIELD_INTEGER"
+					"aura_radius"					"900"
+				}
+			}
+		}
+		
+		"tower_tier_1_4" // Healing
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"								"ability_lua"
+			"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"AbilityUnitTargetTeam"     			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+			"AbilityUnitTargetType"     			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"AbilityTextureName"					"custom_ability/tower_tier_1_4"
+			"MaxLevel"								"1"
+			"AbilitySharedWithTeammates"			"1"
+			"AbilityCastRange"						"900"
+			"ScriptFile"							"heroes/tower_ability/tower_ability_lvl1.lua"
+
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"						"FIELD_INTEGER"
+					"regen_bonus"					"7"
+				}
+				"02"
+				{
+					"var_type"						"FIELD_INTEGER"
+					"aura_radius"					"900"
+				}
+			}
+		}
+		
+		"tower_tier_1_5" //Stunned
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"								"ability_datadriven"
+			"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"AbilityUnitTargetTeam"     			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"AbilityUnitTargetType"     			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"AbilityTextureName"					"custom_ability/tower_tier_1_5"
+			"MaxLevel"								"1"
+			"AbilitySharedWithTeammates"			"1"
+			"AbilityCastRange"						"900"
+			"AbilityCooldown"						"12"
+
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"						"FIELD_INTEGER"
+					"stunned_radius"				"900"
+				}
+				"02"
+				{
+					"var_type"						"FIELD_FLOAT"
+					"duration_hero"					"1.6"
+				}
+				"04"
+				{
+					"var_type"						"FIELD_INTEGER"
+					"duration_creep"				"2.3"
+				}
+			}
+
+			"Modifiers"
+			{
+				"modifier_tower_tier_1_5"
+				{
+					"Passive"						"1"
+					"IsHidden"						"1"
+					"ThinkInterval"					"0.1"
+					"OnIntervalThink"
+					{
+						"RunScript"
+						{
+							"ScriptFile"			"heroes/tower_ability/tower_ability_lvl1.lua"
+							"Function"				"tower_tier_1_5"
+						}
+					}
+				}
+			}
+		}
+		
+		"tower_tier_1_6" // Bonus Movespeed
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"								"ability_lua"
+			"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"AbilityUnitTargetTeam"     			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+			"AbilityUnitTargetType"     			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"AbilityTextureName"					"custom_ability/tower_tier_1_6"
+			"MaxLevel"								"1"
+			"AbilitySharedWithTeammates"			"1"
+			"AbilityCastRange"						"900"
+			"ScriptFile"							"heroes/tower_ability/tower_ability_lvl1.lua"
+
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"						"FIELD_INTEGER"
+					"bonus_movespeed"				"45"
+				}
+				"02"
+				{
+					"var_type"						"FIELD_INTEGER"
+					"aura_radius"					"900"
+				}
+			}
+		}
+		
+		//=======================================================
+		// TIER 2
+		//=======================================================
+		
+		"tower_tier_2_1" //SPLIT SHOT
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"								"ability_lua"
+			"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"AbilityUnitTargetTeam"     			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"AbilityUnitTargetType"     			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"AbilityTextureName"					"custom_ability/tower_tier_2_1"
+			"MaxLevel"								"1"
+			"AbilitySharedWithTeammates"			"1"
+			"AbilityCastRange"						"900"
+			"ScriptFile"							"heroes/tower_ability/tower_ability_lvl2.lua"
+
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"						"FIELD_INTEGER"
+					"split_targets"					"7"
+				}
+				"02"
+				{
+					"var_type"						"FIELD_INTEGER"
+					"bonus_attack_speed"			"12"
+				}
+				"03"
+				{
+					"var_type"						"FIELD_INTEGER"
+					"bonus_attack_dur"				"12"
+				}
+			}
+		}
+		
+		"tower_tier_2_2" //Mana Burn
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"								"ability_lua"
+			"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"AbilityUnitTargetTeam"     			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"AbilityUnitTargetType"     			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"AbilityTextureName"					"custom_ability/tower_tier_2_2"
+			"MaxLevel"								"1"
+			"AbilitySharedWithTeammates"			"1"
+			"AbilityCastRange"						"900"
+			"ScriptFile"							"heroes/tower_ability/tower_ability_lvl2.lua"
+
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"						"FIELD_FLOAT"
+					"mana_steal"					"2.5"
+				}
+				"02"
+				{
+					"var_type"						"FIELD_INTEGER"
+					"aura_radius"					"900"
+				}
+			}
+		}
+		
+		"tower_tier_2_3" //Rootes
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"								"ability_datadriven"
+			"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"AbilityUnitTargetTeam"     			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"AbilityUnitTargetType"     			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"AbilityTextureName"					"custom_ability/tower_tier_2_3"
+			"MaxLevel"								"1"
+			"AbilitySharedWithTeammates"			"1"
+			"AbilityCastRange"						"900"
+			"AbilityCooldown"						"8"
+
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"						"FIELD_INTEGER"
+					"root_radius"					"900"
+				}
+				"02"
+				{
+					"var_type"						"FIELD_FLOAT"
+					"duration_hero"					"2.5"
+				}
+				"03"
+				{
+					"var_type"						"FIELD_INTEGER"
+					"root_damage"					"70"
+				}
+				"04"
+				{
+					"var_type"						"FIELD_INTEGER"
+					"duration_creep"				"4"
+				}
+				"05"
+				{
+					"var_type"						"FIELD_INTEGER"
+					"min_creeps"					"3"
+				}
+			}
+
+			"Modifiers"
+			{
+				"modifier_tower_tier_2_3"
+				{
+					"Passive"						"1"
+					"IsHidden"						"1"
+					"ThinkInterval"					"0.1"
+					"OnIntervalThink"
+					{
+						"RunScript"
+						{
+							"ScriptFile"			"heroes/tower_ability/tower_ability_lvl2.lua"
+							"Function"				"tower_tier_2_3"
+						}
+					}
+				}
+
+				"modifier_tower_tier_2_3_root"
+				{
+					"Passive"						"0"
+					"IsHidden"						"0"
+					"IsDebuff"						"1"
+					"IsPurgable"					"1"
+					"EffectName"					"particles/units/heroes/hero_treant/treant_overgrowth_vines.vpcf"
+					"EffectAttachType"				"follow_origin"
+					"ThinkInterval"					"1.0"
+					"OnIntervalThink"
+					{
+						"Damage"
+						{
+							"Target"				"TARGET"
+							"Type"					"DAMAGE_TYPE_MAGICAL"
+							"Damage"				"%root_damage"
+						}
+					}
+
+					"States"
+					{
+						"MODIFIER_STATE_ROOTED"		"MODIFIER_STATE_VALUE_ENABLED"
+					}
+				}
+			}
+		}
+		
+		"tower_tier_2_4" //Hexed
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"								"ability_datadriven"
+			"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"AbilityUnitTargetTeam"     			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"AbilityUnitTargetType"     			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"AbilityTextureName"					"custom_ability/tower_tier_2_4"
+			"MaxLevel"								"1"
+			"AbilitySharedWithTeammates"			"1"
+			"AbilityCastRange"						"900"
+			"AbilityCooldown"						"16"
+
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"						"FIELD_INTEGER"
+					"hexed_radius"					"900"
+				}
+				"02"
+				{
+					"var_type"						"FIELD_FLOAT"
+					"duration_hero"					"2.1"
+				}
+				"04"
+				{
+					"var_type"						"FIELD_INTEGER"
+					"duration_creep"				"3.1"
+				}
+			}
+
+			"Modifiers"
+			{
+				"modifier_tower_tier_2_4"
+				{
+					"Passive"						"1"
+					"IsHidden"						"1"
+					"ThinkInterval"					"0.1"
+					"OnIntervalThink"
+					{
+						"RunScript"
+						{
+							"ScriptFile"			"heroes/tower_ability/tower_ability_lvl2.lua"
+							"Function"				"tower_tier_2_4"
+						}
+					}
+				}
+			}
+		}
+		
+		"tower_tier_2_5" //Silence
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"								"ability_datadriven"
+			"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"AbilityUnitTargetTeam"     			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"AbilityUnitTargetType"     			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"AbilityTextureName"					"custom_ability/tower_tier_2_5"
+			"MaxLevel"								"1"
+			"AbilitySharedWithTeammates"			"1"
+			"AbilityCastRange"						"900"
+			"AbilityCooldown"						"8"
+
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"						"FIELD_INTEGER"
+					"silence_radius"					"900"
+				}
+				"02"
+				{
+					"var_type"						"FIELD_FLOAT"
+					"duration_hero"					"3.2"
+				}
+			}
+
+			"Modifiers"
+			{
+				"modifier_tower_tier_2_5"
+				{
+					"Passive"						"1"
+					"IsHidden"						"1"
+					"ThinkInterval"					"0.1"
+					"OnIntervalThink"
+					{
+						"RunScript"
+						{
+							"ScriptFile"			"heroes/tower_ability/tower_ability_lvl2.lua"
+							"Function"				"tower_tier_2_5"
+						}
+					}
+				}
+			}
+		}
+		
+		"tower_tier_2_6" //Kill Illusion
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"								"ability_datadriven"
+			"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"AbilityUnitTargetTeam"     			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"AbilityUnitTargetType"     			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"AbilityTextureName"					"custom_ability/tower_tier_2_6"
+			"MaxLevel"								"1"
+			"AbilitySharedWithTeammates"			"1"
+			"AbilityCastRange"						"900"
+			"AbilityCooldown"						"14"
+
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"						"FIELD_INTEGER"
+					"radius"						"900"
+				}
+			}
+
+			"Modifiers"
+			{
+				"modifier_tower_tier_2_6"
+				{
+					"Passive"						"1"
+					"IsHidden"						"1"
+					"ThinkInterval"					"0.1"
+					"OnIntervalThink"
+					{
+						"RunScript"
+						{
+							"ScriptFile"			"heroes/tower_ability/tower_ability_lvl2.lua"
+							"Function"				"tower_tier_2_6"
+						}
+					}
+				}
+			}
+		}
+		//=======================================================
+		// TIER 3
+		//=======================================================
+	
+		"tower_tier_3_1" //Healing
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"								"ability_datadriven"
+			"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"AbilityUnitTargetTeam"     			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+			"AbilityUnitTargetType"     			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"AbilityTextureName"					"custom_ability/tower_tier_3_1"
+			"MaxLevel"								"1"
+			"AbilitySharedWithTeammates"			"1"
+			"AbilityCastRange"						"900"
+			"AbilityCooldown"						"18"
+
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"						"FIELD_INTEGER"
+					"aura_radius"						"900"
+				}
+				"02"
+				{
+					"var_type"						"FIELD_INTEGER"
+					"healing"							"15"
+				}
+				"03"
+				{
+					"var_type"						"FIELD_INTEGER"
+					"mana_regen"						"220"
+				}
+				"04"
+				{
+					"var_type"						"FIELD_INTEGER"
+					"healing_creep"						"50"
+				}	
+				"05"
+				{
+					"var_type"						"FIELD_INTEGER"
+					"min_creep"							"2"
+				}				
+			}
+
+			"Modifiers"
+			{
+				"modifier_tower_tier_3_1"
+				{
+					"Passive"						"1"
+					"IsHidden"						"1"
+					"ThinkInterval"					"0.1"
+					"OnIntervalThink"
+					{
+						"RunScript"
+						{
+							"ScriptFile"			"heroes/tower_ability/tower_ability_lvl3.lua"
+							"Function"				"tower_tier_3_1"
+						}
+					}
+				}
+			}
+		}
+		"tower_tier_3_2" // Disable healing
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"								"ability_lua"
+			"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"AbilityTextureName"					"custom_ability/tower_tier_3_2"
+			"AbilityUnitTargetTeam"     			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"AbilityUnitTargetType"     			"DOTA_UNIT_TARGET_HERO"
+			"MaxLevel"								"1"
+			"AbilityCastRange"						"900"
+			"ScriptFile"							"heroes/tower_ability/tower_ability_lvl3.lua"
+
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"02"
+				{
+					"var_type"						"FIELD_INTEGER"
+					"aura_radius"					"900"
+				}
+			}
+		}
+		
+		"tower_tier_3_3" // Disable healing
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"								"ability_lua"
+			"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"AbilityTextureName"					"custom_ability/tower_tier_3_3"
+			"AbilityUnitTargetTeam"     			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"AbilityUnitTargetType"     			"DOTA_UNIT_TARGET_HERO"
+			"AbilityUnitDamageType"					"DAMAGE_TYPE_MAGICAL"
+			"MaxLevel"								"1"
+			"AbilityCastRange"						"900"
+			"ScriptFile"							"heroes/tower_ability/tower_ability_lvl3.lua"
+
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"02"
+				{
+					"var_type"						"FIELD_INTEGER"
+					"return_damage"					"45"
+				}
+			}
+		}
+		//=======================================================
+		// TIER 4
+		//=======================================================
+		"tower_tier_4_1" // Tower Health regen
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"								"ability_lua"
+			"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"AbilityTextureName"					"custom_ability/tower_tier_4_1"
+			"AbilityUnitTargetTeam"     			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"AbilityUnitTargetType"     			"DOTA_UNIT_TARGET_HERO"
+			"MaxLevel"								"1"
+			"AbilityCastRange"						"900"
+			"ScriptFile"							"heroes/tower_ability/tower_ability_lvl4.lua"
+
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"						"FIELD_INTEGER"
+					"regen_health"					"50"
+				}
+				"02"
+				{
+					"var_type"						"FIELD_FLOAT"
+					"bonus_heal"					"1.25"
+				}
+			}
+		}
+		"tower_tier_4_2" //Chronosphere
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"								"ability_datadriven"
+			"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"AbilityUnitTargetTeam"     			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"AbilityUnitTargetType"     			"DOTA_UNIT_TARGET_HERO"
+			"AbilityTextureName"					"custom_ability/tower_tier_4_2"
+			"MaxLevel"								"1"
+			"AbilitySharedWithTeammates"			"1"
+			"AbilityCastRange"						"800"
+			"AbilityCooldown"						"18"
+
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"						"FIELD_INTEGER"
+					"aura_radius"						"800"
+				}
+				"02"
+				{
+					"var_type"						"FIELD_INTEGER"
+					"duration"							"5"
+				}					
+			}
+
+			"Modifiers"
+			{
+				"modifier_tower_tier_4_2"
+				{
+					"Passive"						"1"
+					"IsHidden"						"1"
+					"ThinkInterval"					"0.1"
+					"OnIntervalThink"
+					{
+						"RunScript"
+						{
+							"ScriptFile"			"heroes/tower_ability/tower_ability_lvl4.lua"
+							"Function"				"tower_tier_4_2"
+						}
+					}
+				}
+			}
+		}
+		
+		"tower_tier_4_3" //Damage
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"								"ability_datadriven"
+			"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"AbilityUnitTargetTeam"     			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"AbilityUnitTargetType"     			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"AbilityTextureName"					"custom_ability/tower_tier_4_3"
+			"AbilityUnitDamageType"					"DAMAGE_TYPE_MAGICAL"
+			"MaxLevel"								"1"
+			"AbilitySharedWithTeammates"			"1"
+			"AbilityCastRange"						"900"
+			"AbilityCooldown"						"18"
+
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"						"FIELD_INTEGER"
+					"aura_radius"						"900"
+				}
+				"03"
+				{
+					"var_type"						"FIELD_INTEGER"
+					"damage"							"75"
+				}
+				"04"
+				{
+					"var_type"						"FIELD_FLOAT"
+					"interval"							"0.75"
+				}				
+			}
+
+			"Modifiers"
+			{
+				"modifier_tower_tier_4_3"
+				{
+					"Passive"						"1"
+					"IsHidden"						"1"
+					"ThinkInterval"					"0.1"
+					"OnIntervalThink"
+					{
+						"RunScript"
+						{
+							"ScriptFile"			"heroes/tower_ability/tower_ability_lvl4.lua"
+							"Function"				"tower_tier_4_3"
+						}
+					}
+				}
+			}
+		}
+		"tower_tier_4_4" //Full Healing
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"								"ability_datadriven"
+			"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"AbilityUnitTargetTeam"     			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"AbilityUnitTargetType"     			"DOTA_UNIT_TARGET_HERO"
+			"AbilityTextureName"					"custom_ability/tower_tier_4_4"
+			"MaxLevel"								"1"
+			"AbilitySharedWithTeammates"			"1"
+			"AbilityCastRange"						"800"
+			"AbilityCooldown"						"35"
+
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"						"FIELD_INTEGER"
+					"min_hp"						"25"
+				}					
+			}
+
+			"Modifiers"
+			{
+				"modifier_tower_tier_4_4"
+				{
+					"Passive"						"1"
+					"IsHidden"						"1"
+					"ThinkInterval"					"0.1"
+					"OnIntervalThink"
+					{
+						"RunScript"
+						{
+							"ScriptFile"			"heroes/tower_ability/tower_ability_lvl4.lua"
+							"Function"				"tower_tier_4_4"
+						}
+					}
+				}
+			}
+		}
+	}

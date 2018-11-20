@@ -1,0 +1,370 @@
+""
+	{
+		"thor_mjollnir"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"ability_lua"
+			"ScriptFile"					"heroes/thor/thor_mjollnir.lua"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"	
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			//"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+			"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+			"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+			//"AbilityDamageTypeTooltip"	"DAMAGE_TYPE_ELECTRICAL"
+			"AbilityTextureName"			"custom_ability/thor_mjollnir"
+			"AbilityCooldown"				"20 15 13 12"
+			"AbilityCastRange"				"700"
+			"AbilityManaCost"				"75"
+			
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"base_damage"			"125 200 240 260"	
+					"LinkedSpecialBonus"	"special_bonus_thor_4"
+				}				
+				"01"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"damage"				"25 30 35 45"	
+				}		
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"num_targets"			"4 4 4 5"
+					"LinkedSpecialBonus"	"special_bonus_thor_2"
+				}				
+				"03"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_damage"			"10"
+				}				
+				"04"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"radius"				"750"
+				}				
+				"05"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"interval"				"0.15"
+				}
+			}
+		}		
+		"thor_storm"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"ability_lua"
+			"ScriptFile"					"heroes/thor/thor_storm.lua"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"	
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+			"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+			"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+			//"AbilityDamageTypeTooltip"		"DAMAGE_TYPE_ELECTRICAL"
+			"AbilityTextureName"			"custom_ability/thor_storm"
+			"AbilityCooldown"				"35 28 24 18"
+			"AbilityCastRange"				"400 550 750 900"
+			"AbilityManaCost"				"150"
+			
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"damage"				"60 80 90 125"	
+				}		
+				"02"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"interval"				"0.7"
+				}				
+				"03"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"duration"				"4 6 8 9"
+				}				
+				"04"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"radius"				"660"
+				}
+			}
+		}
+		"thor_lightning"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"ability_lua"
+			"ScriptFile"					"heroes/thor/thor_lightning.lua"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"	
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"AbilityTextureName"			"custom_ability/thor_lightning"
+			
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"bonus_electric"			"1 1 1 2"	
+				}		
+				"02"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"duration"					"10 12 14 17"
+				}				
+			}
+		}
+		"thor_lightning_hammer"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"ability_lua"
+			"ScriptFile"					"heroes/thor/thor_lightning_hammer.lua"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"	
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+			"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+			"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+			//"AbilityDamageTypeTooltip"	"DAMAGE_TYPE_ELECTRICAL"
+			"AbilityTextureName"			"custom_ability/thor_lightning_hammer"
+			"AbilityCooldown"				"90"
+			"AbilityCastRange"				"1600"
+			"AbilityManaCost"				"250"
+			
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"damage"				"450 650 1100"	
+				}				
+				"01"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"damage_per_electric"	"20"	
+				}										
+				"04"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"radius"				"1800"
+				}
+			}
+		}
+		
+		"special_bonus_thor_1"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"7654"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+			"BaseClass"						"special_bonus_undefined"
+			"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MAXLEVEL"                      "1"
+
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"value"					"1"
+				}
+			}
+			// Tooltip Talent Manager
+			"LinkedTalentManager"
+			{
+				"01"	"thor_lightning_hammer"
+			}
+		}		
+		"special_bonus_thor_2"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"7654"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+			"BaseClass"						"special_bonus_undefined"
+			"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MAXLEVEL"                      "1"
+
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"value"					"3"
+				}
+			}
+			// Tooltip Talent Manager
+			"LinkedTalentManager"
+			{
+				"01"	"thor_mjollnir"
+			}
+		}		
+		"special_bonus_thor_3"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"7654"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+			"BaseClass"						"special_bonus_undefined"
+			"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MAXLEVEL"                      "1"
+			
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"value"					"0.3"
+				}
+			}
+			// Tooltip Talent Manager
+			"LinkedTalentManager"
+			{
+				"01"	"thor_mjollnir"
+			}
+		}		
+		"special_bonus_thor_4"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"7654"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+			"BaseClass"						"special_bonus_undefined"
+			"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MAXLEVEL"                      "1"
+			
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"value"					"120"
+				}
+			}
+			// Tooltip Talent Manager
+			"LinkedTalentManager"
+			{
+				"01"	"thor_mjollnir"
+			}
+		}		
+		"special_bonus_thor_5"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"7654"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+			"BaseClass"						"special_bonus_undefined"
+			"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MAXLEVEL"                      "1"
+			
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"value"					"1"
+				}
+			}
+			// Tooltip Talent Manager
+			"LinkedTalentManager"
+			{
+				"01"	"thor_lightning"
+			}
+		}		
+		"special_bonus_thor_6"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"7654"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+			"BaseClass"						"special_bonus_undefined"
+			"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MAXLEVEL"                      "1"
+			
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"value"					"2.4"
+				}
+			}
+			// Tooltip Talent Manager
+			"LinkedTalentManager"
+			{
+				"01"	"thor_storm"
+			}
+		}		
+		"special_bonus_thor_7"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"7654"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+			"BaseClass"						"special_bonus_undefined"
+			"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MAXLEVEL"                      "1"
+			
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"value"					"1.4"
+				}
+			}
+			// Tooltip Talent Manager
+			"LinkedTalentManager"
+			{
+				"01"	"thor_lightning_hammer"
+			}
+		}		
+		"special_bonus_thor_8"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"7654"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+			"BaseClass"						"special_bonus_undefined"
+			"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MAXLEVEL"                      "1"
+			
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"value"					"1.2"
+				}
+			}
+			// Tooltip Talent Manager
+			"LinkedTalentManager"
+			{
+				"01"	"thor_lightning"
+			}
+		}
+	}

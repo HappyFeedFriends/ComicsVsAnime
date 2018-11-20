@@ -1,0 +1,432 @@
+""
+{
+
+	"special_bonus_black_panther_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"													// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"2"
+			}				
+		}
+	}
+	
+	"special_bonus_black_panther_4"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"													// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"30"
+			}				
+		}
+	}	
+	"special_bonus_black_panther_5"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"													// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"50"
+			}				
+		}
+	}	
+	"special_bonus_black_panther_6"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"													// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"25"
+			}				
+		}
+	}	
+	"special_bonus_black_panther_7"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"													// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"75"
+			}				
+		}
+	}	
+	"special_bonus_black_panther_8"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"													// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"-50"
+			}				
+		}
+	}
+	
+	"special_bonus_black_panther_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"													// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"2"
+			}				
+		}
+	}
+
+	"special_bonus_black_panther_1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"													// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"chance"				"15"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"duration"		   		"2"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage"		   		"35" 
+			}	
+			
+		}
+	}
+
+	"black_panther_kostume"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"		    "custom_ability/black_panther_kostum"
+		"ScriptFile"					"heroes/black_panther/black_panther_kostume.lua"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_bonus"				"45 65 75 100"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"armor_bonus"				"12 16 19 24"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"move_bonus"				"50 80 100 100"
+				"LinkedSpecialBonus"		"special_bonus_black_panther_7"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"attack_speed_bonus"		"50 90 140 180"
+			}
+		}
+	}	
+
+	"black_panther_rage"
+	{
+			
+		"BaseClass"                 "ability_datadriven"
+		"AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"        "custom_ability/black_Panther_rage"
+		"AbilityCooldown"			"30 30 30 25"
+		"HasScepterUpgrade"				"0"
+		"AbilitySpecial"
+		{
+			"01"
+		    {
+		      "var_type"               "FIELD_FLOAT"
+			  "health_limit"            "35"
+			}
+		   "02"
+		    {
+		      "var_type"              "FIELD_FLOAT"
+			  "attack_speed"          "50 75 125 150"
+			  "LinkedSpecialBonus"		"special_bonus_black_panther_5"
+			}	
+
+		   "03"
+		    {
+		      "var_type"            "FIELD_FLOAT"
+			  "damage"          	"45 60 75 100"
+			  "LinkedSpecialBonus"	"special_bonus_black_panther_6"
+			}
+
+			"04"
+		    {
+		      "var_type"              "FIELD_FLOAT"
+			  "duration"          	 "5 8 10 12"	
+			}
+		}
+		"Modifiers"
+		{
+		    "modifier_black_panther_rage"
+			{
+				"Passive"       "1"
+				"IsHidden"      "1"
+				"IsPurgable"    "1"
+				"ThinkInterval"					"0.1"
+				"OnIntervalThink"
+			    {
+			       "RunScript"   
+				    {
+				        "ScriptFile"    "heroes/black_panther/black_panther_health_check.lua"
+						"Function"     	"black_panther_check_hp"
+				    }
+			    }
+			}
+			"modifier_black_panther_rage_activate"
+			{
+				"Passive"       "0"
+				"IsHidden"      "0"
+				"IsPurgable"    "1"
+				"OnDestroy"
+				{
+					"RunScript"   
+				    {
+				        "ScriptFile"    "heroes/black_panther/black_panther_health_check.lua"
+						"Function"     	"black_panther_back_model"
+				    }
+				}
+				"Properties"
+			    {
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%damage"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%attack_speed"
+			    }
+			}
+	    }
+	}		
+
+	"black_panther_kogti"
+	{
+			
+		"BaseClass"                 "ability_datadriven"
+		"AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"        "custom_ability/black_panther_kogti"
+		"AbilityUnitDamageType"		"DAMAGE_TYPE_MAGICAL"		
+		"SpellImmunityType"			"SPELL_IMMUNITY_ENEMIES_NO"
+	    "AbilityManaCost"			"125"
+		"AbilityCooldown"			"30 30 30 25"
+		"AbilitySpecial"
+		{
+		   "01"
+		    {
+		      "var_type"              "FIELD_FLOAT"
+			  "num_attack"          "5 7 9 10"
+			  "LinkedSpecialBonus" 	"special_bonus_black_panther_3"	
+			}	
+		   "01"
+		    {
+		      "var_type"            "FIELD_FLOAT"
+			  "damage"          	"5"
+			  "LinkedSpecialBonus" 	"special_bonus_black_panther_2"			
+			  "CalculateSpellDamageTooltip" "0"
+			}
+			"04"
+		    {
+		      "var_type"               "FIELD_FLOAT"
+			  "duration"            "4 6 7 8"
+			}
+			"05"
+		    {
+		      "var_type"               "FIELD_INTEGER"
+			  "mult_rage"            "2"
+			}
+	    }				
+		"OnSpellStart"
+		{
+
+			"RunScript"   
+			{
+				"ScriptFile"    "heroes\black_panther/black_panther_kogti.lua"
+				"Function"      "black_panther_kogti"
+			}
+		}
+		"Modifiers"
+		{
+		    "modifier_black_panther_kogti"
+			{
+			   "Passive"       "0"
+			   "IsHidden"      "1"
+			   "IsPurgable"    "1"
+				"OnAttack"
+				{
+			       "RunScript"   
+				    {
+				        "ScriptFile"    "heroes\black_panther/black_panther_kogti.lua"
+						"Function"     "black_panther_kogti_attack"
+				    }
+				}
+			}		
+			"black_panther_attack_bonus"
+			{
+			    "Passive"            "0"
+				"IsBuff"             "1"
+				"IsPurgable"         "0"
+				"IsHidden"           "0"
+			}
+		}
+	}
+	
+		"black_panther_ultimate"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/black_panther/black_panther_ultimate.lua"
+		"AbilityTextureName"			"custom_ability/black_panther_ult"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"FightRecapLevel"				"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"				"150"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"80"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		"precache"
+		{
+			"model"		"models/items/antimage/pw_tustarkuri_head/antimage_head.vmdl"
+			"model"		"models/items/antimage/mage_eraser_belt/mage_eraser_belt.vmdl"
+			"model"		"models/items/antimage/witch_hunter_head/witch_hunter_head.vmdl"
+			"model"		"models/items/antimage/witch_hunter_shoulder/witch_hunter_shoulder.vmdl"
+			"model"		"models/items/antimage/ti7_antimage_immortal/ti7_immortal_armor.vmdl"
+			"particle"  "particles/hero_iron_fist/iron_fist_iron_strike_immortal_ambient.vpcf"
+			"particle"  "particles/hero_iron_fist/iron_fist_iron_strike_immortal.vpcf"
+			"particle"	"particles/hero_iron_fist/ironfist_iron_strike_ground.vpcf"
+			"particle"	"particles/hero_iron_fist/ironfist_iron_strike_line.vpcf"
+			"particle"	"particles/hero_iron_fist/ironfist_iron_strike_buff.vpcf"
+			"particle"  "particles/econ/items/antimage/antimage_ti7_golden/antimage_ti7_golden_ambient.vpcf"
+			"particle"  "particles/econ/items/antimage/antimage_ti7/antimage_ti7_ambient.vpcf"
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"hp_damage"					"80 100 125"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"stack_dmg_bonus"				"10"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"lenght"					"200 400 600"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"width"						"300"
+			}	
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"mana"						"80"
+				"LinkedSpecialBonus"		"special_bonus_black_panther_8"
+			}
+		}
+	}
+
+}

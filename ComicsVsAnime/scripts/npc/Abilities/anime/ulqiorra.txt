@@ -1,0 +1,469 @@
+""
+{
+	"ulquiorra_ult"
+	{
+		"BaseClass"								"ability_datadriven"
+
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityTextureName"					"custom_ability/ulqiorra_ult"
+		"AbilityUnitTargetTeam"					"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"					"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"					"DAMAGE_TYPE_MAGICAL"
+		"AOERadius"								"%radius"
+		"AbilityType"							"DOTA_ABILITY_TYPE_ULTIMATE"
+
+		"AbilityCastPoint"						"1.0"
+		"AbilityCastAnimation"					"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate"					"1.0"
+		"AnimationIgnoresModelScale"			"1"
+
+		// Stats
+		//----------------------------------------------------------------------------------------
+		"AbilityManaCost"						"400"
+		"AbilityCooldown"						"110.0"
+		"AbilityCastRange"						"1400"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage"						"450 650 700"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"mult"							"120"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"radius"						"920"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"duration_stun"					"1.2"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/ulquiorra/ulquiorra_ult.lua"
+				"Function"		"ulqiorra_ult"
+				"Target"		"POINT"
+			}
+			"FireSound"
+			{
+				"EffectName"	"Hero_Enchantress.Impetus"
+				"Target"
+				{
+					"Center"  	"CASTER"
+					"Flags"     "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+				}
+			}
+		}
+
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"1"
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/ulquiorra/ulquiorra_ult.lua"
+				"Function"		"ulqiorra_ult_hit"
+			}
+			"FireSound"
+			{
+				"EffectName"	"Hero_Pugna.NetherBlast"
+				"Target"
+				{
+					"Center"  	"TARGET"
+					"Flags"     "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+				}
+			}
+		}
+	}
+	
+	"ulquiorra_sero"
+	{
+		"BaseClass"								"ability_datadriven"
+
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityTextureName"					"custom_ability/ulqiorra_sero"
+		"AbilityUnitTargetTeam"					"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"					"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"					"DAMAGE_TYPE_MAGICAL"
+		"HasScepterUpgrade"						"1"
+
+		"AbilityCastPoint"						"0.3"
+		"AbilityCastAnimation"					"ACT_DOTA_CAST_ABILITY_2"
+		"AnimationPlaybackRate"					"3"
+		"AnimationIgnoresModelScale"			"1"
+
+		// Stats
+		//----------------------------------------------------------------------------------------
+		"AbilityManaCost"						"100 160 200 220"
+		"AbilityCooldown"						"30 25 25 20"
+		"AbilityCastRange"						"1500"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage"						"150 210 260 350"
+				"LinkedSpecialBonus"			"special_bonus_ulquiorra_5"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"chance"						"10"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"radius"						"350"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"damage_scepter"				"50"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"LinearProjectile"
+			{
+				"Target" 			"TARGET"
+				"EffectName" 		"particles/custom/ulquiorra/ulquiorra_skill_3.vpcf"
+				"MoveSpeed" 		"1600"
+				"StartRadius" 		"50"
+				"EndRadius" 		"10"
+				"FixedDistance" 	"99999"
+				"StartPosition" 	"CASTER"
+				"TargetTeams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"TargetTypes" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"TargetFlags" 		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+				"HasFrontalCone" 	"1"
+				"ProvidesVision" 	"1"
+				"VisionRadius" 		"200"
+			}
+			"FireSound"
+			{
+				"EffectName"	"Hero_Tinker.Laser"
+				"Target"
+				{
+					"Center"  	"CASTER"
+					"Flags"     "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+				}
+			}
+		}
+
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit" "1"
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/ulquiorra/ulquiorra_sero.lua"
+				"Function"		"ulquiorra_sero"
+			}
+		}
+
+		"precache"
+		{
+			"particle" "particles/custom/ulquiorra/ulquiorra_skill_3.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_gyrocopter.vsndevts"
+		}
+	}
+	
+	"ulquiorra_ierro"
+	{
+		"BaseClass"								"ability_datadriven"
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"					"custom_ability/ulqiorra_ierro"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"armor_bonus"					"10 12 16 20"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"resist_bonus"					"25"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage_block"					"4 6 8 10"
+			}	
+		}
+
+		"Modifiers"
+		{
+			"modifier_ulquiorra_ierro_passive"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"IsBuff"			"1"
+		
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" 	"%resist_bonus"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%armor_bonus"
+					"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE"	"%damage_block"
+				}
+			}
+		}
+	}
+	
+	"ulquiorra_bala"
+	{
+		"BaseClass"								"ability_datadriven"
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityTextureName"					"custom_ability/ulqiorra_bala"
+		"AbilityUnitDamageType"					"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetType"					"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AOERadius"								"%radius"
+		"AbilityCastRange"						"900"
+		"AbilityCastPoint"						"0.3"
+		"AbilityCastAnimation"					"ACT_DOTA_CAST_ABILITY_1"
+		"AnimationPlaybackRate"					"2"
+		"AnimationIgnoresModelScale"			"1"
+
+		// Stats
+		//----------------------------------------------------------------------------------------
+		"AbilityManaCost"						"120"
+		"AbilityCooldown"						"20 16 14 12"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage"						"150 170 240 300"
+				"LinkedSpecialBonus" 			"special_bonus_ulquiorra_3"	
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"radius"						"250"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"AttachEffect"
+			{
+				"EffectName"	"particles/units/heroes/hero_lycan/lycan_summon_wolves_spawn_g.vpcf"
+				"Target"
+				{
+					"Center"  	"CASTER"
+					"Flags"     "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+				}
+				"EffectAttachType"	"attach_attack1"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/ulquiorra/ulquiorra_bala.lua"
+				"Function"		"ulquiorra_bala"
+				"Target"		"POINT"
+			}
+
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Center"  	"POINT"
+					"Radius" 	"%radius"
+					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				}
+			
+				"Action"    
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/ulquiorra/ulquiorra_bala.lua"
+						"Function"		"ulquiorra_bala_damage"
+					}
+				}
+			}
+		}
+
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_lycan/lycan_summon_wolves_spawn_g.vpcf"
+			"particle"  "particles/custom/ulquiorra/ulquiorra_skill_1.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
+		}
+	}
+	
+	"special_bonus_ulquiorra_1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"													// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"25"
+			}				
+		}
+	}
+	
+	"special_bonus_ulquiorra_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"													// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"1"
+			}				
+		}
+	}
+	"special_bonus_ulquiorra_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"													// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"125"
+			}				
+		}
+	}	
+	"special_bonus_ulquiorra_4"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"													// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"250"
+			}				
+		}
+	}	
+	"special_bonus_ulquiorra_5"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"													// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"100"
+			}				
+		}
+	}	
+	"special_bonus_ulquiorra_6"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"													// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"0"
+			}				
+		}
+	}	
+	"special_bonus_ulquiorra_7"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"													// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"0.8"
+			}				
+		}
+	}	
+	"special_bonus_ulquiorra_8"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"													// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"3"
+			}			
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"cooldown"			"95"
+			}				
+		}
+	}
+}

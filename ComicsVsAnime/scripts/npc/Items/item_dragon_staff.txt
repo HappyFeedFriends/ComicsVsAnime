@@ -1,0 +1,379 @@
+""
+	{
+	
+		"item_recipe_dragon_staff"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"32100"						
+			"Model"							"models/props_gameplay/recipe.mdl"
+			"AbilityTextureName"			"item_recipe"
+			"BaseClass"                     "item_datadriven"
+		
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"1100"	
+			"ItemShopTags"					"artifacts"
+			
+			// Recipe
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemRecipe"					"1"
+			"ItemResult"					"item_dragon_staff"
+			"ItemRequirements"
+			{
+				"01"						"item_staff_of_wizardry;item_null_talisman"
+			}
+		}
+		
+		"item_recipe_dragon_staff_2"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"32101"						
+			"Model"							"models/props_gameplay/recipe.mdl"
+			"AbilityTextureName"			"item_recipe"
+			"BaseClass"                     "item_datadriven"
+		
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"1100"	
+			"ItemShopTags"					"artifacts"
+			
+			// Recipe
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemRecipe"					"1"
+			"ItemResult"					"item_dragon_staff_2"
+			"ItemRequirements"
+			{
+				"01"						"item_dragon_staff"
+			}
+		}
+		
+		"item_recipe_dragon_staff_3"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"32102"						
+			"Model"							"models/props_gameplay/recipe.mdl"
+			"AbilityTextureName"			"item_recipe"
+			"BaseClass"                     "item_datadriven"
+		
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"1100"	
+			"ItemShopTags"					"artifacts"
+			
+			// Recipe
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemRecipe"					"1"
+			"ItemResult"					"item_dragon_staff_3"
+			"ItemRequirements"
+			{
+				"01"						"item_dragon_staff_2"
+			}
+		}
+		
+		"item_recipe_dragon_staff_4"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"32103"						
+			"Model"							"models/props_gameplay/recipe.mdl"
+			"AbilityTextureName"			"item_recipe"
+			"BaseClass"                     "item_datadriven"
+		
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"1100"	
+			"ItemShopTags"					"artifacts"
+			
+			// Recipe
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemRecipe"					"1"
+			"ItemResult"					"item_dragon_staff_4"
+			"ItemRequirements"
+			{
+				"01"						"item_dragon_staff_3"
+			}
+		}
+		
+		"item_recipe_dragon_staff_5"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"32104"						
+			"Model"							"models/props_gameplay/recipe.mdl"
+			"AbilityTextureName"			"item_recipe"
+			"BaseClass"                     "item_datadriven"
+		
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"1100"	
+			"ItemShopTags"					"artifacts"
+			
+			// Recipe
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemRecipe"					"1"
+			"ItemResult"					"item_dragon_staff_5"
+			"ItemRequirements"
+			{
+				"01"						"item_dragon_staff_4"
+			}
+		}
+	
+		"item_dragon_staff"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"item_lua"
+			"AbilityTextureName" 			"custom/item_dragon_staff"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+			"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+			"ScriptFile"					"items/item_dragon_staff.lua"
+			"AbilityCooldown"				"25"
+			"AbilityManaCost"				"120"
+			"AbilitySharedCooldown"			"dagon;dragon_staff"
+			"MaxUpgradeLevel"				"5"
+			"ItemBaseLevel"					"1"
+			"AbilityCastRange"				"600 800 900 1100 1300"
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"0"
+			"ItemShopTags"					"dragon;staff;dragon staff"
+			"ItemQuality"					"legendary"
+			"ItemAliases"					"dragon staff"
+			"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"damage"				"400 550 700 800 1000"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"range"					"600 800 900 1100 1300"
+				}				
+				"03"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"int"					"18 22 25 27 30"
+				}				
+				"04"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"all_stats"				"10"
+				}
+			}
+		}
+		"item_dragon_staff_2"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"item_lua"
+			"AbilityTextureName" 			"custom/item_dragon_staff_2"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+			"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+			"ScriptFile"					"items/item_dragon_staff.lua"
+			"AbilityCooldown"				"25"
+			"AbilityManaCost"				"120"
+			"AbilitySharedCooldown"			"dagon;dragon_staff"
+			"MaxUpgradeLevel"				"5"
+			"ItemBaseLevel"					"2"
+			"AbilityCastRange"				"600 800 900 1100 1300"
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"0"
+			"ItemShopTags"					"dragon;staff;dragon staff"
+			"ItemQuality"					"legendary"
+			"ItemAliases"					"dragon staff"
+			"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"damage"				"400 550 700 800 1000"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"range"					"600 800 900 1100 1300"
+				}				
+				"03"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"int"					"18 22 25 27 30"
+				}				
+				"04"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"all_stats"				"10"
+				}
+			}
+		}
+		"item_dragon_staff_3"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"item_lua"
+			"AbilityTextureName" 			"custom/item_dragon_staff_3"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+			"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+			"ScriptFile"					"items/item_dragon_staff.lua"
+			"AbilityCooldown"				"25"
+			"AbilityManaCost"				"120"
+			"AbilitySharedCooldown"			"dagon;dragon_staff"
+			"MaxUpgradeLevel"				"5"
+			"ItemBaseLevel"					"3"
+			"AbilityCastRange"				"600 800 900 1100 1300"
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"0"
+			"ItemShopTags"					"dragon;staff;dragon staff"
+			"ItemQuality"					"legendary"
+			"ItemAliases"					"dragon staff"
+			"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"damage"				"400 550 700 800 1000"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"range"					"600 800 900 1100 1300"
+				}				
+				"03"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"int"					"18 22 25 27 30"
+				}				
+				"04"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"all_stats"				"10"
+				}
+			}
+		}
+		"item_dragon_staff_4"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"item_lua"
+			"AbilityTextureName" 			"custom/item_dragon_staff_4"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+			"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+			"ScriptFile"					"items/item_dragon_staff.lua"
+			"AbilityCooldown"				"25"
+			"AbilityManaCost"				"120"
+			"AbilitySharedCooldown"			"dagon;dragon_staff"
+			"MaxUpgradeLevel"				"5"
+			"ItemBaseLevel"					"4"
+			"AbilityCastRange"				"600 800 900 1100 1300"
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"0"
+			"ItemShopTags"					"dragon;staff;dragon staff"
+			"ItemQuality"					"legendary"
+			"ItemAliases"					"dragon staff"
+			"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"damage"				"400 550 700 800 1000"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"range"					"600 800 900 1100 1300"
+				}				
+				"03"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"int"					"18 22 25 27 30"
+				}				
+				"04"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"all_stats"				"10"
+				}
+			}
+		}
+		"item_dragon_staff_5"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"item_lua"
+			"AbilityTextureName" 			"custom/item_dragon_staff_5"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+			"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+			"ScriptFile"					"items/item_dragon_staff.lua"
+			"AbilityCooldown"				"25"
+			"AbilityManaCost"				"120"
+			"AbilitySharedCooldown"			"dagon;dragon_staff"
+			"MaxUpgradeLevel"				"5"
+			"ItemBaseLevel"					"5"
+			"AbilityCastRange"				"600 800 900 1100 1300"
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"0"
+			"ItemShopTags"					"dragon;staff;dragon staff"
+			"ItemQuality"					"legendary"
+			"ItemAliases"					"dragon staff"
+			"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"damage"				"400 550 700 800 1000"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"range"					"600 800 900 1100 1300"
+				}				
+				"03"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"int"					"18 22 25 27 30"
+				}				
+				"04"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"all_stats"				"10"
+				}
+			}
+		}
+	}

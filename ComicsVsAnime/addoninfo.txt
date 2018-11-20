@@ -1,0 +1,27 @@
+"AddonInfo"
+{
+	"maps"			         "desert_duo desert_quintet mines_trio dota"
+	"IsPlayable"	         "1"
+	"HeroGuidesSupported"    "1"
+	"PenaltiesEnabled"	     "0"
+	"mines_trio"
+	{
+					"MaxPlayers"                    "9"
+	}
+	"desert_duo"
+	{
+					"MaxPlayers"                    "10"
+	}
+	"desert_quintet"
+	{
+					"MaxPlayers"                    "9"
+	}
+	"dota"
+	{
+					"MaxPlayers"                    "10"
+	}
+	"hero_picker"
+	{
+		"background_map"	"backgrounds/dueling_fates_main"
+	}
+}

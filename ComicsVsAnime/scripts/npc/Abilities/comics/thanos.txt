@@ -1,0 +1,465 @@
+""
+{
+	"thanos_attack_passive"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                    	"ability_datadriven" 
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityTextureName"			"custom_ability/thanos_attack_passive"
+		"AbilityCooldown"				"15 12 10 8"
+		"AbilityManaCost"				"60"
+		
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"130 160 210 260"
+				"LinkedSpecialBonus"	"special_bonus_thanos_1"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"knock_duration"		"0.2 0.3 0.4 0.4"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"knockback_height"		"175"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration_vision"		"1.2"
+			}
+		}
+		"Modifiers"
+		{		
+			"modifier_thanos_knockback"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"IsPurgable"		"0"
+				"IsBuff"			"1"
+				"IsDebuff"			"0"
+				"IsStunDebuff"		"0"
+				"OnAttack"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/thanos/thanos_attack_passive.lua"
+						"Function"		"thanos_damage"
+					}
+				}	
+			}
+		}
+	}
+	
+	"thanos_skin"
+	{
+		"BaseClass"								"ability_datadriven"
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"					"custom_ability/thanos_skin"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"armor_bonus"					"7 9 14 17"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"resist_bonus"					"20"
+			}	
+		}
+
+		"Modifiers"
+		{
+			"modifier_thanos_skin"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"IsBuff"			"1"
+		
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" 	"%resist_bonus"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%armor_bonus"
+				}
+			}
+		}
+	}
+	
+	"thanos_ult"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/thanos/thanos_ult.lua"
+		"AbilityTextureName"			"custom_ability/thanos_ult"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AOERadius"						"600 800 1000"
+		"FightRecapLevel"				"2"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.5 0.5 0.5"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"120 110 80"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"200 300 400"
+
+		// Cast Range
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600 900 1200"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.5"	// Primarily about the summon
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"damage_per"					"1"
+				"LinkedSpecialBonus"		"special_bonus_thanos_7"
+			}
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"damage_end"					"35 45 55"
+				"LinkedSpecialBonus"		"special_bonus_thanos_3"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"600 800 1000"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"duration"					"3" // Длительность урона от интервала
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"duration_stunned"			"2"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"interval"					"0.15"
+			}
+		}
+	}
+	
+	"Thanos_damage_convert"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_NO"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"custom_ability/thanos_damage_convert"
+	"AbilityCastRange"				"1200"
+	"AbilityCastPoint"				"0.3"
+	"AbilityCooldown"				"12.0 10.0 8.0 6.0"
+	"AbilityManaCost"				"100 105 110 115"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"stack_bonus_dmg"		"30 45 50 55"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"damage"				"50"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"2"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"limit"					"2500"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"distance"				"1600"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"interval"				"0.5"
+		}
+		"07"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"remove_stack"				"50"
+		}
+	}
+
+	"precache"
+	{	
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_abaddon.vsndevts"
+		"particle"  "particles/units/heroes/hero_abaddon/abaddon_aphotic_shield_explosion.vpcf"
+		"particle"	"particles/units/heroes/hero_abaddon/abaddon_aphotic_shield.vpcf"
+		"particle"	"particles/units/heroes/hero_abaddon/abaddon_aphotic_shield_hit.vpcf"
+	}
+
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/thanos/thanos_attack.lua"
+			"Function"		"thanos_damage_attack"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_thanos_passive_Stack"
+		{
+			"IsBuff"			"1"
+			"Passive"			"1"
+			"IsHidden"			"1"
+			"OnTakeDamage"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/thanos/thanos_attack.lua"
+					"Function"		"ConvertDamageStack"
+					"DamageTaken"	"%attack_damage"
+				}
+			}
+			"ThinkInterval" 	"0.03"
+			"OnIntervalThink"
+        	{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/thanos/thanos_attack.lua"
+					"Function"		"thanos_tick"
+				}
+			}
+		}
+		"modifier_thanos_Stack_damage"
+		{
+			"IsBuff"			"1"
+			"IsHidden"			"0"
+			"IsPurgable"		"0"
+			"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+			"OnDeath"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/thanos/thanos_attack.lua"
+					"Function"		"thanos_remove_stack"
+				}
+			}	
+		}			
+	}
+}
+	
+	"special_bonus_thanos_1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"7654"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MAXLEVEL"                      "1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"value"					"80"
+			}
+		}
+	}
+	
+	"special_bonus_thanos_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"7654"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MAXLEVEL"                      "1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"value"					"1.7"
+			}
+		}
+	}
+	
+	"special_bonus_thanos_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"7654"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MAXLEVEL"                      "1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"value"					"10"
+			}
+		}
+	}
+	"special_bonus_thanos_4"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"7654"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MAXLEVEL"                      "1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max"					"2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cooldown"				"80"
+			}
+		}
+	}
+	"special_bonus_thanos_5"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"7654"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MAXLEVEL"                      "1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"value"					"15"
+			}
+		}
+	}	
+	"special_bonus_thanos_6"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"7654"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MAXLEVEL"                      "1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"value"					"20"
+			}
+		}
+	}	
+	"special_bonus_thanos_7"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"7654"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MAXLEVEL"                      "1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"value"					"1"
+			}
+		}
+	}	
+	"special_bonus_thanos_8"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"7654"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MAXLEVEL"                      "1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"value"					"1"
+			}
+		}
+	}
+}

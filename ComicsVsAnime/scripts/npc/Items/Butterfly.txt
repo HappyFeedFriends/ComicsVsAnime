@@ -1,0 +1,179 @@
+""
+{
+	"item_recipe_butterfly_1"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"7051"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"1200"
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_butterfly_1"
+		"ItemRequirements"
+		{
+			"01"						"item_butterfly"
+		}
+	}
+	
+		"item_recipe_butterfly_2"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"7052"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"1400"
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_butterfly_2"
+		"ItemRequirements"
+		{
+			"01"						"item_butterfly_1"
+		}
+	}
+	
+	"item_recipe_butterfly_3"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"7053"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"1600"
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_butterfly_3"
+		"ItemRequirements"
+		{
+			"01"						"item_butterfly_2"
+		}
+	}
+	"item_butterfly_1"
+	{
+		"BaseClass"						"item_lua"
+		"ID"							"7062"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/item_butterfly_1"
+		"ScriptFile"					"items/item_butterfly"
+		"ItemShopTags"					"agi;damage;evasion;attack_speed"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"bfly;butterfly"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"MaxUpgradeLevel"				"3"
+		"ItemBaseLevel"					"1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_agility"					"50 65 80"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_damage"					"80 100 130"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_evasion"					"35 35 45"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_attack_speed"			"80 125 160"
+			}
+		}
+	}
+	
+	"item_butterfly_2"
+	{
+		"BaseClass"						"item_lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/item_butterfly_2"
+		"ScriptFile"					"items/item_butterfly"
+		"ItemShopTags"					"agi;damage;evasion;attack_speed"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"bfly;butterfly"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"MaxUpgradeLevel"				"3"
+		"ItemBaseLevel"					"2"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_agility"					"50 65 80"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_damage"					"80 100 130"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_evasion"					"35 35 45"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_attack_speed"			"80 125 160"
+			}
+		}
+	}
+	
+	"item_butterfly_3"
+	{
+		"BaseClass"						"item_lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"custom/item_butterfly_3"
+		"ScriptFile"					"items/item_butterfly"
+		"AbilityCooldown"				"35"
+		"ItemShopTags"					"agi;damage;evasion;attack_speed"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"bfly;butterfly"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"MaxUpgradeLevel"				"3"
+		"ItemBaseLevel"					"3"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_agility"					"50 65 80"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_damage"					"80 100 130"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_evasion"					"35 35 45"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_attack_speed"			"80 125 160"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"duration"						"5"
+			}	
+			"06"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"ms_linit"						"800"
+			}
+		}
+	}
+}
+	

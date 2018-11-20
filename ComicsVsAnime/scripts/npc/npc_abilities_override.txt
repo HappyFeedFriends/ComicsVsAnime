@@ -1,0 +1,127 @@
+
+"DOTAAbilities"
+{
+	"Version"		"1"
+	
+	//=================================================================================================================
+	// 
+	//=================================================================================================================
+
+	"item_octarine_core"
+	{
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	}
+		"item_ring_of_aquila"
+	{
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	}
+		"item_phase_boots"
+	{
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	}
+		"item_power_treads"
+	{
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	}
+		"item_gem"
+	{
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	}
+		"item_aghanim2"
+	{
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	}
+		"item_pipe"
+	{
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	}
+		"item_blink"
+	{
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	}
+		"item_ghost"
+	{
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	}
+		"item_vanguard"
+	{
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	}
+		"item_mask_of_madness"
+	{
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	}
+		"item_blade_mail"
+	{
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	}
+		"item_vladmir"
+	{
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	}
+		"item_yasha"
+	{
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	}
+		"item_mekansm"
+	{
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	}
+		"item_hood_of_defiance"
+	{
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	}
+		"item_veil_of_discord"
+	{
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	}
+		"item_glimmer_cape"
+	{
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	}
+		"item_diffusal_blade"
+	{
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	}
+		"item_maelstrom"
+	{
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	}
+		"item_basher"
+	{
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	}
+		"item_invis_sword"
+	{
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	}
+	
+	"item_dagon"
+	{
+		"ItemPurchasable"				"0"
+	}
+	"item_dagon_1"
+	{
+		"ItemPurchasable"				"0"
+	}
+	"item_dagon_2"
+	{
+		"ItemPurchasable"				"0"
+	}
+	"item_dagon_3"
+	{
+		"ItemPurchasable"				"0"
+	}
+	"item_dagon_4"
+	{
+		"ItemPurchasable"				"0"
+	}
+	"item_dagon_5"
+	{
+		"ItemPurchasable"				"0"
+	}
+	"item_recipe_dagon"
+	{
+		"ItemPurchasable"				"0"
+	}
+}

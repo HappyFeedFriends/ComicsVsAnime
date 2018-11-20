@@ -1,0 +1,204 @@
+""
+	{
+	
+	"item_recipe_black_king_bar_1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"21326"						
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"BaseClass"                     "item_datadriven"
+	
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1000"	
+		"ItemShopTags"					"artifacts"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_black_king_bar_1"
+		"ItemRequirements"
+		{
+			"01"						"item_black_king_bar"
+		}
+	}
+	
+		"item_recipe_black_king_bar_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"21327"						
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"BaseClass"                     "item_datadriven"
+	
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1200"	
+		"ItemShopTags"					"artifacts"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_black_king_bar_2"
+		"ItemRequirements"
+		{
+			"01"						"item_black_king_bar_1"
+		}
+	}
+	
+	"item_recipe_black_king_bar_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"21328"						
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"BaseClass"                     "item_datadriven"
+	
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1400"	
+		"ItemShopTags"					"artifacts"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_black_king_bar_3"
+		"ItemRequirements"
+		{
+			"01"						"item_black_king_bar_2"
+		}
+	}
+	
+		"item_black_king_bar_1"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"item_lua"
+			"AbilityTextureName" 			"custom/item_black_king_bar_1"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+			"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+			"ScriptFile"					"items/item_black_king_bar.lua"
+			"AbilityCooldown"				"60 50 45"
+			// Stats
+			//-------------------------------------------------------------------------------------------------------------
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"4000"
+			"ItemShopTags"					"magic;amplify;magic crit;crit;magic"
+			"ItemQuality"					"legendary"
+			"ItemAliases"					"magic medallion"
+			"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
+			"MaxUpgradeLevel"				"3"
+			"ItemBaseLevel"					"1"
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_strength"			"25 30 45"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_damage"				"50 85 100"
+				}
+				"03"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"duration"					"16"
+				}
+			}
+		}
+		
+		"item_black_king_bar_2"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"item_lua"
+			"AbilityTextureName" 			"custom/item_black_king_bar_2"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+			"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+			"ScriptFile"					"items/item_black_king_bar.lua"
+			"AbilityCooldown"				"60 50 45"
+			// Stats
+			//-------------------------------------------------------------------------------------------------------------
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"4000"
+			"ItemShopTags"					"magic;amplify;magic crit;crit;magic"
+			"ItemQuality"					"legendary"
+			"ItemAliases"					"magic medallion"
+			"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
+			"MaxUpgradeLevel"				"3"
+			"ItemBaseLevel"					"2"
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_strength"			"25 30 45"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_damage"				"50 85 100"
+				}
+				"03"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"duration"					"16"
+				}
+			}
+		}
+		
+		"item_black_king_bar_3"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"item_lua"
+			"AbilityTextureName" 			"custom/item_black_king_bar_3"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+			"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+			"ScriptFile"					"items/item_black_king_bar.lua"
+			"AbilityCooldown"				"60 50 45"
+			// Stats
+			//-------------------------------------------------------------------------------------------------------------
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"4000"
+			"ItemShopTags"					"magic;amplify;magic crit;crit;magic"
+			"ItemQuality"					"legendary"
+			"ItemAliases"					"magic medallion"
+			"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
+			"MaxUpgradeLevel"				"3"
+			"ItemBaseLevel"					"3"
+			// Special
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_strength"			"25 30 45"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_damage"				"50 85 100"
+				}
+				"03"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"duration"					"16"
+				}
+			}
+		}
+	}

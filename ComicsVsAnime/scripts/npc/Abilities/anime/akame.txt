@@ -1,0 +1,375 @@
+	""
+	{
+		"akame_muramasa"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"ability_datadriven"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+			"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+			"AbilityTextureName"			"custom_ability/akame_muramasa"       
+			"AbilityUnitTargetTeam"     	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"AbilityUnitTargetType"     	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"SpellImmunityType"         	"SPELL_IMMUNITY_ENEMIES_YES"
+			"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+			"AbilityManaCost"				"240"
+			"AbilityCooldown"				"140 120 100"
+	
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"num_attack"				"1"
+					"LinkedSpecialBonus"	"special_bonus_akame_8"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"time_kill"				"8 6 5"
+				}
+				"03"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"duration"				"15"
+					"LinkedSpecialBonus"	"special_bonus_akame_6"
+				}
+				"04"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"chance"				"2"
+					"LinkedSpecialBonus"    "special_bonus_akame_1"
+				}
+			}
+			"OnSpellStart"
+			{
+				"RunScript"   
+				{
+					"ScriptFile"			"heroes/akame/akame_muramasa.lua"
+					"Function"				"akame_muramasa_created"
+				}
+			}
+			"Modifiers"
+			{
+				"modifier_akame_attack_passive"
+				{
+					"IsHidden"		"1"
+					"Passive"	    "1"
+					
+					"OnAttack"
+					{
+						"RunScript"
+						{	
+							"ScriptFile"			"heroes/akame/akame_muramasa.lua"
+							"Function"				"akame_muramasa_passive"
+						}
+					}
+				}
+				"modifier_akame_attack_activate"
+				{
+					"IsHidden"		"0"
+					"Passive"	    "0"				
+					"OnAttack"
+					{
+						"RunScript"
+						{	
+							"ScriptFile"			"heroes/akame/akame_muramasa.lua"
+							"Function"				"akame_muramasa_activate_attack"
+						}
+					}
+				}
+			}
+		}
+		
+		"akame_doping"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"ability_datadriven"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+			"AbilityTextureName"			"custom_ability/akame_doping"       
+			"AbilityUnitTargetType"     	"DOTA_UNIT_TARGET_HERO"
+			"SpellImmunityType"         	"SPELL_IMMUNITY_ENEMIES_YES"
+			"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+			"AbilityManaCost"				"120"
+			"AbilityCooldown"				"35"
+	
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"mult"					"20"
+					"LinkedSpecialBonus"    "special_bonus_akame_2"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"dur"				"4 5 6 7"
+				}
+			}
+			"OnSpellStart"
+			{
+				"RunScript"   
+				{
+					"ScriptFile"			"heroes/akame/akame_doping.lua"
+					"Function"				"akame_doping_activate"
+				}
+			}
+		}
+		
+		"akame_runner"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"ability_datadriven"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+			"AbilityTextureName"			"custom_ability/akame_runner"       
+			"AbilityUnitTargetTeam"     	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+			"AbilityUnitTargetType"     	"DOTA_UNIT_TARGET_HERO"
+			"SpellImmunityType"         	"SPELL_IMMUNITY_ENEMIES_YES"
+			"AbilityManaCost"				"120"
+			"AbilityCooldown"				"40 40 40 35"
+	
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"movespeed"				"550"
+					"LinkedSpecialBonus"	"special_bonus_akame_3"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"evasion"				"20 25 35 40"
+					"LinkedSpecialBonus"	"special_bonus_akame_7"
+				}
+				"03"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"duration"				"6"
+					"LinkedSpecialBonus"	"special_bonus_akame_5"
+				}
+			}
+			"OnSpellStart"
+			{
+				"RunScript"   
+				{
+					"ScriptFile"			"heroes/akame/akame_runner.lua"
+					"Function"				"akame_runner"
+				}
+			}
+		}
+		
+		"akame_ennoodzuno"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"ability_datadriven"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+			"AbilityTextureName"			"custom_ability/akame_ennoodzuno"       
+			"AbilityUnitTargetTeam"     	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+			"AbilityUnitTargetType"     	"DOTA_UNIT_TARGET_HERO"
+			"SpellImmunityType"         	"SPELL_IMMUNITY_ENEMIES_YES"
+			"AbilityManaCost"				"140"
+			"AbilityCooldown"				"45"
+	
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"duration"				"10"
+					"LinkedSpecialBonus"	"special_bonus_akame_4"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_num_attack"		"1"
+				}
+				"03"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_stats"			"10 12 16 25"
+				}
+				"04"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"bonus_movespeed"		"50 75 100 125"
+				}
+			}
+			"OnSpellStart"
+			{
+				"RunScript"   
+				{
+					"ScriptFile"			"heroes/akame/akame_ennoodzuno.lua"
+					"Function"				"akame_ennoodzuno"
+				}
+			}
+		}
+		
+		"special_bonus_akame_1"
+		{
+			// General
+			//----------------------------------------------------------------------------------
+			"BaseClass"                     "special_bonus_undefined"
+			"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MaxLevel"                      "1"
+
+			// Special
+			//----------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"                  "FIELD_FLOAT"
+					"value"                     "2"
+				}
+			}
+		}
+		
+		"special_bonus_akame_2"
+		{
+			// General
+			//----------------------------------------------------------------------------------
+			"BaseClass"                     "special_bonus_undefined"
+			"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MaxLevel"                      "1"
+
+			// Special
+			//----------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"                  "FIELD_FLOAT"
+					"value"                     "15"
+				}
+			}
+		}
+		
+		"special_bonus_akame_3"
+		{
+			// General
+			//----------------------------------------------------------------------------------
+			"BaseClass"                     "special_bonus_undefined"
+			"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MaxLevel"                      "1"
+
+			// Special
+			//----------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"                  "FIELD_FLOAT"
+					"value"                     "150"
+				}
+			}
+		}		
+		"special_bonus_akame_4"
+		{
+			// General
+			//----------------------------------------------------------------------------------
+			"BaseClass"                     "special_bonus_undefined"
+			"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MaxLevel"                      "1"
+
+			// Special
+			//----------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"                  "FIELD_FLOAT"
+					"value"                     "4"
+				}
+			}
+		}		
+		"special_bonus_akame_5"
+		{
+			// General
+			//----------------------------------------------------------------------------------
+			"BaseClass"                     "special_bonus_undefined"
+			"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MaxLevel"                      "1"
+
+			// Special
+			//----------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"                  "FIELD_FLOAT"
+					"value"                     "2"
+				}
+			}
+		}		
+		"special_bonus_akame_6"
+		{
+			// General
+			//----------------------------------------------------------------------------------
+			"BaseClass"                     "special_bonus_undefined"
+			"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MaxLevel"                      "1"
+
+			// Special
+			//----------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"                  "FIELD_FLOAT"
+					"value"                     "10"
+				}
+			}
+		}		
+		"special_bonus_akame_7"
+		{
+			// General
+			//----------------------------------------------------------------------------------
+			"BaseClass"                     "special_bonus_undefined"
+			"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MaxLevel"                      "1"
+
+			// Special
+			//----------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"                  "FIELD_FLOAT"
+					"value"                     "15"
+				}
+			}
+		}		
+		"special_bonus_akame_8"
+		{
+			// General
+			//----------------------------------------------------------------------------------
+			"BaseClass"                     "special_bonus_undefined"
+			"AbilityType"                   "DOTA_ABILITY_TYPE_ATTRIBUTES"
+			"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"MaxLevel"                      "1"
+
+			// Special
+			//----------------------------------------------------------------------------------
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"                  "FIELD_FLOAT"
+					"value"                     "1"
+				}
+			}
+		}
+	}

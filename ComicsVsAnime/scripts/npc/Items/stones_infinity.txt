@@ -1,0 +1,287 @@
+""
+	{
+		//========================================================================= 
+		// Камень силы
+		//=========================================================================
+		"item_stone_strength"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"2905"
+			"BaseClass"						"item_datadriven"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+			"AbilityTextureName"			"custom/item_stone_strength"
+			"Model"							"models/props_gameplay/red_box.vmdl"
+			
+			// Stats
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityCooldown"				"40"
+			
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"7600"
+			"ItemShopTags"					"consumable"
+			"ItemQuality"					"consumable"
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"str"						"2"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"chance"					"15"
+				}
+				"03"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"mult"						"3"
+				}
+			}
+			"Modifiers"
+			{
+				"modifier_stone_strength"
+				{
+					"Passive"	"1"
+					"IsHidden"	"1"
+
+					"ThinkInterval"	"0.1"
+					"OnIntervalThink"
+					{	
+						"RunScript"
+						{
+							"ScriptFile"	"items/item_stone_strength.lua"
+							"Function"		"stone_str"
+						}
+					}
+				}
+			}
+		}
+		//========================================================================= 
+		// Камень времени
+		//=========================================================================
+		"item_stone_of_time"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"2903"
+			"BaseClass"						"item_datadriven"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+			"AbilityTextureName"			"custom/item_stone_of_time"
+			"Model"							"models/props_gameplay/red_box.vmdl"
+			
+			// Stats
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityCastPoint"				"0.5"
+			"AbilityManaCost"				"250"
+			"AbilityCooldown"				"120"
+			
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"6000"
+			"ItemShopTags"					"consumable"
+			"ItemQuality"					"consumable"
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"backtrack_time"			"3.0"
+				}
+				"02"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"tooltip_range"		"		625"
+				}
+				"03"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"remember_interval"			"0.2"
+				}
+			}
+			
+			"OnSpellStart"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"items/stone_of_time.lua"
+					"Function"		"TimeLapseRewind"
+				}
+			}
+			"Modifiers"
+			{
+				"modifier_rewind_datadriven"
+				{
+					"Passive"	"1"
+					"IsHidden"	"1"
+
+					"ThinkInterval"	"%remember_interval"
+					"OnIntervalThink"
+					{	
+						"RunScript"
+						{
+							"ScriptFile"	"items/stone_of_time.lua"
+							"Function"		"TimeLapseSave"
+							"DamageTaken"	"%attack_damage"
+							"BacktrackTime"	"%backtrack_time"
+							"Interval"		"%remember_interval"
+						}
+					}
+				}
+			}
+		}
+		//========================================================================= 
+		// Камень души
+		//=========================================================================
+		"item_stone_soul"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"2906"
+			"BaseClass"						"item_datadriven"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+			"AbilityTextureName"			"custom/item_stone_soul"
+			"Model"							"models/props_gameplay/red_box.vmdl"
+			
+			// Stats
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityCastPoint"				"0.5"
+			"AbilityManaCost"				"500"
+			"AbilityCooldown"				"210"
+			
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"12000"
+			"ItemShopTags"					"consumable"
+			"ItemQuality"					"consumable"
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_FLOAT"
+					"dur"					"15"
+				}
+			}
+			
+			"OnSpellStart"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"items/item_stone_soul.lua"
+					"Function"		"stone_soul"
+				}
+			}
+		}
+		//========================================================================= 
+		// Камень реальности
+		//=========================================================================	
+		"item_stone_reality"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"2904"
+			"BaseClass"						"item_datadriven"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+			"AbilityTextureName"			"custom/item_stone_reality"
+			"Model"							"models/props_gameplay/red_box.vmdl"
+			
+			// Stats
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityCastPoint"				"0.4"
+			"AbilityManaCost"				"250"
+			"AbilityCooldown"				"25"
+			
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"4500"
+			"ItemShopTags"					"consumable"
+			"ItemQuality"					"consumable"
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"dur"					"3"
+				}
+			}
+			
+			"OnSpellStart"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"items/item_stone_reality.lua"
+					"Function"		"item_stone_reality"
+				}
+			}
+		}
+		//========================================================================= 
+		// Камень пространства
+		//=========================================================================	
+		"item_stone_spaces"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"item_lua"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"AbilityTextureName"			"custom/item_stone_spaces"
+			"ScriptFile"					"items/item_stone_spaces.lua"
+			"Model"							"models/props_gameplay/red_box.vmdl"
+			"ItemPurchasable"		 		"0"
+			"ItemSellable"                  "0"
+			
+			// Stats
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilityManaCost"				"250"
+			"AbilityCooldown"				"150"
+			
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"4500"
+			"ItemShopTags"					"consumable"
+			"ItemQuality"					"consumable"
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"time_respawn"			"3"
+				}
+			}
+		}
+		
+		"item_stone_intellegence"
+		{
+			// General
+			//-------------------------------------------------------------------------------------------------------------
+			"BaseClass"						"item_lua"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			"AbilityTextureName"			"custom/item_stone_intellegence"
+			"ScriptFile"					"items/item_stone_intellegence.lua"
+			"Model"							"models/props_gameplay/red_box.vmdl"
+			"AbilityCooldown"				"40"
+			
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"3500"
+			"ItemShopTags"					"consumable"
+			"ItemQuality"					"consumable"
+			"AbilitySpecial"
+			{
+				"01"
+				{
+					"var_type"		"FIELD_INTEGER"
+					"bonus_int"			"3"
+				}
+			}
+		}
+	}
